@@ -140,21 +140,30 @@ setup_log_files() {
 
 # 최근 명령어 가져오기
 get_last_command() {
-    # fc 명령어를 사용하여 더 정확하게 마지막 명령어 가져오기
-    # -1은 마지막 명령어, -2는 그 이전 명령어(thehelp 자신을 제외하기 위함)
-    local last_cmd=$(fc -ln -2 -2 2>/dev/null || fc -ln -1 -1 2>/dev/null)
+    # fc 명령어를 사용하여 명령어 히스토리 가져오기
+    # -l: 목록 형식, -n: 명령어 번호 제외, 마지막 20개 명령어 가져오기
+    local history_cmds=$(fc -ln -20 2>/dev/null)
+    local cmd=""
+    local found_non_thehelp=false
     
-    # 'thehelp'가 포함된 명령어는 제외하고 그 이전 명령어 가져오기
-    if [[ "$last_cmd" == *"thehelp"* ]]; then
-        last_cmd=$(fc -ln -3 -3 2>/dev/null || fc -ln -2 -2 2>/dev/null)
-    fi
+    # 각 명령어를 역순으로 확인
+    while IFS= read -r line; do
+        # 앞뒤 공백 제거
+        line=$(echo "$line" | sed 's/^[ \t]*//;s/[ \t]*$//')
+        
+        # 비어있지 않고 thehelp를 포함하지 않는 명령어 찾기
+        if [ -n "$line" ] && [[ "$line" != *"thehelp"* ]]; then
+            cmd="$line"
+            found_non_thehelp=true
+            break
+        fi
+    done <<< "$(echo "$history_cmds" | tac)"  # tac으로 역순 처리
     
-    # 명령어가 없으면 'history' 반환
-    if [ -z "$last_cmd" ]; then
+    # 적절한 명령어를 찾지 못한 경우 기본값 반환
+    if [ "$found_non_thehelp" = false ]; then
         echo "history"
     else
-        # 앞뒤 공백 제거
-        echo "$last_cmd" | sed 's/^[ \t]*//;s/[ \t]*$//'
+        echo "$cmd"
     fi
 }
 
