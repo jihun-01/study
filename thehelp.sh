@@ -3,7 +3,7 @@ VERSION="1.0.0"
 SCRIPT_NAME=$(basename "$0")
 
 # 기본 설정값
-DEFAULT_MODEL="gpt-3.5-turbo"
+DEFAULT_MODEL="gpt-4.1-nano"
 DEFAULT_ERR_LOG="/tmp/thehelp_err.log"
 DEFAULT_OUT_LOG="/tmp/thehelp_out.log"
 DEFAULT_HISTORY_FILE="$HOME/.bash_history"
