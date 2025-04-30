@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv=”X-UA-compatible” content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <header class ="header">
+        <h2>메뉴</h2>
+        <nav>
+            <ul>
+                <li><a href ="index.html"title="업데이트 준비중">회원가입</a></li>
+                <li><a href ="index.html"title="업데이트 준비중">프로필 정보</a></li>
+                <li><a href ="index.html"title="업데이트 준비중">문의하기</a></li>
+            </ul>
+        </nav>
+        <hr/>
+    </header>
+    <main class="signup">
+        <h2>회원가입</h2>
+        <div class="user_name">사용자 이름: <input type="text" id="name" placeholder="이름을 입력하세요" required></div>
+        <div class="user_email">이메일: <input type="email" id="email" placeholder="이메일을 입력하세요" required></div>
+        <div class="user_password">비밀번호: <input type="password" id="password" placeholder="비밀번호를 입력하세요" required></div>
+        <div class="user_age">나이: <input type="number" id="age" placeholder="나이를 입력하세요" required></div>
+        <div>성별: 
+            <select id="age_select" required>
+                <option value>남성</option>
+                <option value>여성</option>
+            </select>
+        <div class="decribe">자기소개:<textarea id="describe" placeholder="자기소개를 입력하세요" required  cols="40" rows="5" ></textarea></div>
+        <div class="hobby">취미: 
+            <select id="hobby_select" required>
+                <option value>축구</option>
+                <option value>게임</option>
+                <option value>여행</option>
+                <option value>음악감상</option>
+            </select>
+        </div>
+        <div class="user_photo">프로필 사진: <input type="file" id="photo" accept="image/*" required></div>
+        <div class="submit">
+            <button type="submit" id="submit" title="업데이트 준비중">회원가입</button>
+            <button type="reset" id="reset" title="업데이트 준비중">초기화</button>
+            업데이트 진행률 
+            <progress id="progress" value="60" max="100"></progress>
+        </div>
+        <hr/>
+        <h2>프로필 정보</h2>
+        <table border="1" cellspacing="0" cellpadding="5">
+            <caption>프로필 정보 요약</caption>
+            <thead>
+                <tr>
+                    <th>항목</th>
+                    <th>내용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>프로필</td>
+                    <td id="profile_info"> </td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td id="profile_info_name"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td id="profile_info_email"></td>
+                </tr>
+                <tr>
+                    <td>나이</td>
+                    <td id="profile_info_age"></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td id="profile_info_gender"></td>
+                </tr>
+                <tr>
+                    <td>자기소개</td>
+                    <td id="profile_info_dscribe"></td>
+                </tr>   
+                <tr>
+                    <td>취미</td>
+                    <td id="profile_info_hobby"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                    <tr>
+                        <td colspan="2">프로필 정보가 성공적으로 업데이트 되었습니다.</td>
+                    </tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer class="footer">
+        <h2>문의하기</h2>
+        <p>문의: <a href="index.html">tset@test.com</a></div>
+        <p>전화: 010-1234-5678</div>
+        <p>주소: 서울특별시 예제로 123</div>
+        <h3>찾아오시는길</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d12659.75918022341!2d126.98610888251326!3d37.50933808831027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sko!2skr!4v1746002119380!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>copyright &copy; 2025<strong> 프로필 관리 페이지</strong></p>
+    </footer>
+</body>
+</html>
