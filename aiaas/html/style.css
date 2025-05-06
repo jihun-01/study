@@ -1,4 +1,4 @@
-/* 기본 리셋 및 공통 스타일 */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -529,7 +529,6 @@ body {
   margin-right: 0;
 }
 
-/* 제목 스타일 */
 .footer_column h3 {
   font-size: 12px;
   font-weight: 600;
@@ -544,7 +543,6 @@ body {
 }
 
 
-/* 리스트 스타일 */
 .footer_column ul {
   list-style: none;
   padding: 0;
@@ -564,7 +562,6 @@ body {
   text-decoration: underline;
 }
 
-/* 푸터 하단부 스타일 */
 .footer_bottom {
   max-width: 980px;
   margin: 10px auto 0;
@@ -633,7 +630,6 @@ body {
   align-items: flex-start;
 }
 
-/* 슬라이드 쇼 스타일 */
 .module_3 {
     position: relative;
     width: 100%;
@@ -675,12 +671,10 @@ body {
     object-fit: contain;
 }
 
-/* 라디오 버튼 숨기기 */
 input[type="radio"] {
     display: none;
 }
 
-/* 슬라이드 네비게이션 스타일 */
 .slide-nav {
     position: absolute;
     bottom: 20px;
@@ -704,7 +698,7 @@ input[type="radio"] {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* 슬라이드 버튼 컨테이너 */
+
 .slide-buttons {
     position: absolute;
     top: 50%;
@@ -730,9 +724,9 @@ input[type="radio"] {
     right: 20px;
 }
 
-/* 슬라이드 버튼 기본 스타일 */
+
 .slide-button {
-    display: none; /* 기본적으로 모든 버튼 숨김 */
+    display: none; 
     width: 50px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.3);
@@ -743,7 +737,7 @@ input[type="radio"] {
     transition: background-color 0.3s ease;
 }
 
-/* 현재 슬라이드에 따른 버튼 표시 */
+
 #slide1:checked ~ .slide-buttons .prev-buttons label[for="slide9"],
 #slide1:checked ~ .slide-buttons .next-buttons label[for="slide2"],
 #slide2:checked ~ .slide-buttons .prev-buttons label[for="slide1"],
@@ -775,7 +769,7 @@ input[type="radio"] {
     font-weight: bold;
 }
 
-/* 슬라이드 전환 효과 */
+
 #slide1:checked ~ .slide-container .slide-container-ul li:nth-child(1),
 #slide2:checked ~ .slide-container .slide-container-ul li:nth-child(2),
 #slide3:checked ~ .slide-container .slide-container-ul li:nth-child(3),
@@ -789,7 +783,6 @@ input[type="radio"] {
     z-index: 1;
 }
 
-/* 네비게이션 도트 활성화 */
 #slide1:checked ~ .slide-nav label:nth-child(1),
 #slide2:checked ~ .slide-nav label:nth-child(2),
 #slide3:checked ~ .slide-nav label:nth-child(3),
