@@ -843,6 +843,10 @@ input[type="radio"] {
   .footer_container {
     flex-direction: column;
   }
+
+  .top_nav ul li:not(:first-child, :last-child) {
+    display: none;
+  }
   
   .footer_column {
     margin-right: 0;
