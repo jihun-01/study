@@ -1,3 +1,7 @@
 __pycache__/
 *.jpg
 .vscode/
+# SpecStory explanation file
+.specstory/.what-is-this.md
+.specstory/
+./aiaas/html/React/my-app/node_modules/*

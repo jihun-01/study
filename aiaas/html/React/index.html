@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React APP</title>
+     <!-- React cdn -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel cdn -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- root -->
+    <div id="root"></div>
+
+    <!-- React componet rendering -->
+    <script type="text/babel">
+    // react component 정의
+    function App() {
+        return (
+            <div>
+                <h1>Hello, React!</h1>
+                <p>
+                    This is a simple Recat component rendered using CDN and Babel. 
+                </p>
+            </div>
+        )
+    }
+
+    // React component
+    ReactDom.render(<App />, document.getElementById('root'));   
+    </script>
+
+</body>
+</html>

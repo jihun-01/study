@@ -1,8 +1,17 @@
 const menuItems = document.querySelectorAll('.top_nav ul li');
 const menuBars = document.querySelectorAll('.menu_bar');
 const header = document.querySelector('.header');
+const slideList = document.getElementById('slide-list');
+const slides = document.querySelectorAll('.slide');
+const slideNav = document.getElementById('slide-nav');
+const prevButton = document.querySelector('.slide-preview-prev');
+const nextButton = document.querySelector('.slide-preview-next');
 
 // 현재 활성화된 메뉴 바 인덱스를 추적
+let currentSlideIndex = 0;
+let slideTimer;
+const slideInterval = 3000; // 슬라이드 간격 (3초)
+
 let activeMenuIndex = -1;
 let showTimer = null;
 let hideTimer = null;
@@ -105,3 +114,87 @@ menuBars.forEach((menuBar, index) => {
     }, 200);
   });
 });
+
+// 슬라이드쇼 초기화
+document.addEventListener('DOMContentLoaded', () => {
+  // 첫 번째 슬라이드 활성화
+  if (slides.length > 0) {
+    slides[0].classList.add('active');
+  }
+  
+  // 네비게이션 도트 생성
+  createNavDots();
+  
+  // 첫 번째 도트 활성화
+  document.querySelectorAll('.nav-dot')[0].classList.add('active');
+  
+  // 이벤트 리스너 등록
+  const prevButton = document.querySelector('.slide-preview-prev');
+  const nextButton = document.querySelector('.slide-preview-next');
+  
+  if (prevButton && nextButton) {
+    prevButton.addEventListener('click', showPrevSlide);
+    nextButton.addEventListener('click', showNextSlide);
+  }
+  
+  // 자동 슬라이드 시작
+  startAutoSlide();
+  
+  // 마우스 이벤트 리스너
+  const slideContainer = document.querySelector('.module_3');
+  if (slideContainer) {
+    slideContainer.addEventListener('mouseenter', stopAutoSlide);
+    slideContainer.addEventListener('mouseleave', startAutoSlide);
+  }
+});
+
+function createNavDots() {
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('nav-dot');
+    dot.setAttribute('data-index', i);
+
+    dot.addEventListener('click', () => {
+      showSlide(i);
+    });
+
+    slideNav.appendChild(dot);
+  }
+}
+// 슬라이드 표시
+function showSlide(index) {
+  if (index < 0 ) {
+    index = slides.length - 1; // 마지막 슬라이드로 이동
+  } else if (index >= slides.length) {
+    index = 0; // 첫 번째 슬라이드로 이동
+  }
+
+  slides[currentSlideIndex].classList.remove('active');
+  document.querySelectorAll('.nav-dot')[currentSlideIndex].classList.remove('active');
+
+  currentSlideIndex = index;
+  slides[currentSlideIndex].classList.add('active');
+  document.querySelectorAll('.nav-dot')[currentSlideIndex].classList.add('active');
+}
+
+function showPrevSlide() {
+  showSlide(currentSlideIndex - 1);
+}
+
+function showNextSlide() {
+  showSlide(currentSlideIndex + 1);
+}
+
+function startAutoSlide() {
+  stopAutoSlide(); // 기존 타이머가 있다면 정지
+
+  slideTimer = setInterval(showNextSlide, slideInterval);
+}
+
+// 슬라이드 자동 전환 정지
+function stopAutoSlide() {
+  if (slideTimer) {
+    clearInterval(slideTimer);
+    slideTimer = null;
+  }
+}
