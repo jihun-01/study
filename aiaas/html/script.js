@@ -1,9 +1,9 @@
 const menuItems = document.querySelectorAll('.top_nav ul li');
 const menuBars = document.querySelectorAll('.menu_bar');
 const header = document.querySelector('.header');
-const slideList = document.getElementById('slide_list');
+const slideList = document.getElementById('slide-list');
 const slides = document.querySelectorAll('.slide');
-const slideNav = document.getElementById('slide_nav');
+const slideNav = document.getElementById('slide-nav');
 const prevButton = document.querySelector('.slide-preview-prev');
 const nextButton = document.querySelector('.slide-preview-next');
 
@@ -115,37 +115,38 @@ menuBars.forEach((menuBar, index) => {
   });
 });
 
-// 슬라이드쇼
-// 페이지 로드 시 초기화
+// 슬라이드쇼 초기화
 document.addEventListener('DOMContentLoaded', () => {
   // 첫 번째 슬라이드 활성화
   if (slides.length > 0) {
-      slides[0].classList.add('active');
+    slides[0].classList.add('active');
   }
   
-  initSlide();
-});
-// 페이지 로드 초기화
-function initSlide() {
+  // 네비게이션 도트 생성
   createNavDots();
-
-  //첫번째 슬라이드 활성화
-  if (slides.length > 0) {
-    slides[0].classList.add('active');
-    document.querySelectorAll('.nav-dot')[0].classList.add('active');
-}
-
-
-  // 이벤트 리스너
-  prevButton.addEventListener('click', showPrevSlide);
-  nextButton.addEventListener('click', showNextSlide);
-// 자동 슬라이드 시작
+  
+  // 첫 번째 도트 활성화
+  document.querySelectorAll('.nav-dot')[0].classList.add('active');
+  
+  // 이벤트 리스너 등록
+  const prevButton = document.querySelector('.slide-preview-prev');
+  const nextButton = document.querySelector('.slide-preview-next');
+  
+  if (prevButton && nextButton) {
+    prevButton.addEventListener('click', showPrevSlide);
+    nextButton.addEventListener('click', showNextSlide);
+  }
+  
+  // 자동 슬라이드 시작
   startAutoSlide();
-
-  document.querySelector('.module_3').addEventListener('mouseenter', stopAutoSlide);
-  document.querySelector('.module_3').addEventListener('mouseleave', startAutoSlide);
-
-}
+  
+  // 마우스 이벤트 리스너
+  const slideContainer = document.querySelector('.module_3');
+  if (slideContainer) {
+    slideContainer.addEventListener('mouseenter', stopAutoSlide);
+    slideContainer.addEventListener('mouseleave', startAutoSlide);
+  }
+});
 
 function createNavDots() {
   for (let i = 0; i < slides.length; i++) {
@@ -197,5 +198,3 @@ function stopAutoSlide() {
     slideTimer = null;
   }
 }
-document.addEventListener('DOMContentLoaded', initSlide);
-
