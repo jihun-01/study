@@ -200,7 +200,6 @@ background-position: center;
 background-repeat: no-repeat;
 background-image: url('https://www.apple.com/v/home/cd/images/promos/ipad-air/promo_ipad_air__bfbxzvw65c02_large.jpg');
 position: relative;
-text-decoration: none;
 }
 
 .module_2_2 {
@@ -532,20 +531,27 @@ justify-content: flex-end;
 height: 100%;
 }
 
+
 .module_2_AI_text_ipadair {
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
-height: 100%;
-margin-top: 10%;
+position: relative;
+top : 140%;
 }
 
 /* AI 관련 텍스트 스타일 */
 .AI_text {
   font-size: 20px;
   font-weight: 600;
-  margin-top: 30px;
   color: #1d1d1f;
+  background-image: linear-gradient(108deg, #006bb9 0, #903fcf 32%, #cf0f3c 84%, #b84100 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 600;
+
 }
 
 .AI_text_describe {

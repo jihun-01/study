@@ -7,27 +7,50 @@ main{
     letter-spacing: 0;
     line-height: 1.1875;
     text-decoration: none;
+    
 }
 a {
     text-decoration: none;
     color: #000000;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .footer_container {
+      flex-direction: column;
+    }
 }
 /*헤더 설정정*/
 .storehome_header{
     display: flex;
-    margin: 0 auto;
-    max-width: 1412px;
-    max-height: 258px;
-    padding: 80px 0px 64px;
+    width: auto;
+    max-height: 248px;
+    margin : 0 140px 0 140px;
     justify-content: space-between;
     align-items: center;
 }
+.storehome_header_left{
+    
+    display: flex;
+    flex-flow : row wrap;
+    width : 100%;
+    padding: 80px 0 64px;
+    flex-basis: 66.66666667%;
+    max-width: 640px;
+}
+
 .storehome_header_left_title{
-   font-size: 41px;
+    display : inline;
+   font-size: 48px;
    font-weight: 600;
-   max-width: 537.95px;
-   max-height: 114.33px;
-   margin : 38.4px 0px 0px;
+   word-break: keep-all;
+}
+.storehome_header_left_title_text{
+    display: inline;
+    font-size: 48px;
+    font-weight: 600;
+    color: #6e6e73;
+    word-break: keep-all;
 }
 .storehome_header_right{
     display: flex;
@@ -59,6 +82,7 @@ a {
 .storehome_header_right_chat_text{
     flex: 1;
     min-height: 22px;
+    
 }
 .storehome_header_right_chat_link{
     flex: 1;
@@ -114,4 +138,37 @@ a {
     color: #000000;
     text-decoration: none;
 }
+
+.storehome_latest_product{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0px 0px 40px;
+}
+
+
+.storehome_latest_product_title{
+    margin : 0 1418px 0 140px;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 0px 0px 16px;
+    white-space: nowrap;
+}
+
+.storehome_latest_product_card_container{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    margin : 0 140px 0 130px;
+    overflow : scroll;
+}
+.storehome_latest_product_card{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    padding: 0px 10px 16px;
+}
+
 

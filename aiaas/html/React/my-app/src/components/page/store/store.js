@@ -1,6 +1,9 @@
 import React from 'react';
 import './store.css';
 import Card400 from '../../common/itemcard/card400';
+import Card480 from '../../common/itemcard/card480';
+
+
 const StoreHome = () => {
     return (
         <>
@@ -9,7 +12,8 @@ const StoreHome = () => {
                 <div className="storehome_header">
                     <div className="storehome_header_left">
                         <div className="storehome_header_left_title">
-                            스토어.좋아하는 Apple 제품을 구입하는 가장 좋은 방법.
+                            <p>스토어.</p>
+                            <div className='storehome_header_left_title_text'>좋아하는 Apple 제품을 구입하는 가장 좋은 방법.</div>
                         </div>
                     </div>
                     <div className="storehome_header_right">
@@ -49,101 +53,166 @@ const StoreHome = () => {
                     <div className="storehome_scroll_item_container">
                         <div className="storehome_scroll_item_container_card_front"></div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
-                                <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202503?wid=400&hei=260&fmt=png-alpha&.v=M1Q3OGxnb1lBaHhqNjZ2OVRXZmx4VEpBUDFBeEhMZS9GUnNSYXdEd0hscisrUlZaSVRoWVYzU0Qra0FoTmUwNng2bitObzZwQzk4cEorV1dZdzhIazVVcFlOTkdoMWg4ZkdDS1ovMUlzcW8"/>
-                            </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">Mac</a>
-                            </div>
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
+                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-mac-nav-202503?wid=400&hei=260&fmt=png-alpha&.v=M1Q3OGxnb1lBaHhqNjZ2OVRXZmx4VEpBUDFBeEhMZS9GUnNSYXdEd0hscisrUlZaSVRoWVYzU0Qra0FoTmUwNng2bitObzZwQzk4cEorV1dZdzhIazVVcFlOTkdoMWg4ZkdDS1ovMUlzcW8"/>
+                                </div>
+                                <div className="storehome_scroll_item_container_img_text">
+                                    Mac
+                                </div>
+                            </a>
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
-                                <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-iphone-nav-202502?wid=400&hei=260&fmt=png-alpha&.v=dW5XbHI1eDVpd01qWUU4bFRtWGZXOG9vbGw5MnhRZ3BpYVMwQTIvb2xsaDVoZlhhY1p4QWdsTjFNaGRHM3FYWW15d1FhSDJ0bkR0ZGZtUjZJNmFveFVockp1czQ4Q0pvWUU1bC9ERnl2dFE"/>
-                            </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
-                                    <p>iPhone</p>
-                                </a>
-                            </div>
+                            <a href ="#">
+                                <div className="storehome_scroll_item_container_img">
+                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-iphone-nav-202502?wid=400&hei=260&fmt=png-alpha&.v=dW5XbHI1eDVpd01qWUU4bFRtWGZXOG9vbGw5MnhRZ3BpYVMwQTIvb2xsaDVoZlhhY1p4QWdsTjFNaGRHM3FYWW15d1FhSDJ0bkR0ZGZtUjZJNmFveFVockp1czQ4Q0pvWUU1bC9ERnl2dFE"/>
+                                </div>
+                                <div className="storehome_scroll_item_container_img_text">
+                                        <p>iPhone</p>
+                                </div>
+                            </a>        
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
-                                <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-ipad-nav-202405?wid=400&hei=260&fmt=png-alpha&.v=dW5XbHI1eDVpd01qWUU4bFRtWGZXNGFLQTJVNnlNQmQrVmRBYnZYei9jckUzelNmMnRxajE0NHhmMWtLazl6eG53M0FRZHBXNTh1U1lFVEtSR2YzTm5qbE56RWRpRFNIRXZvbkd2S0l5dTg"/>
-                            </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
+                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-ipad-nav-202405?wid=400&hei=260&fmt=png-alpha&.v=dW5XbHI1eDVpd01qWUU4bFRtWGZXNGFLQTJVNnlNQmQrVmRBYnZYei9jckUzelNmMnRxajE0NHhmMWtLazl6eG53M0FRZHBXNTh1U1lFVEtSR2YzTm5qbE56RWRpRFNIRXZvbkd2S0l5dTg"/>
+                                </div>
+                                <div className="storehome_scroll_item_container_img_text">
                                     <p>iPad</p>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
-                                <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-watch-nav-202409?wid=400&hei=260&fmt=png-alpha&.v=S0tSVzBtSkRkSFFhMm1zS1NmeWtkNDJNVmlnVytwalkvOTJ2M1BKWUREdkh5NTJ6cGtEemJOblBHR043ZjFkZzAzOVFHb3N0MkVmS01ZcFh0d1Y4R2oxdUo4aWtyK05IRkZuWjBWbW5HM00"/>
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
+                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-watch-nav-202409?wid=400&hei=260&fmt=png-alpha&.v=S0tSVzBtSkRkSFFhMm1zS1NmeWtkNDJNVmlnVytwalkvOTJ2M1BKWUREdkh5NTJ6cGtEemJOblBHR043ZjFkZzAzOVFHb3N0MkVmS01ZcFh0d1Y4R2oxdUo4aWtyK05IRkZuWjBWbW5HM00"/>
                             </div>
                             <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
                                     <p>Apple Watch</p>
-                                </a>
                             </div>
+                            </a>
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
-                                <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-vision-pro-nav-202401?wid=400&hei=260&fmt=png-alpha&.v=VzVpanYvTldHb05iVXFhc0xveWRLM25jd0w4dXFwc1hFbWZkNm9IcUR2bytSMWt1ZUNyTGx4SjRKL1pSL0ZDeGpCeVFkSWhuN0RJazJDeHBqaFFac0hlZzcwajlwb1R2dHNlazl1dldSUGQ5RzBLTDk5c25YRG5wR2ZpUlI4RFM"/>
-                            </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
+                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-vision-pro-nav-202401?wid=400&hei=260&fmt=png-alpha&.v=VzVpanYvTldHb05iVXFhc0xveWRLM25jd0w4dXFwc1hFbWZkNm9IcUR2bytSMWt1ZUNyTGx4SjRKL1pSL0ZDeGpCeVFkSWhuN0RJazJDeHBqaFFac0hlZzcwajlwb1R2dHNlazl1dldSUGQ5RzBLTDk5c25YRG5wR2ZpUlI4RFM"/>
+                                </div>
+                                <div className="storehome_scroll_item_container_img_text">
                                     <p>Vision Pro</p>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
-                                <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-airpods-nav-202409?wid=400&hei=260&fmt=png-alpha&.v=Q0Z1bWFqMUpRRnp3T0Y0VWJpdk1yNlJ5eGFhR1FVd2NNNDB0VWRUSzVCUFd1aTN5QlRYNG5PRjJxc2d1RklXbVM0TjRWdzF2UjRGVEY0c3dBQVZ6VFI0R1M4eFpKRTFIclV0ZHRqakVRd1k"/>
-                            </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
-                                    <p>AirPods</p>
-                                </a>
-                            </div>
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
+                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-airpods-nav-202409?wid=400&hei=260&fmt=png-alpha&.v=Q0Z1bWFqMUpRRnp3T0Y0VWJpdk1yNlJ5eGFhR1FVd2NNNDB0VWRUSzVCUFd1aTN5QlRYNG5PRjJxc2d1RklXbVM0TjRWdzF2UjRGVEY0c3dBQVZ6VFI0R1M4eFpKRTFIclV0ZHRqakVRd1k"/>
+                                </div>
+                                <div className="storehome_scroll_item_container_img_text">
+                                     <p>AirPods</p>
+                                </div>
+                            </a>
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
-                                <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-airtags-nav-202108?wid=400&hei=260&fmt=png-alpha&.v=Q0Z1bWFqMUpRRnp3T0Y0VWJpdk1ydzduWDk4YUM5R1JVL2gwcEZnWWNaRFd1aTN5QlRYNG5PRjJxc2d1RklXbVM0TjRWdzF2UjRGVEY0c3dBQVZ6VFpQclc0OVE3cmhmS3FBaXd6cG8yYzg"/>
-                            </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
-                                    <p>AirTags</p>
-                                </a>
-                            </div>
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
+                                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-airtags-nav-202108?wid=400&hei=260&fmt=png-alpha&.v=Q0Z1bWFqMUpRRnp3T0Y0VWJpdk1ydzduWDk4YUM5R1JVL2gwcEZnWWNaRFd1aTN5QlRYNG5PRjJxc2d1RklXbVM0TjRWdzF2UjRGVEY0c3dBQVZ6VFpQclc0OVE3cmhmS3FBaXd6cG8yYzg"/>
+                                </div>
+                                <div className="storehome_scroll_item_container_img_text">
+                                        <p>AirTags</p>
+                                </div>
+                            </a>
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
                                 <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-appletv-nav-202210?wid=400&hei=260&fmt=png-alpha&.v=T0wvM1N3YUcxQ09qK0VNRkl1RU1BZFM5WnN0RmVZRmVXQ0FCUWJjbnJDald1aTN5QlRYNG5PRjJxc2d1RklXbVM0TjRWdzF2UjRGVEY0c3dBQVZ6VFZ3YmJrVi9SakQxWUcrYWQwVXc5VTA"/>
-                            </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
+                                </div>
+                                <div className="storehome_scroll_item_container_img_text">
                                     <p>Apple TV 4K</p>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
                         <div className="storehome_scroll_item_container_card">
-                            <div className="storehome_scroll_item_container_img">
+                            <a href="#">
+                                <div className="storehome_scroll_item_container_img">
                                 <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-13-accessories-nav-202503?wid=400&hei=260&fmt=png-alpha&.v=QnhsNk96S0o4R1dkN2FveStNM1hwNzZGMHVrNGw2NTM5Vmk2bHZzMXQ3aUJGVHdnWkxMaklDeW9JYU5tT3FWeVBrcjVFNVdueFRVbVY3TGtiL2RjUVhQYS92MS9scmN4eTZLbFFkMHVzTVhuL2FLN3hwSUJhbzdFUHltVU1ldnQ"/>
                             </div>
-                            <div className="storehome_scroll_item_container_img_text">
-                                <a href="#">
+                                <div className= "storehome_scroll_item_container_img_text">
                                     <p>액세서리</p>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
                 {/*최신 제품 소개*/}
                 <div className="storehome_latest_product">
-                    <Card400 product_name="iPhone 16" product_text="iPhone 16 라인업을 만나볼까요?" product_price="100,000원" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-macbook-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MjhMcWJ2MGZwbXEwdnBkcUN6ZnhyOWVOMytmanI1M0ZTQWR1RjlDMWJpNXFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbk15N0N0R0lhUGhlMG1Tdmc3RjZVQ09NTUhYNlZ6OGxKNWpBMHlTSTlldko"/>
+                    <div className="storehome_latest_product_title">
+                        <p>최신 제품. 따끈따끈한 신제품 이야기.</p>
+                    </div>
+                    <div className="storehome_latest_product_card_container">
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="MacBook Air" product_text="Apple Intelligence" product_price="₩1,590,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-macbook-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MjhMcWJ2MGZwbXEwdnBkcUN6ZnhyOWVOMytmanI1M0ZTQWR1RjlDMWJpNXFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbk15N0N0R0lhUGhlMG1Tdmc3RjZVQ09NTUhYNlZ6OGxKNWpBMHlTSTlldko"/>
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="iPone 16 Pro" product_text="Apple Intelligence" product_price="₩1,550,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16-pro-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXUHpnd0VsRWFiaWRaRHRaUXBvNTNkalNab1lJcUZwSFVRK1htYlNmZUtPTG54cStVNU5BQmhzbkxYRGxDWUc3R1lXVzNzT2dSajRTd2tFaEdoYUp2VnY1WVJVT21DTzBZRFlBTTZySFFMbHY"/>
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="iPad Air" product_text="바람처럼 빠르게" product_price="₩949,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-ipad-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXRFJ0OFRiWngrNGllYTMvQ1dlWDBQZjZXYXJlRUd1cTBYTnRnbTNlazIvMzRHeXB5TnVsU3R6Qjd0Y2JzbURyWEdJV2RaUklyUnViT0c4OGJXRWhUTnArYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="Apple Watch 프라이드 에디션 스포츠 밴드" product_text="무지갯빛으로 당당하게."  product_price="₩65,000" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-pride-202505?wid=800&hei=1000&fmt=png-alpha&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vdDYvU0ZacGROckNJUjJGMTk0bnRxaHFTRjNxbmh1UnU2R29ibGdpZUFXc3V5NVU0QmM2b3hmeWJWTTVtN1o5ZnNZK25GTnpvbUY1UTI4WmI2VjkwM1YrYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="Apple Watch Series 10" product_text="얇아진 두께. 더 커진 존재감." product_price="₩599,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-s10-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbGtrQjBqdmhJbWlLcCtlQTMwc01SdjkvamYzRzRvcFlnajNacmhEOC9BeDE1UUxLT2t0cW42N3FvQzVqaGhrVVlSek45NHpYUG91NnZ3YmlDQlpUYnArYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="iPhone 16e" product_text="Apple Intelligence" product_price="₩990,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16e-202502_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXSzRWdVVUSklyLzFIUnk0cUZLSXhCVnRDKzU3amEwWnp2K0RPZm52QW9wL1JSeXJaL3JqNm9jc2psYU5Qelh0TnNldk5NTXRkeFF2V3BGOGlmVi9OaUE1YlplWFJuaTJ3ajR1TFNMNDJGK2U"/>                           
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="iPad" product_text="쓰다. 그리다. 빠져들다." product_price="₩529,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-ultra-202409_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbHdYN09OOVhGMkJZZWFPTlJDYlZ0VkFYdUFnVlgvUCtkRUM4dVJJUkRxSHAwckMxbExydC8yeDhtUjlFVHdKVnRSR0liZklwWjJ2eGlOd1dxRHFuOXFZUFpIL004NVhDbUZOOW82a2p5cS8"/>                           
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="Mac Studio" product_text="Apple Intelligence" product_price="₩3,290,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-mac-studio-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MjhMcWJ2MGZwbXEwdnBkcUN6ZnhyMFozSSthUWxLelAxTitDZ3M4Tk5nbm45S05qekNUdVUwMVFyK1pKaERUd3NtS0NkZnlUKzBRdlpRai9zMDR0cTA2K1VNZGNlb0hPLzMyemJjWVkyQ0JMQzBoZ1NYMmRGQ2VZWXI2YVMzc2I"/>                           
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="iPhone 16" product_text="Apple Intelligence" product_price="₩1,250,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXSHNhd1RFMExoRHFBcWNCalJOblBtbjkvamYzRzRvcFlnajNacmhEOC9BeDE1UUxLT2t0cW42N3FvQzVqaGhrVVQ1UEcwSy9Yd3FpT0wveFRydDk3cE4rYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>                           
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="Apple Watch Ultra 2" product_text="블랙으로 계속되는 전력 질주." product_price="₩1,149,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-ultra-202409_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbHdYN09OOVhGMkJZZWFPTlJDYlZ0VkFYdUFnVlgvUCtkRUM4dVJJUkRxSHAwckMxbExydC8yeDhtUjlFVHdKVnRSR0liZklwWjJ2eGlOd1dxRHFuOXFZUFpIL004NVhDbUZOOW82a2p5cS8"/>                           
+                            </div>
+                        </div>
+                        <div className="list_item">
+                            <div className="storehome_latest_product_card">
+                            <Card400 product_name="다양한 스타일. 다양한 컬러." link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-bands-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09va1BWaWtDc3JqbmtIWDhTOVFud0xCSnFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbkRMUVYvUzMyczZzTlBKNTVVYUNsRytycDU0Zm9tS1NLYWZhaWJKS1VJSUo"/>                           
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-
+                {/*도움 카드*/}
+                <div className="storehome_help_card">
+                    <div className="storehome_help_card_container">
+                        <Card480 head="Apple 스페셜리스트" text="스페셜리스트와 함께하는 일대일 온라인 쇼핑." link="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-earth-day-specialist-help-202504?wid=4000&hei=4167&fmt=p-jpg&qlt=95&.v=cHZTdEJURVNIcmNmcWQ1YlUyV2pSZmZ6Q2ZTaDM0dDFtQTRQZitiSUxoQ3ZaQ3BPZ3VPbjZ1OE1jMHB0VHplaVQ1SVRRZnoyY2xiVHFIbFpnUnJwcmJKaWduWDhrL3RFTDJVSS83Tk9MYXNncFNxekt2MjNBWmdPdTJsTW1wWDdOcEJRdUlLK3pHczBBRDF3cDFHQ3Bn"/>
+                    </div>
+                </div>
             </main>
         </>
     );

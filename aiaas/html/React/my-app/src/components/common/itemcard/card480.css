@@ -1,0 +1,64 @@
+* {
+    font-family: 'SF Pro KR', 'SF Pro Text', 'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum', 'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    line-height: 1.5;
+}
+
+.image_card{
+    width: 480px;
+    height: 500px;
+    position: relative;
+    justify-content: center;
+}
+
+.image_card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.image_card_info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top : 0 ;
+    bottom: 70%;
+    padding: 30px;
+}
+
+
+.image_card_info_header{
+    font-size: 12px;
+    font-weight: bold;
+    padding : 24px 0 0;
+    color: #6E6E73;
+    white-space: normal;
+}
+
+.image_card_info_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding : 10px 0 0 0;
+}
+
+.image_card_info_body_text{
+    font-size: 28px;
+    padding : 0 0 6px;
+    font-weight: 600;
+    white-space: normal;
+}
+
+.image_card_info_body_describe{
+    font-size: 17px;
+    padding : 10px 0 0 0;
+}
+
+
+
+
+
+
