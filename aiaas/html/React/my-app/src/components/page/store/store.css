@@ -1,0 +1,117 @@
+/* 기본 스타일 리셋 및 공통 설정 */
+main{
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font-family: SF Pro KR, SF Pro Display, SF Pro Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif;
+    letter-spacing: 0;
+    line-height: 1.1875;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+/*헤더 설정정*/
+.storehome_header{
+    display: flex;
+    margin: 0 auto;
+    max-width: 1412px;
+    max-height: 258px;
+    padding: 80px 0px 64px;
+    justify-content: space-between;
+    align-items: center;
+}
+.storehome_header_left_title{
+   font-size: 41px;
+   font-weight: 600;
+   max-width: 537.95px;
+   max-height: 114.33px;
+   margin : 38.4px 0px 0px;
+}
+.storehome_header_right{
+    display: flex;
+    max-width: 204.3px;
+    flex-wrap: wrap;
+    padding: 90px 0px 54px;
+}
+.storehome_header_right_chat{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    max-width: 204.3px;
+    padding: 0px 0px 16px;
+    flex-wrap: wrap;
+}
+.storehome_header_right_chat_img{
+    width: 30%;
+    min-width: 44px;
+    max-width: 44px;
+    min-height: 36px;
+    max-height: 36px;
+    justify-content: left;
+    align-items: center;
+}
+.storehome_header_right_chat_text_container{
+    width: 70%;
+    min-width: 160.03px;
+}
+.storehome_header_right_chat_text{
+    flex: 1;
+    min-height: 22px;
+}
+.storehome_header_right_chat_link{
+    flex: 1;
+    min-height: 22px;
+}
+.storehome_header_right_chat a{
+    font-size: 13px;
+    color: #0066CC;
+    text-decoration: none;
+}
+.storehome_header_right_chat p{
+    font-size: 13px;
+}
+/*헤더 설정 끝*/
+
+/*스크롤 설정*/
+.storehome_scroll_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0px 40px 0px;
+}
+
+.storehome_scroll_item_container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.storehome_scroll_item_container_card_front{
+    width: 146px;
+    height: 148px;
+}
+.storehome_scroll_item_container_card{
+    width: 136px;
+    height: 150px;
+    padding: 18px 8px 16px;
+}
+.storehome_scroll_item_container_img{
+    height: 94px;
+    width: 120px;
+    padding: 0px 0px 16px;
+}
+.storehome_scroll_item_container_img img{
+    width: 120px;
+    height: 78px;
+}
+
+.storehome_scroll_item_container_img_text{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: none;
+}
+
