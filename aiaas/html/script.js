@@ -1,20 +1,15 @@
 const menuItems = document.querySelectorAll('.top_nav ul li');
 const menuBars = document.querySelectorAll('.menu_bar');
 const header = document.querySelector('.header');
-const slideList = document.getElementById('slide-list');
-const slides = document.querySelectorAll('.slide');
-const slideNav = document.getElementById('slide-nav');
-const prevButton = document.querySelector('.slide-preview-prev');
-const nextButton = document.querySelector('.slide-preview-next');
+
+
 
 // 현재 활성화된 메뉴 바 인덱스를 추적
-let currentSlideIndex = 0;
-let slideTimer;
-const slideInterval = 3000; // 슬라이드 간격 (3초)
-
 let activeMenuIndex = -1;
 let showTimer = null;
 let hideTimer = null;
+
+
 
 // 초기에 모든 메뉴 바 숨기기
 menuBars.forEach(menuBar => {
@@ -114,6 +109,20 @@ menuBars.forEach((menuBar, index) => {
     }, 200);
   });
 });
+
+
+
+const slideList = document.getElementById('slide-list');
+const slides = document.querySelectorAll('.slide');
+const slideNav = document.getElementById('slide-nav');
+const prevButton = document.querySelector('.slide-preview-prev');
+const nextButton = document.querySelector('.slide-preview-next');
+// 슬라이드 초기화
+let currentSlideIndex = 0;
+let slideTimer;
+const slideInterval = 3000; // 슬라이드 간격 (3초)
+
+
 
 // 슬라이드쇼 초기화
 document.addEventListener('DOMContentLoaded', () => {

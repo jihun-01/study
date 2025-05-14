@@ -1,9 +1,10 @@
+//components/common/itemcard/card400.js
 import React from 'react';
 import './card400.css';
-const Card400 = ({product_name, product_text, product_price, product_image, link}) => {
+const Card400 = ({product_name, product_text, product_price, product_image, path}) => {
     return (
         <div className="product_card">
-            <a href={link}>
+            <a href={path}>
             <img src={product_image} alt={product_name} />
             <div className="product_card_info">
                 <div className="product_card_info_header">

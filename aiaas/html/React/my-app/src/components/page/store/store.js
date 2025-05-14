@@ -2,7 +2,8 @@ import React from 'react';
 import './store.css';
 import Card400 from '../../common/itemcard/card400';
 import Card480 from '../../common/itemcard/card480';
-
+import Card313 from '../../common/itemcard/card313';
+import { WhiteButton, BlueButton } from '../../common/button/button';
 
 const StoreHome = () => {
     return (
@@ -12,8 +13,8 @@ const StoreHome = () => {
                 <div className="storehome_header">
                     <div className="storehome_header_left">
                         <div className="storehome_header_left_title">
-                            <p>스토어.</p>
-                            <div className='storehome_header_left_title_text'>좋아하는 Apple 제품을 구입하는 가장 좋은 방법.</div>
+                            <span className="storehome_title_main_text_black">스토어.</span>
+                            <span className="storehome_title_main_text_gray">좋아하는 Apple 제품을 구입하는 가장 좋은 방법.</span>
                         </div>
                     </div>
                     <div className="storehome_header_right">
@@ -147,72 +148,133 @@ const StoreHome = () => {
                 {/*최신 제품 소개*/}
                 <div className="storehome_latest_product">
                     <div className="storehome_latest_product_title">
-                        <p>최신 제품. 따끈따끈한 신제품 이야기.</p>
+                        <span className="storehome_title_text_black">최신 제품.</span>
+                        <span className="storehome_title_text_gray">따끈따끈한 신제품 이야기.</span>
                     </div>
                     <div className="storehome_latest_product_card_container">
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="MacBook Air" product_text="Apple Intelligence" product_price="₩1,590,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-macbook-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MjhMcWJ2MGZwbXEwdnBkcUN6ZnhyOWVOMytmanI1M0ZTQWR1RjlDMWJpNXFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbk15N0N0R0lhUGhlMG1Tdmc3RjZVQ09NTUhYNlZ6OGxKNWpBMHlTSTlldko"/>
+                            <Card400 product_name="MacBook Air" product_text="Apple Intelligence" product_price="₩1,590,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-macbook-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MjhMcWJ2MGZwbXEwdnBkcUN6ZnhyOWVOMytmanI1M0ZTQWR1RjlDMWJpNXFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbk15N0N0R0lhUGhlMG1Tdmc3RjZVQ09NTUhYNlZ6OGxKNWpBMHlTSTlldko"/>
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="iPone 16 Pro" product_text="Apple Intelligence" product_price="₩1,550,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16-pro-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXUHpnd0VsRWFiaWRaRHRaUXBvNTNkalNab1lJcUZwSFVRK1htYlNmZUtPTG54cStVNU5BQmhzbkxYRGxDWUc3R1lXVzNzT2dSajRTd2tFaEdoYUp2VnY1WVJVT21DTzBZRFlBTTZySFFMbHY"/>
+                            <Card400 product_name="iPone 16 Pro" product_text="Apple Intelligence" product_price="₩1,550,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16-pro-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXUHpnd0VsRWFiaWRaRHRaUXBvNTNkalNab1lJcUZwSFVRK1htYlNmZUtPTG54cStVNU5BQmhzbkxYRGxDWUc3R1lXVzNzT2dSajRTd2tFaEdoYUp2VnY1WVJVT21DTzBZRFlBTTZySFFMbHY"/>
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="iPad Air" product_text="바람처럼 빠르게" product_price="₩949,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-ipad-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXRFJ0OFRiWngrNGllYTMvQ1dlWDBQZjZXYXJlRUd1cTBYTnRnbTNlazIvMzRHeXB5TnVsU3R6Qjd0Y2JzbURyWEdJV2RaUklyUnViT0c4OGJXRWhUTnArYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                            <Card400 product_name="iPad Air" product_text="바람처럼 빠르게" product_price="₩949,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-ipad-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXRFJ0OFRiWngrNGllYTMvQ1dlWDBQZjZXYXJlRUd1cTBYTnRnbTNlazIvMzRHeXB5TnVsU3R6Qjd0Y2JzbURyWEdJV2RaUklyUnViT0c4OGJXRWhUTnArYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="Apple Watch 프라이드 에디션 스포츠 밴드" product_text="무지갯빛으로 당당하게."  product_price="₩65,000" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-pride-202505?wid=800&hei=1000&fmt=png-alpha&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vdDYvU0ZacGROckNJUjJGMTk0bnRxaHFTRjNxbmh1UnU2R29ibGdpZUFXc3V5NVU0QmM2b3hmeWJWTTVtN1o5ZnNZK25GTnpvbUY1UTI4WmI2VjkwM1YrYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                            <Card400 product_name="Apple Watch 프라이드 에디션 스포츠 밴드" product_text="무지갯빛으로 당당하게."  product_price="₩65,000" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-pride-202505?wid=800&hei=1000&fmt=png-alpha&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vdDYvU0ZacGROckNJUjJGMTk0bnRxaHFTRjNxbmh1UnU2R29ibGdpZUFXc3V5NVU0QmM2b3hmeWJWTTVtN1o5ZnNZK25GTnpvbUY1UTI4WmI2VjkwM1YrYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="Apple Watch Series 10" product_text="얇아진 두께. 더 커진 존재감." product_price="₩599,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-s10-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbGtrQjBqdmhJbWlLcCtlQTMwc01SdjkvamYzRzRvcFlnajNacmhEOC9BeDE1UUxLT2t0cW42N3FvQzVqaGhrVVlSek45NHpYUG91NnZ3YmlDQlpUYnArYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                            <Card400 product_name="Apple Watch Series 10" product_text="얇아진 두께. 더 커진 존재감." product_price="₩599,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-s10-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbGtrQjBqdmhJbWlLcCtlQTMwc01SdjkvamYzRzRvcFlnajNacmhEOC9BeDE1UUxLT2t0cW42N3FvQzVqaGhrVVlSek45NHpYUG91NnZ3YmlDQlpUYnArYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="iPhone 16e" product_text="Apple Intelligence" product_price="₩990,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16e-202502_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXSzRWdVVUSklyLzFIUnk0cUZLSXhCVnRDKzU3amEwWnp2K0RPZm52QW9wL1JSeXJaL3JqNm9jc2psYU5Qelh0TnNldk5NTXRkeFF2V3BGOGlmVi9OaUE1YlplWFJuaTJ3ajR1TFNMNDJGK2U"/>                           
+                            <Card400 product_name="iPhone 16e" product_text="Apple Intelligence" product_price="₩990,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16e-202502_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXSzRWdVVUSklyLzFIUnk0cUZLSXhCVnRDKzU3amEwWnp2K0RPZm52QW9wL1JSeXJaL3JqNm9jc2psYU5Qelh0TnNldk5NTXRkeFF2V3BGOGlmVi9OaUE1YlplWFJuaTJ3ajR1TFNMNDJGK2U"/>                           
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="iPad" product_text="쓰다. 그리다. 빠져들다." product_price="₩529,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-ultra-202409_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbHdYN09OOVhGMkJZZWFPTlJDYlZ0VkFYdUFnVlgvUCtkRUM4dVJJUkRxSHAwckMxbExydC8yeDhtUjlFVHdKVnRSR0liZklwWjJ2eGlOd1dxRHFuOXFZUFpIL004NVhDbUZOOW82a2p5cS8"/>                           
+                            <Card400 product_name="iPad" product_text="쓰다. 그리다. 빠져들다." product_price="₩529,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-ultra-202409_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbHdYN09OOVhGMkJZZWFPTlJDYlZ0VkFYdUFnVlgvUCtkRUM4dVJJUkRxSHAwckMxbExydC8yeDhtUjlFVHdKVnRSR0liZklwWjJ2eGlOd1dxRHFuOXFZUFpIL004NVhDbUZOOW82a2p5cS8"/>                           
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="Mac Studio" product_text="Apple Intelligence" product_price="₩3,290,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-mac-studio-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MjhMcWJ2MGZwbXEwdnBkcUN6ZnhyMFozSSthUWxLelAxTitDZ3M4Tk5nbm45S05qekNUdVUwMVFyK1pKaERUd3NtS0NkZnlUKzBRdlpRai9zMDR0cTA2K1VNZGNlb0hPLzMyemJjWVkyQ0JMQzBoZ1NYMmRGQ2VZWXI2YVMzc2I"/>                           
+                            <Card400 product_name="Mac Studio" product_text="Apple Intelligence" product_price="₩3,290,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-mac-studio-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MjhMcWJ2MGZwbXEwdnBkcUN6ZnhyMFozSSthUWxLelAxTitDZ3M4Tk5nbm45S05qekNUdVUwMVFyK1pKaERUd3NtS0NkZnlUKzBRdlpRai9zMDR0cTA2K1VNZGNlb0hPLzMyemJjWVkyQ0JMQzBoZ1NYMmRGQ2VZWXI2YVMzc2I"/>                           
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="iPhone 16" product_text="Apple Intelligence" product_price="₩1,250,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXSHNhd1RFMExoRHFBcWNCalJOblBtbjkvamYzRzRvcFlnajNacmhEOC9BeDE1UUxLT2t0cW42N3FvQzVqaGhrVVQ1UEcwSy9Yd3FpT0wveFRydDk3cE4rYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>                           
+                            <Card400 product_name="iPhone 16" product_text="Apple Intelligence" product_price="₩1,250,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-iphone-16-202409?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=UzBXQnlhUWdraTNvNU1Kb3pEQlpXSHNhd1RFMExoRHFBcWNCalJOblBtbjkvamYzRzRvcFlnajNacmhEOC9BeDE1UUxLT2t0cW42N3FvQzVqaGhrVVQ1UEcwSy9Yd3FpT0wveFRydDk3cE4rYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>                           
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="Apple Watch Ultra 2" product_text="블랙으로 계속되는 전력 질주." product_price="₩1,149,000부터" link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-ultra-202409_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbHdYN09OOVhGMkJZZWFPTlJDYlZ0VkFYdUFnVlgvUCtkRUM4dVJJUkRxSHAwckMxbExydC8yeDhtUjlFVHdKVnRSR0liZklwWjJ2eGlOd1dxRHFuOXFZUFpIL004NVhDbUZOOW82a2p5cS8"/>                           
+                            <Card400 product_name="Apple Watch Ultra 2" product_text="블랙으로 계속되는 전력 질주." product_price="₩1,149,000부터" path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-ultra-202409_GEO_KR?wid=800&hei=1000&fmt=jpeg&qlt=90&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09vbHdYN09OOVhGMkJZZWFPTlJDYlZ0VkFYdUFnVlgvUCtkRUM4dVJJUkRxSHAwckMxbExydC8yeDhtUjlFVHdKVnRSR0liZklwWjJ2eGlOd1dxRHFuOXFZUFpIL004NVhDbUZOOW82a2p5cS8"/>                           
                             </div>
                         </div>
                         <div className="list_item">
                             <div className="storehome_latest_product_card">
-                            <Card400 product_name="다양한 스타일. 다양한 컬러." link="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-bands-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09va1BWaWtDc3JqbmtIWDhTOVFud0xCSnFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbkRMUVYvUzMyczZzTlBKNTVVYUNsRytycDU0Zm9tS1NLYWZhaWJKS1VJSUo"/>                           
+                            <Card400 product_name="다양한 스타일. 다양한 컬러." path="#" product_image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-bands-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09va1BWaWtDc3JqbmtIWDhTOVFud0xCSnFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbkRMUVYvUzMyczZzTlBKNTVVYUNsRytycDU0Zm9tS1NLYWZhaWJKS1VJSUo"/>                           
                             </div>
                         </div>
                     </div>
                 </div>
                 {/*도움 카드*/}
                 <div className="storehome_help_card">
+                    <div className="storehome_help_card_title">
+                        <span className="storehome_title_text_black">도움의 손길.</span>
+                        <span className="storehome_title_text_gray">언제든, 당신에게 맞는 방식으로.</span>
+                    </div>
                     <div className="storehome_help_card_container">
-                        <Card480 head="Apple 스페셜리스트" text="스페셜리스트와 함께하는 일대일 온라인 쇼핑." link="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-earth-day-specialist-help-202504?wid=4000&hei=4167&fmt=p-jpg&qlt=95&.v=cHZTdEJURVNIcmNmcWQ1YlUyV2pSZmZ6Q2ZTaDM0dDFtQTRQZitiSUxoQ3ZaQ3BPZ3VPbjZ1OE1jMHB0VHplaVQ1SVRRZnoyY2xiVHFIbFpnUnJwcmJKaWduWDhrL3RFTDJVSS83Tk9MYXNncFNxekt2MjNBWmdPdTJsTW1wWDdOcEJRdUlLK3pHczBBRDF3cDFHQ3Bn"/>
+                        <div className="storehome_help_card_container_card">
+                            <Card480 text="Apple 스페셜리스트" name="스페셜리스트와 함께하는 일대일 온라인 쇼핑." path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-earth-day-specialist-help-202504?wid=4000&hei=4167&fmt=p-jpg&qlt=95&.v=cHZTdEJURVNIcmNmcWQ1YlUyV2pSZmZ6Q2ZTaDM0dDFtQTRQZitiSUxoQ3ZaQ3BPZ3VPbjZ1OE1jMHB0VHplaVQ1SVRRZnoyY2xiVHFIbFpnUnJwcmJKaWduWDhrL3RFTDJVSS83Tk9MYXNncFNxekt2MjNBWmdPdTJsTW1wWDdOcEJRdUlLK3pHczBBRDF3cDFHQ3Bn"/>
+                        </div>
+                        <div className="storehome_help_card_container_card">
+                            <Card480 text="TODAY AT APPLE" name="꼭 맞는 손쉬운 사용 세션 예약하기." describe="무료 세션을 예약하고, 누구나 자기만의 방식대로 Apple 기기를 활용할 수 있도록 도와주는 내장 기능들을 알아보세요." path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-taa-gaad-202505?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=cFEvalhFakpZVzg4RFZsWktqbXFNY0c2by9KWHE0U1NmaEtuWndhZksrQ2o2Z1ptREdBenZRTjZuSCtBemFnUTRHeXB5TnVsU3R6Qjd0Y2JzbURyWFA2Q2ZXNGtMc2tNc1puZEN0QmlFbFIrYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                        </div>
+                        <div className="storehome_help_card_container_card">
+                            <Card480 text="개인 맞춤 설정" name="새 기기 설정은 스페셜리스트의 도움과 함께." describe="데이터 전송 방법부터 최신 기능 사용법까지 온라인 일대일 세션에서 자세히 안내해 드립니다" path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-personal-setup-202408_GEO_KR?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=cFhHZjJBWFBWT2pMQnNFR2RGWlEwWlNLRUlsMkFxY1ZMQzZzY0tkenJrbVpUcktud3gyRlFwYlRKZ0M1UzloMlM3UUxhTDY4VmxnT1pqOEpldm1McjB0RmgycTRGTHI3SUVxVFVFNFI5QzlDblhqYnJabTUrNUtXVTZ0M1lPRzM"/>
+                        </div>
+                        <div className="storehome_help_card_container_card">
+                            <Card480 name="Genius Bar에서 직접 전문가의 도움을 받을 수 있습니다." path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-genius-202108?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=UjZWNjB3VDZRK09HelFpSjJDWXROSXFFVHJmY3pQTE80cGIxc1pFQ1VBQWYzUHRVc053YldlK2NuZForb0M1V0tRNjVHZTlIV04vVjZjbEh0Rm5SYzRmTnpyOVBFZDFPdWR2WFZpUzNkaDA"/>
+                        </div>
                     </div>
                 </div>
+                {/*쇼핑 카드*/}
+                <div className="storehome_shopping_reason">
+                    <div className="storehome_shopping_reason_title">
+                        <span className="storehome_title_text_black">남다른 Apple Store.</span>
+                        <span className="storehome_title_text_gray">이곳에서 쇼핑해야 하는 더욱더 많은 이유.</span>
+                    </div>
+                    <div className="storehome_shopping_reason_card">
+                        <div className="storehome_shopping_reason_card_container">
+                            <div className="storehome_shopping_reason_card_container_icon">
+                                <svg width="46" height="56" viewBox="0 0 46 56" className="card_icon" aria-hidden="true">
+                                    <path d="M41.0009,12H5A5,5,0,0,0,.0009,17L0,39a5,5,0,0,0,4.9991,5H41.0009A5,5,0,0,0,46,39V17A5,5,0,0,0,41.0009,12ZM5,14H41.0009A3.0032,3.0032,0,0,1,44,17l.0005,2H2l.0005-2A3.0032,3.0032,0,0,1,5,14ZM41.0009,42H4.9991a3.0032,3.0032,0,0,1-3-3V22.9577H44V39A3.0032,3.0032,0,0,1,41.0009,42ZM15,31.5737v3.8526A1.5541,1.5541,0,0,1,13.4663,37H8.5338A1.5542,1.5542,0,0,1,7,35.4263V31.5737A1.5542,1.5542,0,0,1,8.5338,30h4.9325A1.5541,1.5541,0,0,1,15,31.5737Z"></path>
+                                </svg>
+                            </div>
+                            <div className="storehome_shopping_reason_card_container_text">
+                                기분 좋은 결제 옵션.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="storehome_shopping_reason_card">
+                        <div className="storehome_shopping_reason_card_container">
+                            <div className="storehome_shopping_reason_card_container_icon">
+                                <svg width="46" height="56" viewBox="0 0 46 56" className="card_icon" aria-hidden="true">
+                                    <path d="M41.0009,12H5A5,5,0,0,0,.0009,17L0,39a5,5,0,0,0,4.9991,5H41.0009A5,5,0,0,0,46,39V17A5,5,0,0,0,41.0009,12ZM5,14H41.0009A3.0032,3.0032,0,0,1,44,17l.0005,2H2l.0005-2A3.0032,3.0032,0,0,1,5,14ZM41.0009,42H4.9991a3.0032,3.0032,0,0,1-3-3V22.9577H44V39A3.0032,3.0032,0,0,1,41.0009,42ZM15,31.5737v3.8526A1.5541,1.5541,0,0,1,13.4663,37H8.5338A1.5542,1.5542,0,0,1,7,35.4263V31.5737A1.5542,1.5542,0,0,1,8.5338,30h4.9325A1.5541,1.5541,0,0,1,15,31.5737Z"></path>
+                                </svg>
+                            </div>
+                            <div className="storehome_shopping_reason_card_container_text">
+                                기분 좋은 결제 옵션.
+                            </div>
+                        </div>
+                    </div>
+                    <div className="storehome_shopping_reason_card">
+                        <div className="storehome_shopping_reason_card_container">
+                            <div className="storehome_shopping_reason_card_container_icon">
+                                <svg width="46" height="56" viewBox="0 0 46 56" className="card_icon" aria-hidden="true">
+                                    <path d="M41.0009,12H5A5,5,0,0,0,.0009,17L0,39a5,5,0,0,0,4.9991,5H41.0009A5,5,0,0,0,46,39V17A5,5,0,0,0,41.0009,12ZM5,14H41.0009A3.0032,3.0032,0,0,1,44,17l.0005,2H2l.0005-2A3.0032,3.0032,0,0,1,5,14ZM41.0009,42H4.9991a3.0032,3.0032,0,0,1-3-3V22.9577H44V39A3.0032,3.0032,0,0,1,41.0009,42ZM15,31.5737v3.8526A1.5541,1.5541,0,0,1,13.4663,37H8.5338A1.5542,1.5542,0,0,1,7,35.4263V31.5737A1.5542,1.5542,0,0,1,8.5338,30h4.9325A1.5541,1.5541,0,0,1,15,31.5737Z"></path>
+                                </svg>
+                            </div>
+                            <div className="storehome_shopping_reason_card_container_text">
+                                기분 좋은 결제 옵션.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </main>
         </>
     );

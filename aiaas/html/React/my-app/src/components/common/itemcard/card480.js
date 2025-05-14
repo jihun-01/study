@@ -1,21 +1,22 @@
-import React from 'react';
+//components/common/itemcard/card480.js
 import './card480.css';
 
-const Card480 = ({head, text, describe,image,link}) => {
+const Card480 = ({text, name,describe,image,path}) => {
+    
     return (
         <div className="image_card">
-            <a href={link}>
-                <img src={image} alt={head} />
+            <a href={path}>
+                <img src={image} alt={name} />
                 <div className="image_card_info">
-                    <div className="image_card_info_header">
-                        {head}
+                    <div className="image_card_info_text">
+                        {text}
                     </div>
                     <div className="image_card_info_body">
-                        <span className="image_card_info_body_text">
-                            <p>{text}</p>
+                        <span className="image_card_info_body_name">
+                            <p>{name}</p>
                         </span>
                         <span className="image_card_info_body_describe">
-                            <p>{describe}</p>
+                            {describe}
                         </span>
                     </div>
                 </div>

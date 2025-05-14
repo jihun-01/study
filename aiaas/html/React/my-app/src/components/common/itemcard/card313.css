@@ -1,0 +1,78 @@
+
+.card313{
+    display: block;
+    width: 313px;
+    height: 500px;
+    position: relative;
+    justify-content: center;
+    background-color: white;
+    border-radius: 25px;
+    padding :30px;
+}
+
+.card313_image{
+    width: 253px;
+    height: 271px;
+    margin: 0 auto;
+    padding: 41px 0 0 0;
+}
+
+.card313_image img{
+    width: 230px;
+    height: 230px;
+    margin: 0px 11.5px;
+    object-fit: cover;
+    display: block;
+    
+}
+.card313_colorimage{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card313_colorimage ul{
+    padding: 19px 0px 14px;
+    width: 253px;
+    height: 60px;
+}
+.card313_colorimage li{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    list-style: none;
+}
+
+.card313_info{
+    display: flex;
+    flex-direction: column;
+    
+}
+.card313_info_main{
+    padding: 0px 0px 0px 0px;
+}
+.card313_info_text{
+    font-size: 12px;
+    font-weight: 600;
+    color: #B64400;
+}
+
+.card313_info_name{
+    font-size: 17px;
+    font-weight: 600;
+    color: #000;
+    width: 253px;
+    height: 46px;
+    white-space: normal;
+    word-break: keep-all;
+}
+
+.card313_info_price{
+    font-size: 14px;
+    margin: 21px 0;
+}
+
+
+
+
+

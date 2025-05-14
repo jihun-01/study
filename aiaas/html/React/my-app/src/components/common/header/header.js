@@ -1,3 +1,4 @@
+//components/common/header.js
 import React from "react";
 
 function Header() {

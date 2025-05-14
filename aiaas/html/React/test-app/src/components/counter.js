@@ -1,40 +1,28 @@
-import React from "react";
+import React, { useReducer } from "react";
 
-class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    // 초기 상태 설정
-    this.state = {
-      count: 0,
-    };
+const initialState = { count: 0 };
 
-    // 메서드 바인딩
-    this.handleIncrement = this.handleIncrement.bind(this);
-    this.handleDecrement = this.handleDecrement.bind(this);
+function reducer(state, action) {
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
   }
+}
 
-  // 메서드 정의
-  handleIncrement() {
-    this.setState((prevState) => ({
-      count: prevState.count + 1,
-    }));
-  }
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  handleDecrement() {
-    this.setState((prevState) => ({
-      count: prevState.count - 1,
-    }));
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Counter: {this.state.count}</h1>
-        <button onClick={this.handleIncrement}>Increment</button>
-        <button onClick={this.handleDecrement}>Decrement</button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+    </div>
+  );
 }
 
 export default Counter;

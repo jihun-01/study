@@ -1,11 +1,7 @@
 import React from "react";
+import { WhiteButton, BlueButton } from '../../common/button/button';  
 
-const handleShopClick = (e) => {
-    e.stopPropagation();
-    window.location.href = '#';
-  };
-
-function MainPage() {
+function Home() {
     return (
         <>
             <main className="main">
@@ -17,8 +13,8 @@ function MainPage() {
                                 <h2 className="module_1_title">iPhone</h2>
                                 <p className="module_1_text">iPhone 16 라인업을 만나볼까요?</p>
                                 <div className="button">
-                                    <button className="button_blue">더 알아보기</button>
-                                    <button className="button_white" onClick={handleShopClick}>쇼핑하기</button>
+                                    <BlueButton text="더 알아보기" path="#" />
+                                    <WhiteButton text="쇼핑하기" path="#" />
                                 </div>
                                 <p className="AI_text">Apple Intelligence를 위한 탄생.</p>
                                 <p className="AI_text_describe">Apple Intelligence, 현재 한국어로 서비스 중</p>
@@ -33,8 +29,8 @@ function MainPage() {
                                 <div className="module_1_1_title"></div>
                                 <p className="module_1_text">얇아진 두께. 더 커진 존재감.</p>
                                 <div className="button">
-                                    <button className="button_blue">더 알아보기</button>
-                                    <button className="button_white" onClick={handleShopClick}>구매하기</button>
+                                    <BlueButton text="더 알아보기" path="#" />
+                                    <WhiteButton text="구매하기" path="#" />
                                 </div>
                             </div>
                         </div>
@@ -47,7 +43,7 @@ function MainPage() {
                                 <h2 className="module_1_2_title">어버이날</h2>
                                 <p className="module_1_text">얇아진 두께. 더 커진 존재감.</p>
                                 <div className="button">
-                                    <button className="button_blue">쇼핑하기</button>
+                                    <BlueButton text="쇼핑하기" path="#" />
                                 </div>
                             </div>
                         </div>
@@ -62,8 +58,8 @@ function MainPage() {
                                     <h2 className="module_2_title">MacBook Air</h2>
                                     <p className="module_2_text">하늘빛 새 컬러. <br /> M4 칩 탑재로 성능도 하늘 높이.</p>
                                     <div className="button_module_2">
-                                        <button className="button_blue_module_2">더 알아보기</button>
-                                        <button className="button_white_module_2" onClick={handleShopClick}>구입하기</button>
+                                        <BlueButton text="더 알아보기" path="#" />
+                                        <WhiteButton text="구입하기" path="#" />
                                     </div>
                                     <div className="module_2_AI_text">
                                         <p className="AI_text">Apple Intelligence를 위한 탄생.</p>
@@ -80,8 +76,8 @@ function MainPage() {
                                     <h2 className="module_2_title_ipadair"></h2>
                                     <p className="module_2_text">이제 막강한 성능의 M3 칩 탑재.</p>
                                     <div className="button_module_2">
-                                        <button className="button_blue_module_2">더 알아보기</button>
-                                        <button className="button_white_module_2" onClick={handleShopClick}>구입하기</button>
+                                        <BlueButton text="더 알아보기"  path="#" />
+                                        <WhiteButton text="구입하기"  path="#"  />
                                     </div>
                                     <div className="module_2_AI_text_ipadair">
                                         <p className="AI_text">Apple Intelligence를 위한 탄생.</p>
@@ -98,8 +94,8 @@ function MainPage() {
                                     <h2 className="module_2_2_title">iPad Pro</h2>
                                     <p className="module_2_2_text">놀라우리만치 얇다. 엄청나게 강력하다.</p>
                                     <div className="button_module_2">
-                                        <button className="button_blue_module_2">더 알아보기</button>
-                                        <button className="button_white_module_2" onClick={handleShopClick}>구입하기</button>
+                                        <BlueButton text="더 알아보기" path="#" />
+                                        <WhiteButton text="구입하기" path="#" />
                                     </div>
                                     <div className="module_2_AI_text">
                                         <p className="AI_text">Apple Intelligence를 위한 탄생.</p>
@@ -116,8 +112,8 @@ function MainPage() {
                                     <h2 className="module_2_2_title">AirPods 4</h2>
                                     <p className="module_2_2_text">아이콘의 귀환. 사운드의 진화.<br /> 액티브 노이즈 캔슬링 탑재.</p>
                                     <div className="button_module_2">
-                                        <button className="button_blue_module_2">더 알아보기</button>
-                                        <button className="button_white_module_2" onClick={handleShopClick}>구입하기</button>
+                                        <BlueButton text="더 알아보기" path="#" />
+                                        <WhiteButton text="구입하기" path="#" />
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +126,7 @@ function MainPage() {
                                     <div className="module_2_title_mac"></div>
                                     <p className="module_2_text">Mac으로 갈아타기, 참 쉽습니다.</p>
                                     <div className="button_module_2">
-                                        <button className="button_blue_module_2">더 알아보기</button>
+                                        <BlueButton text="더 알아보기" path="#" />
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +139,7 @@ function MainPage() {
                                     <div className="module_2_title_tradein"></div>
                                     <p className="module_2_text">iPhone 12 이상의 모델을 보상 판매하면<br />₩200,000-₩1,000,000<br />상당의 크레딧이.</p>
                                     <div className="button_module_2">
-                                        <button className="button_blue_module_2">견적 확인하기</button>
+                                        <BlueButton text="견적 확인하기" path="#" />
                                     </div>
                                 </div>
                             </div>
@@ -212,4 +208,4 @@ function MainPage() {
     );
 }
 
-export default MainPage;
+export default Home;

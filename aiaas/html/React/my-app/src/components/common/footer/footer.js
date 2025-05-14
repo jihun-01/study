@@ -1,3 +1,4 @@
+//components/common/footer.js
 import React from "react";
 
 function Footer() {

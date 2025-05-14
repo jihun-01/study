@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import './App.css';
-import Header from './components/common/header';
-import Footer from './components/common/footer';
-import MainPage from './components/page/mainpage';
+import Header from './components/common/header/header';
+import Footer from './components/common/footer/footer';
+import Home from './components/page/home/home';
 import StoreHome from './components/page/store/store';
 function App() {
   
@@ -14,7 +14,7 @@ function App() {
     <Header />
     <Router>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/store" element={<StoreHome />} />
       </Routes>
     </Router>
