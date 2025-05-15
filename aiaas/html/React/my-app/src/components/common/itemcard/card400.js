@@ -1,18 +1,18 @@
 //components/common/itemcard/card400.js
 import React from 'react';
-import './card400.css';
-const Card400 = ({product_name, product_text, product_price, product_image, path}) => {
+import styles from './card400.module.css';
+const Card400 = ({name, describe, image, path, price}) => {
     return (
-        <div className="product_card">
+        <div className={styles.product_card}>
             <a href={path}>
-            <img src={product_image} alt={product_name} />
-            <div className="product_card_info">
-                <div className="product_card_info_header">
-                    {product_name}
+            <img src={image} alt={name} />
+            <div className={styles.product_card_info}>
+                <div className={styles.product_card_info_header}>
+                    {name}
                 </div>
-                <div className="product_card_info_body">
-                    <span className="product_card_info_body_text"><p>{product_text}</p></span>
-                    <span className="product_card_info_body_price">{product_price}</span>
+                <div className={styles.product_card_info_body}>
+                    <span className={styles.product_card_info_body_text}><p>{describe}</p></span>
+                    <span className={styles.product_card_info_body_price}>{price}</span>
                 </div>
             </div>
             </a>

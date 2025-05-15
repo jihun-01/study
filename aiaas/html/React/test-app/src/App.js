@@ -1,27 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useFetch } from "./hooks/useFetch";
+import React, { useState } from "react";
+import ChildComponent from "./components/childComponent";
 
+function ParentComponent() {
+  const [parentState, setParentState] = useState("초기 값");
 
-function App() {
-  const { data, loading, error} = useFetch("https://jsonplaceholder.typicode.com/posts")
-
-  
-  if (loading) return <p>로딩 중...</p>;
-  if (error) return <p>에러 발생: {error}</p>;
+  // 자식에서 호출할 수 있는 함수
+  const handleChange = (newValue) => {
+    setParentState(newValue);
+  };
 
   return (
     <div>
-      <h1>Posts</h1>
-      <ul>
-        {data.map((post) => (
-          <li key={post.id}>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-          </li>
-        ))}
-      </ul>
+      <h1>부모 상태: {parentState}</h1>
+      <ChildComponent onChange={handleChange} />
     </div>
   );
 }
 
-export default App;
+export default ParentComponent;

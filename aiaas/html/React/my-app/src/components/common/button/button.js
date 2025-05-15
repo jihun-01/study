@@ -1,5 +1,5 @@
 import React from 'react';
-import './button.css';
+import styles from './button.module.css';
 
 const WhiteButton = ({text, onClick, path}) => {
     const handleClick = (e) => {
@@ -13,7 +13,7 @@ const WhiteButton = ({text, onClick, path}) => {
     };
 
     return (
-        <button className="button_white" onClick={handleClick}>{text}</button>
+        <button className={styles.button_white} onClick={handleClick}>{text}</button>
     )
 }
 
@@ -29,7 +29,7 @@ const BlueButton = ({text, onClick, path}) => {
     };
 
     return (
-        <button className="button_blue" onClick={handleClick}>{text}</button>
+        <button className={styles.button_blue} onClick={handleClick}>{text}</button>
     )
 }
 

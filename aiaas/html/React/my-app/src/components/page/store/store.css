@@ -191,6 +191,7 @@ a {
     justify-content: left;
     padding: 0px 10px 16px;
 }
+/*최신 제품 스크롤 설정 끝*/
 
 /*도움 카드 설정*/
 
@@ -219,6 +220,7 @@ a {
     height: 500px;
     margin: 0 10px 0 10px;
 }
+/*도움 카드 설정 끝*/
 
 /*쇼핑 카드 설정*/
 .storehome_shopping_reason{
@@ -242,9 +244,16 @@ a {
     
 }
 
+.storehome_shopping_reason_main{
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    height: 240px;
+}
+
 .storehome_shopping_reason_card_container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 313px;
     height: 240px;
     padding : 30px 30px 0;
@@ -252,6 +261,8 @@ a {
     border-radius: 20px;
 }
 
+
+      
 .storehome_shopping_reason_card_container_icon{
     width: 253px;
     height: 53px;
@@ -260,7 +271,7 @@ a {
 
 .storehome_shopping_reason_card_container_text{
     width: 253px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
 }
 
@@ -269,7 +280,90 @@ a {
     fill: #008009;
 }
 
+.card_icon_elevated{
+    color :#007aff;
+    fill  : #007aff;
+}
+
+.card_icon_elevated_purple{
+    color :#ac39ff;
+    fill  : #ac39ff;
+}
+
+.card_icon_elevated_navy{
+    color :#3f6eb8;
+    fill  : #3f6eb8;
+}
+
 .storehome_shopping_reason_card_container_text{
     line-height: 1.2917;
 }
+/*쇼핑 카드 설정 끝*/
 
+/*액세서리 카드 설정*/
+.storehome_shopping_product_accessories{
+    display: flex;
+    flex-direction: column;
+    margin : 0 0 0 140px;
+    padding: 0 0 40px;
+}
+
+.storehome_shopping_product_accessories_title{
+    display: flex;
+    flex-direction: row;
+}
+
+.storehome_shopping_product_accessories_card{
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.storehome_shopping_product_accessories_card_container{
+    display: flex;
+    width: 420px;
+    height: 500px;
+    margin: 0 10px 0 10px;
+}
+
+.storehome_shopping_product_accessories_card_container_card{
+    display: flex;
+    width: 333px;
+    height: 500px;
+    margin: 0 10px 0 10px;
+}
+/*액세서리 카드 설정 끝*/  
+
+/*음향기기 카드 설정*/
+.storehome_shopping_product_audio{
+    display: flex;
+    flex-direction: column;
+    margin : 0 0 0 140px;
+    padding: 0 0 40px;
+}
+
+.storehome_shopping_product_audio_title{
+    display: flex;
+    flex-direction: row;
+}
+
+.storehome_shopping_product_audio_card{
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.storehome_shopping_product_audio_card_container{
+    display: flex;
+    width: 420px;
+    height: 500px;
+    margin: 0 10px 0 10px;
+}
+
+.storehome_shopping_product_audio_card_container_card{
+    display: flex;
+    width: 333px;
+    height: 500px;
+    margin: 0 10px 0 10px;
+}
+/*음향기기 카드 설정 끝*/

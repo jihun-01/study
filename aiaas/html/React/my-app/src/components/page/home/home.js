@@ -9,7 +9,7 @@ function Home() {
                 <a href="#" className="module_1_link_area">
                     <div className="module_1">
                         <div className="link">
-                            <div>
+                            <div className= "product_main">
                                 <h2 className="module_1_title">iPhone</h2>
                                 <p className="module_1_text">iPhone 16 라인업을 만나볼까요?</p>
                                 <div className="button">
@@ -25,7 +25,7 @@ function Home() {
                 <a href="#" className="module_1_link_area">
                     <div className="module_1_1">
                         <div className="link">
-                            <div>
+                            <div className="product_main">
                                 <div className="module_1_1_title"></div>
                                 <p className="module_1_text">얇아진 두께. 더 커진 존재감.</p>
                                 <div className="button">
@@ -39,7 +39,7 @@ function Home() {
                 <a href="#" className="module_1_link_area">
                     <div className="module_1_2">
                         <div className="link_3">
-                            <div>
+                            <div className="product_main">
                                 <h2 className="module_1_2_title">어버이날</h2>
                                 <p className="module_1_text">얇아진 두께. 더 커진 존재감.</p>
                                 <div className="button">

@@ -1,4 +1,3 @@
-
 .card313{
     display: block;
     width: 313px;
@@ -35,10 +34,14 @@
     padding: 19px 0px 14px;
     width: 253px;
     height: 60px;
+    list-style: none;
 }
 .card313_colorimage li{
-    width: 20px;
-    height: 20px;
+    margin: 0px 7px 0 0 ;;
+}
+.card313_colorimage li img{
+    width: 12.12px;
+    height: 12.12px;
     border-radius: 50%;
     list-style: none;
 }
@@ -46,7 +49,8 @@
 .card313_info{
     display: flex;
     flex-direction: column;
-    
+    position: relative;
+    height: 100px;
 }
 .card313_info_main{
     padding: 0px 0px 0px 0px;
@@ -69,8 +73,12 @@
 
 .card313_info_price{
     font-size: 14px;
-    margin: 21px 0;
+    position: absolute;
+    bottom : -60px;
+    left: 0;
+    margin: 0;
 }
+
 
 
 

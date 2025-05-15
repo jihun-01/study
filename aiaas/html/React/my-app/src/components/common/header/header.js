@@ -1,7 +1,115 @@
-//components/common/header.js
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Header() {
+    const [activeMenuIndex, setActiveMenuIndex] = useState(-1);
+    const [showTimer, setShowTimer] = useState(null);
+    const [hideTimer, setHideTimer] = useState(null);
+
+    useEffect(() => {
+        const menuItems = document.querySelectorAll('.top_nav ul li');
+        const menuBars = document.querySelectorAll('.menu_bar');
+        const header = document.querySelector('.header');
+
+        // 초기에 모든 메뉴 바 숨기기
+        menuBars.forEach(menuBar => {
+            menuBar.style.display = 'none';
+            menuBar.classList.remove('active');
+        });
+
+        // 메뉴 항목에 마우스 올릴 때 이벤트
+        menuItems.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                if (hideTimer) {
+                    clearTimeout(hideTimer);
+                    setHideTimer(null);
+                }
+
+                if (showTimer) {
+                    clearTimeout(showTimer);
+                }
+
+                const newShowTimer = setTimeout(() => {
+                    if (activeMenuIndex !== -1 && activeMenuIndex !== index && activeMenuIndex < menuBars.length) {
+                        menuBars[activeMenuIndex].classList.remove('active');
+                        setTimeout(() => {
+                            if (activeMenuIndex !== index) {
+                                menuBars[activeMenuIndex].style.display = 'none';
+                            }
+                        }, 10);
+                    }
+
+                    if (index < menuBars.length) {
+                        menuBars[index].style.display = 'flex';
+                        setTimeout(() => {
+                            menuBars[index].classList.add('active');
+                        }, 10);
+                        setActiveMenuIndex(index);
+                    }
+                }, 100);
+
+                setShowTimer(newShowTimer);
+            });
+        });
+
+        // 헤더 영역에서 마우스가 떠날 때
+        header.addEventListener('mouseleave', () => {
+            if (showTimer) {
+                clearTimeout(showTimer);
+                setShowTimer(null);
+            }
+
+            const newHideTimer = setTimeout(() => {
+                if (activeMenuIndex !== -1 && activeMenuIndex < menuBars.length) {
+                    menuBars[activeMenuIndex].classList.remove('active');
+                    setTimeout(() => {
+                        if (!menuBars[activeMenuIndex].classList.contains('active')) {
+                            menuBars[activeMenuIndex].style.display = 'none';
+                        }
+                    }, 300);
+                    setActiveMenuIndex(-1);
+                }
+            }, 200);
+
+            setHideTimer(newHideTimer);
+        });
+
+        // 각 메뉴 바에 마우스 진입 시 숨김 방지
+        menuBars.forEach((menuBar, index) => {
+            menuBar.addEventListener('mouseenter', () => {
+                if (hideTimer) {
+                    clearTimeout(hideTimer);
+                    setHideTimer(null);
+                }
+
+                menuBar.style.display = 'flex';
+                menuBar.classList.add('active');
+                setActiveMenuIndex(index);
+            });
+
+            // 메뉴 바에서 마우스 떠날 때
+            menuBar.addEventListener('mouseleave', () => {
+                const newHideTimer = setTimeout(() => {
+                    menuBar.classList.remove('active');
+                    setTimeout(() => {
+                        if (!menuBar.classList.contains('active')) {
+                            menuBar.style.display = 'none';
+                            setActiveMenuIndex(-1);
+                        }
+                    }, 300);
+                }, 200);
+
+                setHideTimer(newHideTimer);
+            });
+        });
+
+        // 컴포넌트가 언마운트될 때 타이머 정리
+        return () => {
+            if (showTimer) clearTimeout(showTimer);
+            if (hideTimer) clearTimeout(hideTimer);
+        };
+    }, [activeMenuIndex, showTimer, hideTimer]);
+
+
     return (
         <>
             <header className="header">
@@ -33,7 +141,7 @@ function Header() {
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">쇼핑하기</h4>
-                                <li className="menu_category_li"><a href="#"><h2>최신 제품 쇼핑하기</h2></a></li>
+                                <li className="menu_category_li"><a href="/store"><h2>최신 제품 쇼핑하기</h2></a></li>
                                 <li className="menu_category_li"><a href="#"><h2>Mac</h2></a></li>
                                 <li className="menu_category_li"><a href="#"><h2>iPad</h2></a></li>
                                 <li className="menu_category_li"><a href="#"><h2>iPhone</h2></a></li>

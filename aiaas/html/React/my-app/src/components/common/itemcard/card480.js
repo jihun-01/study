@@ -1,21 +1,22 @@
 //components/common/itemcard/card480.js
-import './card480.css';
+import React from 'react';
+import styles from './card480.module.css';
 
 const Card480 = ({text, name,describe,image,path}) => {
     
     return (
-        <div className="image_card">
+        <div className={styles.image_card}>
             <a href={path}>
                 <img src={image} alt={name} />
-                <div className="image_card_info">
-                    <div className="image_card_info_text">
+                <div className={styles.image_card_info}>
+                    <div className={styles.image_card_info_text}>
                         {text}
                     </div>
-                    <div className="image_card_info_body">
-                        <span className="image_card_info_body_name">
+                    <div className={styles.image_card_info_body}>
+                        <span className={styles.image_card_info_body_name}>
                             <p>{name}</p>
                         </span>
-                        <span className="image_card_info_body_describe">
+                        <span className={styles.image_card_info_body_describe}>
                             {describe}
                         </span>
                     </div>
