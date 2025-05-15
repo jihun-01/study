@@ -22,11 +22,6 @@ a {
     white-space: nowrap;
 }
 
-@media (max-width: 768px) {
-    .footer_container {
-      flex-direction: column;
-    }
-}
 /*헤더 설정*/
 .storehome_header{
     display: flex;
@@ -182,7 +177,7 @@ a {
     flex-direction: row;
     align-items: left;
     justify-content: left;
-    overflow : scroll;
+    overflow-x: auto;
 }
 .storehome_latest_product_card{
     display: flex;
@@ -212,7 +207,7 @@ a {
 .storehome_help_card_container{
     display: flex;
     flex-direction: row;
-    overflow: scroll;
+    overflow-x: auto;
 }
 
 .storehome_help_card_container_card{
@@ -229,7 +224,7 @@ a {
     margin : 0 0 0 140px;
     padding: 0 0 40px;
 }
-.storehome_shopping_reason_title{
+.storehome_shopping_reason_header{
     display: flex;
     flex-direction: row;
 }
@@ -247,8 +242,8 @@ a {
 .storehome_shopping_reason_main{
     display: flex;
     flex-direction: row;
-    overflow: scroll;
-    height: 240px;
+    overflow-x: auto;
+    height: 260px;
 }
 
 .storehome_shopping_reason_card_container{
@@ -308,25 +303,25 @@ a {
     padding: 0 0 40px;
 }
 
-.storehome_shopping_product_accessories_title{
+.storehome_shopping_product_accessories_header{
     display: flex;
     flex-direction: row;
 }
 
-.storehome_shopping_product_accessories_card{
+.storehome_shopping_product_accessories_main{
     display: flex;
     flex-direction: row;
-    overflow: scroll;
+    overflow-x: auto;
 }
 
-.storehome_shopping_product_accessories_card_container{
+.storehome_shopping_product_accessories_main_card_container{
     display: flex;
     width: 420px;
     height: 500px;
     margin: 0 10px 0 10px;
 }
 
-.storehome_shopping_product_accessories_card_container_card{
+.storehome_shopping_product_accessories_main_card_container_card{
     display: flex;
     width: 333px;
     height: 500px;
@@ -342,28 +337,140 @@ a {
     padding: 0 0 40px;
 }
 
-.storehome_shopping_product_audio_title{
+.storehome_shopping_product_audio_header{
     display: flex;
     flex-direction: row;
 }
 
-.storehome_shopping_product_audio_card{
+.storehome_shopping_product_audio_main{
     display: flex;
     flex-direction: row;
-    overflow: scroll;
+    overflow-x: auto;
 }
 
-.storehome_shopping_product_audio_card_container{
+.storehome_shopping_product_audio_main_card_container{
     display: flex;
     width: 420px;
     height: 500px;
     margin: 0 10px 0 10px;
 }
 
-.storehome_shopping_product_audio_card_container_card{
+.storehome_shopping_product_audio_main_card_container_card{
     display: flex;
     width: 333px;
     height: 500px;
     margin: 0 10px 0 10px;
 }
 /*음향기기 카드 설정 끝*/
+
+/*서비스 카드 설정*/
+.storehome_shopping_service{
+    display: flex;
+    flex-direction: column;
+    margin : 0 0 0 140px;
+    padding: 0 0 40px;
+}
+
+.storehome_shopping_service_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.storehome_shopping_service_container_header{
+    display: flex;
+    flex-direction: row;
+}
+
+.storehome_shopping_service_container_main{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.storehome_shopping_service_container_main_card_container{
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 500px;
+    margin: 0 10px 0 10px;
+    align-items: center;
+}
+/*서비스 카드 설정 끝*/
+
+/*혜택 카드 설정*/
+.storehome_shopping_benefit{
+    display: flex;
+    flex-direction: column;
+    margin : 0 0 0 140px;
+    padding: 0 0 40px;
+}
+
+.storehome_shopping_benefit_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.storehome_shopping_benefit_container_header{
+    display: flex;
+    flex-direction: row;
+}
+
+.storehome_shopping_benefit_container_main{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.storehome_shopping_benefit_container_main_card{
+    display: flex;
+    flex-direction: row;
+    width: 420px;
+    height: 500px;
+    margin: 0 10px 0 10px;
+}
+/*혜택 카드 설정 끝*/
+
+/*빠른 링크 설정*/
+.storehome_shopping_quick_link{
+    display: flex;
+    flex-direction: column;
+    margin : 0 0 0 140px;
+    padding: 0 0 40px;
+}
+
+.storehome_shopping_quick_link_main{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0 ;
+}
+
+.storehome_shopping_quick_link_main ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

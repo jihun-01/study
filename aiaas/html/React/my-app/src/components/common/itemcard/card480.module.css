@@ -31,6 +31,7 @@
     padding : 0 0 8px;
     color: #6E6E73;
     white-space: normal;
+    word-break: keep-all;
 }
 
 .image_card_info_body{
@@ -45,12 +46,14 @@
     padding : 0 0 6px;
     font-weight: 600;
     white-space: normal;
+    word-break: keep-all;
 }
 
 .image_card_info_body_describe{
     font-size: 16px;
     padding : 10px 0 0 0;
     white-space: normal;
+    word-break: keep-all;
 }
 
 

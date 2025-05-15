@@ -9,7 +9,7 @@
 /* 기본 레이아웃 설정 */
 body {
   font-family: SF Pro KR, SF Pro Display, SF Pro Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif;
-  line-height: 1.4;
+  line-height: 1.25;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ body {
 /* 메인 콘텐츠 영역 스타일 */
 .main {
 font-family: SF Pro KR, SF Pro Display, SF Pro Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif;
-line-height: 1.4;
+line-height: 1.25;
 min-height: 100vh;
 display: flex;
 flex-direction: column;
@@ -361,7 +361,7 @@ text-decoration: none;
 .module_1_1_title {
 text-align: center;
 width: 100%;
-height: 100%;
+height: 110px;
 background-size: auto;
 background-position: center;
 background-repeat: no-repeat;
@@ -927,8 +927,14 @@ align-items: center;
 }
 .button {
   display: flex;
-  width: 260px;
+  width: 220px;
   padding: 20px 0px;
   justify-content: space-between;
   align-items: center;
+}
+.button_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px;
 }

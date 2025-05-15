@@ -1,3 +1,4 @@
+// components/common/itemcard/card313.js
 import React from 'react';
 import styles from './card313.module.css';
 import { useFetch } from '../../../customhook/useFetch';

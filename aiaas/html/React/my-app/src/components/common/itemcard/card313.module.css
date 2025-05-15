@@ -59,6 +59,7 @@
     font-size: 12px;
     font-weight: 600;
     color: #B64400;
+    word-break: keep-all;
 }
 
 .card313_info_name{
@@ -77,6 +78,7 @@
     bottom : -60px;
     left: 0;
     margin: 0;
+    word-break: keep-all;
 }
 
 

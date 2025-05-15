@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useHeader } from '../../../contexts/HeaderContext';
+
 
 function Header() {
+
+
+
+
+
+
+
     const [activeMenuIndex, setActiveMenuIndex] = useState(-1);
     const [showTimer, setShowTimer] = useState(null);
     const [hideTimer, setHideTimer] = useState(null);
