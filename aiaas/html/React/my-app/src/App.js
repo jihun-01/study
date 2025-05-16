@@ -14,7 +14,6 @@ function App() {
 
   return (
     <>
-    <HeaderProvider>
       <Header />
       <Router>
         <Routes>
@@ -23,7 +22,6 @@ function App() {
         </Routes>
       </Router>
       <Footer />
-    </HeaderProvider>
     </>
   );
 }

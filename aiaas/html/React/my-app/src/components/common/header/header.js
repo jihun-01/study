@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useHeader } from '../../../contexts/HeaderContext';
 
 
 function Header() {
-
-
-
-
-
-
 
     const [activeMenuIndex, setActiveMenuIndex] = useState(-1);
     const [showTimer, setShowTimer] = useState(null);
@@ -26,35 +19,41 @@ function Header() {
         });
 
         // 메뉴 항목에 마우스 올릴 때 이벤트
-        menuItems.forEach((item, index) => {
-            item.addEventListener('mouseenter', () => {
-                if (hideTimer) {
-                    clearTimeout(hideTimer);
-                    setHideTimer(null);
-                }
+            menuItems.forEach((item, index) => {
+                item.addEventListener('mouseenter', () => {
+                // 숨김 타이머가 있다면 취소
 
+                
+                // 표시 타이머 설정
                 if (showTimer) {
                     clearTimeout(showTimer);
                 }
-
+                
                 const newShowTimer = setTimeout(() => {
+                    // 이미 활성화된 메뉴가 있고, 인덱스가 다르다면
                     if (activeMenuIndex !== -1 && activeMenuIndex !== index && activeMenuIndex < menuBars.length) {
+                        // 활성화된 메뉴를 비활성화
                         menuBars[activeMenuIndex].classList.remove('active');
+                        
+                        // 약간의 딜레이 후에 display 속성 변경
                         setTimeout(() => {
-                            if (activeMenuIndex !== index) {
+                            if (activeMenuIndex !== index) { // 중간에 바뀌었는지 확인
                                 menuBars[activeMenuIndex].style.display = 'none';
                             }
-                        }, 10);
+                        }, 5);
                     }
-
+                    
+                    // 새 메뉴 표시
                     if (index < menuBars.length) {
                         menuBars[index].style.display = 'flex';
+                        
                         setTimeout(() => {
                             menuBars[index].classList.add('active');
-                        }, 10);
+                        }, 5);
+                        
                         setActiveMenuIndex(index);
                     }
-                }, 100);
+                }, 50);
 
                 setShowTimer(newShowTimer);
             });
@@ -70,11 +69,14 @@ function Header() {
             const newHideTimer = setTimeout(() => {
                 if (activeMenuIndex !== -1 && activeMenuIndex < menuBars.length) {
                     menuBars[activeMenuIndex].classList.remove('active');
+                    
+                    // 애니메이션 끝난 후 숨기기
                     setTimeout(() => {
                         if (!menuBars[activeMenuIndex].classList.contains('active')) {
                             menuBars[activeMenuIndex].style.display = 'none';
                         }
                     }, 300);
+                    
                     setActiveMenuIndex(-1);
                 }
             }, 200);
@@ -89,32 +91,39 @@ function Header() {
                     clearTimeout(hideTimer);
                     setHideTimer(null);
                 }
-
+                
                 menuBar.style.display = 'flex';
                 menuBar.classList.add('active');
                 setActiveMenuIndex(index);
             });
-
+            
             // 메뉴 바에서 마우스 떠날 때
             menuBar.addEventListener('mouseleave', () => {
                 const newHideTimer = setTimeout(() => {
                     menuBar.classList.remove('active');
+                    
                     setTimeout(() => {
                         if (!menuBar.classList.contains('active')) {
                             menuBar.style.display = 'none';
                             setActiveMenuIndex(-1);
                         }
-                    }, 300);
-                }, 200);
+                    }, 200);
+                }, 100);
 
                 setHideTimer(newHideTimer);
             });
         });
 
-        // 컴포넌트가 언마운트될 때 타이머 정리
         return () => {
-            if (showTimer) clearTimeout(showTimer);
-            if (hideTimer) clearTimeout(hideTimer);
+            // 이벤트 리스너 정리
+            menuItems.forEach(item => {
+                item.removeEventListener('mouseenter', () => {});
+            });
+            header.removeEventListener('mouseleave', () => {});
+            menuBars.forEach(menuBar => {
+                menuBar.removeEventListener('mouseenter', () => {});
+                menuBar.removeEventListener('mouseleave', () => {});
+            });
         };
     }, [activeMenuIndex, showTimer, hideTimer]);
 
@@ -124,7 +133,7 @@ function Header() {
             <header className="header">
                 <nav className="top_nav">
                     <ul>
-                        <a href="/"><svg height="48" viewBox="0 0 17 36" width="17" xmlns="http://www.w3.org/2000/svg"><path d="m15.5752 19.0792a4.2055 4.2055 0 0 0 -2.01 3.5376 4.0931 4.0931 0 0 0 2.4908 3.7542 9.7779 9.7779 0 0 1 -1.2755 2.6351c-.7941 1.1431-1.6244 2.2862-2.8878 2.2862s-1.5883-.734-3.0443-.734c-1.42 0-1.9252.7581-3.08.7581s-1.9611-1.0589-2.8876-2.3584a11.3987 11.3987 0 0 1 -1.9373-6.1487c0-3.61 2.3464-5.523 4.6566-5.523 1.2274 0 2.25.8062 3.02.8062.734 0 1.8771-.8543 3.2729-.8543a4.3778 4.3778 0 0 1 3.6822 1.841zm-6.8586-2.0456a1.3865 1.3865 0 0 1 -.2527-.024 1.6557 1.6557 0 0 1 -.0361-.337 4.0341 4.0341 0 0 1 1.0228-2.5148 4.1571 4.1571 0 0 1 2.7314-1.4078 1.7815 1.7815 0 0 1 .0361.373 4.1487 4.1487 0 0 1 -.9867 2.587 3.6039 3.6039 0 0 1 -2.5148 1.3236z"></path></svg></a>
+                        <a href="/"><svg  height="44" viewBox="0 0 15 44" width="13" xmlns="http://www.w3.org/2000/svg"><path d="m15.5752 19.0792a4.2055 4.2055 0 0 0 -2.01 3.5376 4.0931 4.0931 0 0 0 2.4908 3.7542 9.7779 9.7779 0 0 1 -1.2755 2.6351c-.7941 1.1431-1.6244 2.2862-2.8878 2.2862s-1.5883-.734-3.0443-.734c-1.42 0-1.9252.7581-3.08.7581s-1.9611-1.0589-2.8876-2.3584a11.3987 11.3987 0 0 1 -1.9373-6.1487c0-3.61 2.3464-5.523 4.6566-5.523 1.2274 0 2.25.8062 3.02.8062.734 0 1.8771-.8543 3.2729-.8543a4.3778 4.3778 0 0 1 3.6822 1.841zm-6.8586-2.0456a1.3865 1.3865 0 0 1 -.2527-.024 1.6557 1.6557 0 0 1 -.0361-.337 4.0341 4.0341 0 0 1 1.0228-2.5148 4.1571 4.1571 0 0 1 2.7314-1.4078 1.7815 1.7815 0 0 1 .0361.373 4.1487 4.1487 0 0 1 -.9867 2.587 3.6039 3.6039 0 0 1 -2.5148 1.3236z"></path></svg></a>
                         <li><a href="/store">스토어</a></li>
                         <li><a href="#">Mac</a></li>
                         <li><a href="#">Ipad</a></li>
@@ -137,16 +146,16 @@ function Header() {
                         <li><a href="#">액세서리</a></li>
                         <li><a href="#">고객지원</a></li>
                         <li><a href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 36">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
                             <path d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z"></path>
                             </svg></a></li>
                         <li><a href="#">
-                            <svg height="44" viewBox="0 0 14 36" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z"></path></svg></a></li>
+                            <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z"></path></svg></a></li>
                     </ul>
                 </nav>
                 
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">쇼핑하기</h4>
@@ -180,7 +189,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">Mac 살펴보기</h4>
@@ -222,7 +231,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">iPad 살펴보기</h4>
@@ -261,7 +270,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">iPhone 살펴보기</h4>
@@ -300,7 +309,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">Watch 살펴보기</h4>
@@ -337,7 +346,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">Vision 살펴보기</h4>
@@ -366,7 +375,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">AirPods 살펴보기</h4>
@@ -395,7 +404,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">Tv 및 홈 살펴보기</h4>
@@ -427,7 +436,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">엔터테인먼트 살펴보기</h4>
@@ -451,7 +460,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">액세서리 쇼핑하기</h4>
@@ -476,7 +485,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <h4 className="menu_category_title">지원 상황 살펴보기</h4>
@@ -511,7 +520,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <span className="menu_category_title_search">
@@ -533,7 +542,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="menu_bar">
-                    <div className="menu_category_title">
+                    <div className="menu_category_card">
                         <div className="menu_category">
                             <ul className="menu_category_main_ul">
                                 <span className="menu_category_title_cart">

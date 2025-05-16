@@ -26,6 +26,8 @@
     padding: 30px;
 }
 
+
+
 .product_card_info_header{
     display: flex;
     flex-direction: column;
@@ -35,6 +37,7 @@
     white-space: normal;
     word-break: keep-all;
 }
+
 
 .product_card_info_header_txt{
     font-size: 12px;
@@ -61,7 +64,7 @@
     word-break: keep-all;
 }
 .product_card_info_body_text p{
-    font-family: 'SF Pro KR', 'SF Pro Text', 'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum', 'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
     background-image: linear-gradient(108deg, #006bb9 0, #903fcf 32%, #cf0f3c 84%, #b84100 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -92,16 +95,14 @@
 .product_card_info_body_price{
     font-size: 14px;
     padding : 0 0 6px;
-    font-family: 'SF Pro KR', 'SF Pro Text', 'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum', 'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    word-break: keep-all;
+   word-break: keep-all;
 }
 
 .product_card_info_body_price_white{
     color: #fff;
     font-size: 14px;
     padding : 0 0 6px;
-    font-family: 'SF Pro KR', 'SF Pro Text', 'SF Pro Icons', 'Apple Gothic', 'HY Gulim', 'MalgunGothic', 'HY Dotum', 'Lexi Gulim', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    word-break: keep-all;
+   word-break: keep-all;
 }
 
 

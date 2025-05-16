@@ -8,12 +8,7 @@ import Button from '../../common/button/button';
 import { useHeader } from '../../../contexts/HeaderContext';
 
 const StoreHome = () => {
-    const { changePage } = useHeader();
-
-    useEffect(() => {
-        changePage('store');
-    }, [changePage]);
-
+ 
     return (
         <>
             <main className={styles.storehome}>
@@ -212,7 +207,7 @@ const StoreHome = () => {
                         </div>
                         <div className={styles.list_item}>
                             <div className={styles.storehome_latest_product_card}>
-                            <Card400 name="다양한 스타일. 다양한 컬러."  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-bands-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09va1BWaWtDc3JqbmtIWDhTOVFud0xCSnFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbkRMUVYvUzMyczZzTlBKNTVVYUNsRytycDU0Zm9tS1NLYWZhaWJKS1VJSUo"/>                           
+                            <Card400 text="Apple Watch 밴드" name="다양한 스타일. 다양한 컬러."  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-watch-bands-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=QWhYaUFuRS9hTUliZ3N5RWVCV09va1BWaWtDc3JqbmtIWDhTOVFud0xCSnFTRjNxbmh1UnU2R29ibGdpZUFXc0prY3crUWRsN1dqVjRnMHR5S1hVbkRMUVYvUzMyczZzTlBKNTVVYUNsRytycDU0Zm9tS1NLYWZhaWJKS1VJSUo"/>                           
                             </div>
                         </div>
                     </div>
@@ -426,7 +421,7 @@ const StoreHome = () => {
                         </div>
                         <div className={styles.storehome_shopping_service_container_main}>
                             <div className={styles.storehome_shopping_service_container_main_card_container}>
-                                <Card480  text="손쉬운 사용" name="손쉬운 사용을 염두에 둔 혁신."  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-apple-experience-202505?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SFNxMjRYSTFLdjBJZG1UYjBKRUNDdXZWOStqTk4vWFIzdExWRHpGMjVKQVVZcUZCTytmVGYydzVnTU9GdnZsaW1td3JHMmlHM0d0VzBMMGs5ZHR4WjhoejZkczZLT2pDNXRIRCtIQjF1RFFidXZEK1ByV3pwM2hLc3BWdTJxQUU"/>
+                                <Card480  text="손쉬운 사용" name="손쉬운 사용을 염두에 둔 혁신." cardType="small" path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-apple-experience-202505?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SFNxMjRYSTFLdjBJZG1UYjBKRUNDdXZWOStqTk4vWFIzdExWRHpGMjVKQVVZcUZCTytmVGYydzVnTU9GdnZsaW1td3JHMmlHM0d0VzBMMGs5ZHR4WjhoejZkczZLT2pDNXRIRCtIQjF1RFFidXZEK1ByV3pwM2hLc3BWdTJxQUU"/>
                             </div>
                             <div className={styles.storehome_shopping_service_container_main_card_container}>
                                 <Card480  name="Apple Intelligence. 글을 쓰고, 개성을 표출하고, 이것저것 척척"  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-apple-intelligence-202503_GEO_KR?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SFNxMjRYSTFLdjBJZG1UYjBKRUNDalZCM0g0MTRQL0NONjZoQUpUNEpyYnhVMDMrUnVWYnFtallyQ1hyYmZpMENJWGJVR3BNa0NheTNxZUJ3blJNRk1mSGN3NTUxbDRHZDZXK1V3b1o4a1RHM1FEZytkNUFtWmRjeWJiaTlKb3Rka0xmckVNVTBkS20yTzkwa0dhU09n"/>
@@ -438,16 +433,16 @@ const StoreHome = () => {
                                 <Card480  text="Apple TV+" name="Apple 기기를 구입하면 Apple TV+가 3개월 무료.*"  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-tv-services-202501_GEO_KR?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=R0NBWk45ZjFvOUNHNjZCZ0VmMkVtQmxxSkhNcjROaFBiMC9VNFhXbTZEbnBST0JBMmIvNmxqRzk3VEM5Uy9jSnU2S1NDY0Mybzd2UUxDKzhkSmN0dERrMTFvNEM2eG1yOHVjc2VHR05XMERYZ3A0aHhkSFdXYkN2dUtzWmF0QW4"/>
                             </div>
                             <div className={styles.storehome_shopping_service_container_main_card_container}>
-                                <Card480  name="네 가지 Apple 서비스. 한 번의 간편한 가입." path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-subscriptions-202108?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=WW05TjdlcC83b2p3NDlrR3ZVbk1xYmJOQmJzSVJ3UFJiNTcwZlp0V0h2dlNTMm5RTnVQcDVKVGwvVHBJTkp3VFN5aWNYUFpIbkFhdm03T3BzSjdVSThtd3k4VkkwQ2l3cXZ6cEkycldOaXl2REFGU3hIOFJyRWo1cXgzVWNKbGY"/>
+                                <Card480  name="네 가지 Apple 서비스. 한 번의 간편한 가입." cardType="small" path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-subscriptions-202108?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=WW05TjdlcC83b2p3NDlrR3ZVbk1xYmJOQmJzSVJ3UFJiNTcwZlp0V0h2dlNTMm5RTnVQcDVKVGwvVHBJTkp3VFN5aWNYUFpIbkFhdm03T3BzSjdVSThtd3k4VkkwQ2l3cXZ6cEkycldOaXl2REFGU3hIOFJyRWo1cXgzVWNKbGY"/>
                             </div>
                             <div className={styles.storehome_shopping_service_container_main_card_container}>
-                                <Card480  name="보다 오래 안심할 수 있도록." describe="이제 AppleCare+가 우발적인 손상에 대한 수리 서비스를 횟수 제한 없이 제공합니다." path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-applecare-202503?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SFNxMjRYSTFLdjBJZG1UYjBKRUNDaXRXOGV1M2ZHcDVxZzhMK2cxK3dsTUloZHRRYWt5UUpyTGVwNEhDZEV3VXg4ZHpEbm5XWGdaM3BiNVRDaG55Ukc2ZjdMSUNqeUNFYjF1MU1sS2U0a3E1dDgvV3BhU1hoSzFPUEZjam5HQ2g"/>
+                                <Card480  name="보다 오래 안심할 수 있도록." describe="이제 AppleCare+가 우발적인 손상에 대한 수리 서비스를 횟수 제한 없이 제공합니다." cardType="small" path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-applecare-202503?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SFNxMjRYSTFLdjBJZG1UYjBKRUNDaXRXOGV1M2ZHcDVxZzhMK2cxK3dsTUloZHRRYWt5UUpyTGVwNEhDZEV3VXg4ZHpEbm5XWGdaM3BiNVRDaG55Ukc2ZjdMSUNqeUNFYjF1MU1sS2U0a3E1dDgvV3BhU1hoSzFPUEZjam5HQ2g"/>
                             </div>
                             <div className={styles.storehome_shopping_service_container_main_card_container}>
-                                <Card480  text="" name="Apple Pay 사용법을 모두 알아보세요."  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-applepay-202503?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SFNxMjRYSTFLdjBJZG1UYjBKRUNDdUVMeDhuVU80VmJvRWgxZU1CTTZlMmo2Z1ptREdBenZRTjZuSCtBemFnUTRHeXB5TnVsU3R6Qjd0Y2JzbURyWERKTGY0SktEdXAyaG9IZWxWT3NMZzErYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
+                                <Card480  text="" name="Apple Pay 사용법을 모두 알아보세요." cardType="small"  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-applepay-202503?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=SFNxMjRYSTFLdjBJZG1UYjBKRUNDdUVMeDhuVU80VmJvRWgxZU1CTTZlMmo2Z1ptREdBenZRTjZuSCtBemFnUTRHeXB5TnVsU3R6Qjd0Y2JzbURyWERKTGY0SktEdXAyaG9IZWxWT3NMZzErYWpGdS9XeFgvbS9ITnNYOEhYaG4"/>
                             </div>
                             <div className={styles.storehome_shopping_service_container_main_card_container}>
-                                <Card480  text="홈" name="앱 하나로 집안 전체를 관리하는 방법을 알아보세요."path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-homekit-202405_GEO_KR?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=UWdrNzNrY0ZiOGhRNlVuUlF4U3JoejVHYVpyWFdSYy85NGlTbU1VNHZsOFBydHo5aldMOTRYbjRSM1lCK1Nra2Nva0xZQWFEV2ljOWRGNWZJRk4vWGgvOERJNEJMdXB2K2JwM2I2YmhadytMQW1saTRVVjVlUW5QdVdlb0dJUWQ"/>
+                                <Card480  text="홈" name="앱 하나로 집안 전체를 관리하는 방법을 알아보세요." cardType="small"  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-50-homekit-202405_GEO_KR?wid=960&hei=1000&fmt=p-jpg&qlt=95&.v=UWdrNzNrY0ZiOGhRNlVuUlF4U3JoejVHYVpyWFdSYy85NGlTbU1VNHZsOFBydHo5aldMOTRYbjRSM1lCK1Nra2Nva0xZQWFEV2ljOWRGNWZJRk4vWGgvOERJNEJMdXB2K2JwM2I2YmhadytMQW1saTRVVjVlUW5QdVdlb0dJUWQ"/>
                             </div>
                         </div>
                     </div>
@@ -461,7 +456,7 @@ const StoreHome = () => {
                         </div>
                         <div className={styles.storehome_shopping_benefit_container_main}>
                             <div className={styles.storehome_shopping_benefit_container_main_card}>
-                                <Card400 text="교육" name="새로운 Mac 또는 iPad를 교육 할인가로 더욱 부담 없이." path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-bts-edu-macbook-air-ipad-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=bTAvUVhobndWL01MVC9aenBVVGo5YWZmUzB4a3czWENOTU1QWVJ1K01WWk5LOEsyMEhpRHE1T1EzSDFwQVpKVzF1WTFUcUFiTi80Y2ZLM2ZEQmtMcjJhUXpzSGp3b1lnNUp6M2lSQzZEVVBiYmVpOUU2RG04OHJUUjJybTZTeHFHaXB3VUEzd1huUnhZRnQ3eTQ1QUdB"/>
+                                <Card400 text="교육" name="새로운 Mac 또는 iPad를 교육 할인가로 더욱 부담 없이."  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-bts-edu-macbook-air-ipad-air-202503?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=bTAvUVhobndWL01MVC9aenBVVGo5YWZmUzB4a3czWENOTU1QWVJ1K01WWk5LOEsyMEhpRHE1T1EzSDFwQVpKVzF1WTFUcUFiTi80Y2ZLM2ZEQmtMcjJhUXpzSGp3b1lnNUp6M2lSQzZEVVBiYmVpOUU2RG04OHJUUjJybTZTeHFHaXB3VUEzd1huUnhZRnQ3eTQ1QUdB"/>
                             </div>
                             <div className={styles.storehome_shopping_benefit_container_main_card}>
                                 <Card400 text="인증 리퍼비쉬 제품" name="1년 보증이 제공되는 리퍼비쉬 Apple 제품을 쇼핑하세요"  path="#" image="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/store-card-40-refurb-202408_GEO_KR?wid=800&hei=1000&fmt=p-jpg&qlt=95&.v=MTZ5STlsTFBndFBGTjdlaHEreGY1WVpjRk5RUmNDUnRpcEtwZE90QWhHTVd5Vmc3Z0FwOExzY2czeWpSSWVybFN5aWNYUFpIbkFhdm03T3BzSjdVSTg3eG9qTElWODhsN0VFL2hKVnFlRXFSQzlQOERDWGFFVzNYcmJ6Wlc5V2k"/>

@@ -6,12 +6,7 @@ import { useHeader } from '../../../contexts/HeaderContext';
 
 function Home() {
     
-    const { changePage } = useHeader();
-
-    useEffect(() => {
-        changePage('home');
-    }, [changePage]);
-
+  
     // 슬라이드 상태 관리
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [slideTimer, setSlideTimer] = useState(null);

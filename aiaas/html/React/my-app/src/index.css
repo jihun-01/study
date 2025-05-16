@@ -1,11 +1,4 @@
-body {
-  margin: 0;
-  font-family: SF Pro KR, SF Pro Display, SF Pro Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
-}
 
-code {
-  font-family: SF Pro KR, SF Pro Display, SF Pro Icons, Apple Gothic, HY Gulim, MalgunGothic, HY Dotum, Lexi Gulim, Helvetica Neue, Helvetica, Arial, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

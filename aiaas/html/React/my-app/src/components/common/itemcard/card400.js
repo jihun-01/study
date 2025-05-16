@@ -32,6 +32,7 @@ const Card400 = ({text, name, describe, image, path, price, describeType, nameTy
                 return styles.product_card_info_body_price;
         }
     };
+    
 
     return (
         <div className={styles.product_card}>

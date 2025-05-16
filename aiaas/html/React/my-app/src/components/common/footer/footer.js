@@ -25,7 +25,7 @@ function Footer() {
                         <div className="footer_column">
                         <h3>쇼핑 및 알아보기</h3>
                         <ul>
-                            <li><a href="#">스토어</a></li>
+                            <li><a href="/store">스토어</a></li>
                             <li><a href="#">Mac</a></li>
                             <li><a href="#">iPad</a></li>
                             <li><a href="#">iPhone</a></li>

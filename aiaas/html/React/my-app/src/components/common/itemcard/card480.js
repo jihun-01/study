@@ -2,13 +2,21 @@
 import React from 'react';
 import styles from './card480.module.css';
 
-const Card480 = ({text, name,describe,image,path}) => {
-    
+const Card480 = ({text, name,describe,image,path,cardType}) => {
+
+    const getCardClass = (cardType) => {
+        switch(cardType) {
+            case 'small':
+                return styles.image_card_info_small;
+            default:
+                return styles.image_card_info;
+        }
+    };
     return (
         <div className={styles.image_card}>
             <a href={path}>
                 <img src={image} alt={name} />
-                <div className={styles.image_card_info}>
+                <div className={getCardClass(cardType)}>
                     <div className={styles.image_card_info_text}>
                         {text}
                     </div>
