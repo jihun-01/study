@@ -1,4 +1,4 @@
-// ../../components/page/store/store.js
+// ./components/page/store/store
 import React, { useEffect } from 'react';
 import styles from './store.module.css';
 import Card400 from '../../common/itemcard/card400';

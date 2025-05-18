@@ -1,3 +1,5 @@
+/*./card313.module.css*/
+/* 상품 카드 영역 */
 .card313{
     display: block;
     width: 313px;
@@ -9,6 +11,7 @@
     padding :30px;
 }
 
+/* 상품 이미지 영역 */
 .card313_image{
     width: 253px;
     height: 271px;
@@ -24,6 +27,8 @@
     display: block;
     
 }
+
+/* 상품 색상 영역 */
 .card313_colorimage{
     display: inline-flex;
     flex-direction: row;
@@ -46,15 +51,20 @@
     list-style: none;
 }
 
+/* 상품 정보 영역 */
 .card313_info{
     display: flex;
     flex-direction: column;
     position: relative;
     height: 100px;
 }
+
+/* 상품 정보 메인 영역 */
 .card313_info_main{
     padding: 0px 0px 0px 0px;
 }
+
+/* 상품 정보 텍스트 영역 */
 .card313_info_text{
     font-size: 12px;
     font-weight: 600;
@@ -62,6 +72,7 @@
     word-break: keep-all;
 }
 
+/* 상품 정보 이름 영역 */
 .card313_info_name{
     font-size: 17px;
     font-weight: 600;
@@ -72,6 +83,7 @@
     word-break: keep-all;
 }
 
+/* 상품 정보 가격 영역 */
 .card313_info_price{
     font-size: 14px;
     position: absolute;

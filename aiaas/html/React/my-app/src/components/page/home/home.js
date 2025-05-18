@@ -1,4 +1,4 @@
-// ../../components/page/home/home.js
+// ./components/page/home/home
 
 import React, { useEffect, useState } from "react";
 import Button from '../../common/button/button';

@@ -8,7 +8,7 @@
 
 .contentContainer {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: auto;
     display: flex;
     gap: 13px;
     scroll-behavior: smooth;

@@ -1,4 +1,4 @@
-//components/common/footer.js
+/*./components/common/footer/footer*/
 import React from "react";
 import style from "./footer.module.css";
 

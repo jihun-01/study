@@ -18,18 +18,6 @@ body {
 }
 
 
-/* 반응형 디자인 설정 */
-@media (max-width: 768px) {
-.footer_container {
-  flex-direction: column;
-}
-
-
-.footer_column {
-  margin-right: 0;
-  margin-bottom: 20px;
-}
-}
 
 
 
