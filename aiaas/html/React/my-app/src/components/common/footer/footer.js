@@ -1,12 +1,13 @@
 //components/common/footer.js
 import React from "react";
+import style from "./footer.module.css";
 
 function Footer() {
     return (
         <>
-            <footer className="footer">
-                <div className="footer_content">
-                    <section className="footer_title">
+            <footer className={style.footer}>
+                <div className={style.footer_content}>
+                    <section className={style.footer_title}>
                         <ul>
                             <li>1. Apple Intelligence는 Siri 및 기기 언어를 한국어, 중국어(간체), 영어(오스트레일리아, 캐나다, 인도, 아일랜드, 뉴질랜드, 싱가포르, 남아프리카 공화국, 영국, 미국), 프랑스어, 독일어, 이탈리아어, 일본어, 포르투갈어(브라질), 스페인어로 설정한 iPhone 16 전체 모델, iPhone 15 Pro, iPhone 15 Pro Max, iPad mini(A17 Pro 모델) 그리고 M1 이후 iPad 및 Mac 모델에서 베타로 사용할 수 있으며, iOS 18, iPadOS 18, macOS Sequoia 소프트웨어 업데이트를 통해 제공됩니다. 올해 안으로 계속해서 베트남어를 비롯한 지원 언어를 추가해 나갈 예정입니다. 일부 기능은 한국어로 제공되지 않습니다.</li>
                             <br />
@@ -21,8 +22,8 @@ function Footer() {
                         </ul>
                         
                     </section>
-                    <section className="footer_nav">
-                        <div className="footer_column">
+                    <section className={style.footer_nav}>
+                        <div className={style.footer_column}>
                         <h3>쇼핑 및 알아보기</h3>
                         <ul>
                             <li><a href="/store">스토어</a></li>
@@ -43,7 +44,7 @@ function Footer() {
                         </ul>
                         </div>
                         
-                        <div className="footer_column">
+                        <div className={style.footer_column}>
                             <h3>계정</h3>
                             <ul>
                             <li><a href="#">Apple 계정 관리</a></li>
@@ -62,7 +63,7 @@ function Footer() {
                             </ul>
                         </div>
                         
-                        <div className="footer_column">
+                        <div className={style.footer_column}>
                             <h3>Apple Store</h3>
                             <ul>
                             <li><a href="#">매장 찾기</a></li>
@@ -79,7 +80,7 @@ function Footer() {
                             </ul>
                         </div>
                         
-                        <div className="footer_column">
+                        <div className={style.footer_column}>
                             <h3>비즈니스</h3>
                             <ul>
                             <li><a href="#">Apple과 비즈니스</a></li>
@@ -93,7 +94,7 @@ function Footer() {
                             </ul>
                         </div>
                         
-                        <div className="footer_column">
+                        <div className={style.footer_column}>
                             <h3>Apple의 가치관</h3>
                             <ul>
                             <li><a href="#">손쉬운 사용</a></li>
@@ -114,13 +115,13 @@ function Footer() {
                             </ul>
                         </div>
                         </section>
-                    <section className="footer_bottom">
-                        <div className="footer_bottom_describe">
+                    <section className={style.footer_bottom}>
+                        <div className={style.footer_bottom_describe}>
                         <p>다양한 쇼핑 방법: <a href="#">Apple Store를 방문하거나</a>, <a href="#">리셀러</a>를 찾아보거나, <a href="#">080-123-4567</a>번으로 전화하세요.</p>
                         </div>
                     </section>
-                    <section className="footer_bottom_nav">
-                        <div className="footer_bottom_nav_1">
+                    <section className={style.footer_bottom_nav}>
+                        <div className={style.footer_bottom_nav_1}>
                             <p>Copyright © 2025 모든 권리 보유.</p>
                             <ul>
                                 <li><a href="#">개인정보 처리방침</a></li>
@@ -129,12 +130,12 @@ function Footer() {
                                 <li><a href="#">법적 고지</a></li>
                                 <li><a href="#">사이트 맵</a></li>
                             </ul>
-                            <ul className="footer_global">
+                            <ul className={style.footer_global}>
                                 <li><a href="#">대한민국</a></li>
                             </ul>
                         </div>
 
-                        <div className="footer_bottom_describe">
+                        <div className={style.footer_bottom_describe}>
                             <p>애플코리아 | 대표이사: 예제 | 주소: 서울특별시 강남구 | 전화: 080-123-4567 | <a href="#">https://support.apple.com/ko-kr</a> | 사업자등록번호: 123-45-67890 | 통신판매업신고번호: 제2025-서울예제-0123호 | 호스팅 서비스 제공: 예제 | <a href="#">사업자정보</a> |사업자등록번호: 123-45-67890 | 통신판매업신고번호: 제2025-서울예제-0123호 |호스팅 서비스 제공: 예제
                             <a href="#">사업자정보</a>
                             </p>

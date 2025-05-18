@@ -5,6 +5,7 @@ import Card400 from '../../common/itemcard/card400';
 import Card480 from '../../common/itemcard/card480';
 import Card313 from '../../common/itemcard/card313';
 import Button from '../../common/button/button';
+import ScrollButton from '../../common/button/scrollbutton'
 import { useHeader } from '../../../contexts/HeaderContext';
 
 const StoreHome = () => {
@@ -154,6 +155,7 @@ const StoreHome = () => {
                         <span className={styles.storehome_title_text_black}>최신 제품.</span>
                         <span className={styles.storehome_title_text_gray}>따끈따끈한 신제품 이야기.</span>
                     </div>
+                    <ScrollButton className={styles.storehome_scroll_product}>
                     <div className={styles.storehome_latest_product_card_container}>
                         <div className={styles.list_item}>
                             <div className={styles.storehome_latest_product_card}>
@@ -211,6 +213,7 @@ const StoreHome = () => {
                             </div>
                         </div>
                     </div>
+                    </ScrollButton>
                 </div>
                 {/*도움 카드*/}
                 <div className={styles.storehome_help_card}>

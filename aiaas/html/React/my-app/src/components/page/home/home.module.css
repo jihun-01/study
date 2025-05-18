@@ -1,0 +1,519 @@
+/*../home.module.css*/
+
+
+.main {
+    line-height: 1.25;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1d1d1f;
+    }
+
+/* 메인 프로모션 섹션 1 스타일 */
+/*아이폰 프로모션 카드*/
+.homepage_link_section_card_iphone {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 710px;
+    margin-bottom: 13px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/kr/home/images/heroes/iphone-family/hero_iphone_family__fuz5j2v5xx6y_largetall.jpg');
+    position: relative;
+    text-decoration: none;
+  }
+
+
+  /*애플워치 프로모션 카드*/
+  .homepage_link_section_card_watch {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 710px;
+    margin-bottom: 13px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/heroes/apple-watch-series-10/hero_apple_watch_series_10_avail__efftijb8e3ue_largetall.jpg');
+    position: relative;
+    text-decoration: none;
+    }
+
+/* 애플워치 타이틀 스타일 */
+.product_watch_title {
+    text-align: center;
+    width: 100%;
+    height: 110px;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/logos/apple-watch-series-10/hero_logo_apple_watch_series_10__dla4dkv1wfue_largetall.png');
+    position: relative;
+    text-decoration: none;
+    }
+
+
+  /*어버이날 프로모션 카드*/
+  .homepage_link_section_card_mothersday {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: 710px;
+    margin-bottom: 13px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/heroes/mothers-day-2025/hero_md25__ca4cocy2qlv6_largetall.png');
+    position: relative;
+    text-decoration: none;
+    }
+
+/*섹션1 타이틀 스타일*/
+.title_section_1 {
+    font-size: 55px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1d1d1f;
+    letter-spacing: -0.003em;
+    text-decoration: none;
+    }
+
+.text_section_1 {
+    font-size: 26px;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+     letter-spacing: 0.004em;
+    text-decoration: none;
+    }
+
+/*프로모션 카드 내부 컨텐츠 스타일*/
+.product_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+/*섹션1 끝*/
+
+/*섹션2 시작*/
+/*메인 섹션 레이아웃*/
+.homepage_main_section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    justify-content: center;
+  }
+
+/*메인 섹션 카드 레이아웃*/
+.homepage_link_section_card_layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    height: 100%;
+    padding: 20px;
+}
+
+/*메인 섹션 링크 영역*/
+.homepage_main_section_link_area {
+    flex: 0 0 48%;  
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    }
+
+
+/*맥북 프로모션 카드*/
+.homepage_link_section_card_macbookair {
+    text-align: center;
+    padding: 40px;
+    height: 580px;
+    min-height: 580px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/promos/macbook-air/promo_macbook_air_avail__e8ksaudoisey_large.jpg');
+    position: relative;
+    text-decoration: none;
+    }
+
+.homepage_card_macbookair{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homepage_card_macbookair_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+}
+
+
+    /*아이패드 프로모션 카드*/
+.homepage_link_section_card_ipadair {
+    text-align: center;
+    padding: 40px;
+    height: 580px;
+    min-height: 580px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/promos/ipad-air/promo_ipad_air__bfbxzvw65c02_large.jpg');
+    position: relative;
+    }
+
+.homepage_card_ipadair {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    }
+/*아이패드 프로모션 카드 타이틀*/
+.title_product_ipadair {
+    text-align: center;
+    width: 100%;
+    height: 20%;
+    min-height: 50px;
+    background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/logos/ipad-air/promo_logo_ipadair__frwnnsqveeye_large.png');
+    position: relative;
+    text-decoration: none;
+    }
+
+    /*아이패드 프로 프로모션 카드*/
+ .homepage_link_section_card_ipadpro {
+    text-align: center;
+    padding: 40px;
+    height: 580px;
+    min-height: 580px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/promos/ipad-pro/promo_ipadpro_avail__s271j89g8kii_large.jpg');
+    position: relative;
+    text-decoration: none;
+    }
+
+.homepage_card_ipadpro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    /*에어팟 프로모션 카드*/
+.homepage_link_section_card_airpods {
+    text-align: center;
+    padding: 40px;
+    height: 580px;
+    min-height: 580px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/promos/airpods-4/promo_airpods_4_avail__bl22kvpg6ez6_large.jpg');
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    }
+
+.homepage_card_airpods {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: bottom;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    }
+        
+    /*맥 프로모션 카드*/
+.homepage_link_section_card_mac {
+    text-align: center;
+    padding: 40px;
+    height: 580px;
+    min-height: 580px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/kr/home/images/promos/mac-does-that/promo_mac_does_that__ckozfqcs65w2_large.jpg');
+    position: relative;
+    text-decoration: none;
+    }
+
+
+.homepage_card_mac {
+    text-align: center;
+    width: 100%;
+    height: 50%;
+    background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/kr/home/images/logos/mac-does-that/promo_logo_mac_does_that__clw0vbszi002_large.png');
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+.homepage_card_text{
+    font-size: 45px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1d1d1f;
+    letter-spacing: -0.003em;
+    text-decoration: none;
+    }
+
+
+    /*트레이드인 프로모션 카드*/
+.homepage_link_section_card_tradein {
+    text-align: center;
+    padding: 40px;
+    height: 580px;
+    min-height: 580px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/promos/iphone-tradein/promo_iphone_tradein__bugw15ka691e_large.jpg');
+    position: relative;
+    text-decoration: none;
+    }
+
+.homepage_card_tradein_title {
+    text-align: center;
+    width: 100%;
+    height: 25%;
+    background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-image: url('https://www.apple.com/v/home/cd/images/logos/iphone-tradein/promo_logo_iphone_tradein__7y3gtai5az66_large.png');
+    position: relative;
+    text-decoration: none;
+    }
+.homepage_card_tradein {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+/*섹션2 타이틀 스타일*/
+.title_section2_black {
+    font-size: 45px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1d1d1f;
+    letter-spacing: -0.003em;
+    text-decoration: none;
+    }
+
+.title_section2_white {
+    font-size: 45px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: white;
+    letter-spacing: -0.003em;
+    text-decoration: none;
+    }
+
+
+/*섹션2 텍스트 스타일*/    
+.text_section_2_black {
+    font-size: 20px;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+    letter-spacing: 0.004em;
+    text-decoration: none;
+    }
+
+.text_section_2_white {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 0.004em;
+    text-decoration: none;
+    }   
+    
+
+/*섹션2 AI 텍스트 레이아웃*/    
+.homepage_main_AI_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    }
+    
+    
+.homepage_main_AI_text_ipadair {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    top : 140%;
+    }
+    
+/*섹션2 끝*/
+
+
+/* AI 관련 텍스트 스타일 */
+.AI_text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1f;
+    background-image: linear-gradient(108deg, #006bb9 0, #903fcf 32%, #cf0f3c 84%, #b84100 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-weight: 600;
+  }
+  
+.AI_text_describe {
+    font-size: 14px;
+    color: #86868b;
+    margin-top: 0px;    
+  }
+
+/*버튼 레이아웃*/
+.button {
+    display: flex;
+    width: 220px;
+    padding: 20px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+  }
+
+  /*푸터 섹션*/
+  /* 슬라이드쇼 컨테이너 스타일 */
+.homepage_footer_section {
+    position: relative;
+    width: 100%;
+    height: 703px;
+    overflow:hidden;
+  }
+  .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .slide.active {
+  opacity: 1;
+  z-index: 1;
+  }
+  
+  .slide-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide-container-ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .slide-container-ul li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 0;
+  }
+  
+  .slide-container-ul li.active {
+    opacity: 1;
+    z-index: 1;
+  }
+  .slide-container-ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slide-container-ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* 슬라이드 네비게이션 스타일 */
+  .slide-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+  }
+  
+  .nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-dot.active {
+    background-color: #fff;
+  }
+  
+  .nav-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .slide-preview {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  }
+  
+  .slide-preview:hover {
+  opacity: 0.5;
+  }
+  
+  .slide-preview-prev {
+  left: 0;
+  }
+  
+  .slide-preview-next {
+  right: 0;
+  }

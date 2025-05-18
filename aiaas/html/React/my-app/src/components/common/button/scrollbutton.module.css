@@ -1,0 +1,52 @@
+
+.scrollContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contentContainer {
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    gap: 13px;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0 20px;
+}
+
+.contentContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.scrollButton:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.leftButton {
+    left: 0;
+}
+
+.rightButton {
+    right: 0;
+}
