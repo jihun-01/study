@@ -31,6 +31,7 @@
 # matrix[1][1] = 2
 # print(matrix)
 
+########################################################
 ## 과제 : 리스트 학생 관리
 
 # 기본값
@@ -78,7 +79,7 @@
 
 # student_statistics()
 
-
+########################################################
 
 # 과제 : 튜플 판매 데이터 분석
 # 기본 데이터
@@ -166,7 +167,7 @@
 #             print(f"{i}년도 {j}분기 총 매출 : {sum_sales}")
         
 # quarter_sales()
-
+########################################################
 #과제 : 딕셔너리 
 
 # users = {
@@ -246,29 +247,44 @@
 # 공통 관심사를 갖는 친구 응답
 # 공통 관심사가 없는 친구 응답
 
-hobbies = {
-    "Alice": ["음악", "영화", "독서"],
-    "Bob": ["스포츠", "여행", "음악"],
-    "Charlie": ["프로그래밍", "게임", "영화"],
-    "David": ["요리", "여행", "사진"],
-    "Eve": ["프로그래밍", "독서", "음악"],
-    "Frank": ["스포츠", "게임", "요리"],
-    "Grace": ["영화", "여행", "독서"]
-}
+# hobbies = {
+#     "Alice": ["음악", "영화", "독서"],
+#     "Bob": ["스포츠", "여행", "음악"],
+#     "Charlie": ["프로그래밍", "게임", "영화"],
+#     "David": ["요리", "여행", "사진"],
+#     "Eve": ["프로그래밍", "독서", "음악"],
+#     "Frank": ["스포츠", "게임", "요리"],
+#     "Grace": ["영화", "여행", "독서"]
+# }
 
-key_list = list(hobbies)
-print(key_list)
+# key_list = list(hobbies)
+# @time_decorator
+# def get_common_hobbies(key_list):
+    
+#     for other , interests in hobbies.items():
+#         if other == key_list[0]:
+#             continue
+#         common_hobbies = set(interests) & set(hobbies[key_list[0]])
+#         if common_hobbies:
+#             print(f"{key_list[0]}와 {other}의 공통 취미 : {common_hobbies}")
+# @time_decorator
+# def get_no_common_hobbies(key_list):
+    
+#     for other , interests in hobbies.items():
+#         if other == key_list[0]:
+#             continue
+#         no_common_hobbies = not(set(interests) & set(hobbies[key_list[0]]))
+#         if no_common_hobbies:
+#             print(f"{key_list[0]}와 {other}의 공통 취미가 없습니다.")
 
-
-
-
-
-
+# get_common_hobbies(key_list)
+# get_no_common_hobbies(key_list)
 
 
 
 
 # 여러 개의 숫자를 입력받아 합계를 계산하는 함수를 작성
+
 # def sum_numbers():
 #     sum_num = 0
 #     while True:
@@ -286,6 +302,219 @@ print(key_list)
 
 
 # sum_numbers()
+########################################################
+
+# get_max = lambda a,b : a  * b
+# print(get_max(10,20))
+
+# def multiplier(n):
+#     return lambda x:x*n
+
+# double = multiplier(2)
+# print(double(11))
+
+########################################################
+# def validate_input(func):
+#     def wrapper(x, y):
+#         if x < 0 or y < 0:
+#             raise ValueError('입력 값이 0보다 커야 한다.')
+#         return func(x, y)
+#     return wrapper
+
+# @validate_input
+# def divide(x, y):
+#     return x / y
+
+# try:
+#     print(divide(10,-2))
+# except ValueError as e:
+#     print(e)
+
+# import calculator
+
+# add_result = calculator.add(10, 20)
+# print(add_result)
+
+# import sys
+# print(sys.path)
+
+##파일 입출력
+# import os
+# cwd = os.getcwd()
+# print(cwd)
+
+# os.mkdir("new_folders")
+# os.rmdir("new_folders")
+
+# files = os.listdir('.')
+# print(files)
+
+##json 파일 입출력
+# import json
+
+# person = {
+#     "name" : "홍길동",
+#     "age" : 25
+# }
+
+# # with open('person.json', 'w', encoding = 'utf-8') as f:
+# #     json.dump(person, f, ensure_ascii=False, indent=2)
+
+# with open('person.json', 'r', encoding = 'utf-8') as f:
+#     loaded_person = json.load(f)
+
+# print(loaded_person)
+
+########################################################
+
+# from datetime import datetime, date, time, timedelta
+
+# #현재 날짜와 시간
+# now = datetime.now()
+# print(f"현재: {now}")
+
+# #특정 날짜와 시간
+# specific_date = datetime(2023, 12, 31, 23, 59, 59)
+# print(f"특정 일시: {specific_date}")
+
+# date_str = now.strftime("%Y-%m-%d %H:%M:%S")
+# print(f"형식화된 날짜: {date_str}")
+
+# parsed_date = datetime.strptime("2023-01-15", "%Y-%m-%d")
+# print(f"파싱된 날짜: {parsed_date}")
+########################################################
+# class Car:
+#     wheels = 4
+#     total_cars = 0
+
+#     def __init__(self, model, year):
+#         self.model = model
+#         self.year = year
+#         Car.total_cars += 1
+
+#     def accel(self, speed):
+#         print(f"{speed}만큼 전진")
+
+#     def brake(self, speed):
+#         print(f"{speed}만큼 감속")
+
+#     def get_spec(self):
+#         print(f"모델 : {self.model}, 연식 : {self.year}")
+
+#     @classmethod
+#     def count_cars(cls):
+#         print(f"total count : {cls.total_cars}")
+
+#     @staticmethod
+#     def get_car_type(model):
+#         if model == '지바겐':
+#             return "SUV"
 
 
+# my_car = Car("지바겐",2022)
+# my_car.accel(30)
+# my_car.get_spec()
+# Car.get_car_type("k5")
+# your_car = Car("Sonata", 2001)
+# Car.count_cars()
 
+# class Benz(car):
+#     def __init__(self, model, year, doors):
+#         super().__init__(model,year)
+#         self.doors = doors
+
+########################################################
+# from abc import ABC, abstractmethod
+
+# class Shape(ABC):
+#     @abstractmethod
+#     def area(self):
+#         pass
+
+# class Rectangle(Shape):
+#     def __init__(self, w, h):
+#         self.w = w
+#         self.h = h
+
+#     def area (self):
+#         return self.w * self.h
+
+# rec = Rectangle(30,10)
+
+########################################################
+# 과제 : 모든 함수 호출 시간을 측정하는 데코레이터 적용
+
+
+# import datetime
+# def time_decorator(func):
+#     def wrapper(*args, **kwargs):
+#         now = datetime.datetime.now()
+#         print(f"호출 시간 : {now.year}년 {now.month}월 {now.day}일 {now.hour}시 {now.minute}분 {now.second}초")
+#         return func(*args, **kwargs)
+#     return wrapper
+
+# @time_decorator
+# def sum_numbers():
+#     sum_num = 0
+#     while True:
+#         number = input("숫자를 입력하세요. q를 누르면 종료 :")
+#         if number == "q":
+#             print(f"총합 : {sum_num}")
+#             print("종료")
+#             break
+#         elif number.isdigit():
+#             sum_num += int(number)
+#         else:
+#             print("문자는 사용할수 없습니다.")
+
+# sum_numbers()
+
+# hobbies = {
+#     "Alice": ["음악", "영화", "독서"],
+#     "Bob": ["스포츠", "여행", "음악"],
+#     "Charlie": ["프로그래밍", "게임", "영화"],
+#     "David": ["요리", "여행", "사진"],
+#     "Eve": ["프로그래밍", "독서", "음악"],
+#     "Frank": ["스포츠", "게임", "요리"],
+#     "Grace": ["영화", "여행", "독서"]
+# }
+
+# key_list = list(hobbies)
+# @time_decorator
+# def get_common_hobbies(key_list):
+    
+#     for other , interests in hobbies.items():
+#         if other == key_list[0]:
+#             continue
+#         common_hobbies = set(interests) & set(hobbies[key_list[0]])
+#         if common_hobbies:
+#             print(f"{key_list[0]}와 {other}의 공통 취미 : {common_hobbies}")
+# @time_decorator
+# def get_no_common_hobbies(key_list):
+    
+#     for other , interests in hobbies.items():
+#         if other == key_list[0]:
+#             continue
+#         no_common_hobbies = not(set(interests) & set(hobbies[key_list[0]]))
+#         if no_common_hobbies:
+#             print(f"{key_list[0]}와 {other}의 공통 취미가 없습니다.")
+
+# get_common_hobbies(key_list)
+# get_no_common_hobbies(key_list)
+
+########################################################
+
+# from calculator.arithmetic import add, subtract, multiply, divide, remainder, quotient
+
+# def calculator():
+#     a = int(input("첫번째 숫자를 입력하세요 :"))
+#     b = int(input("두번째 숫자를 입력하세요 :"))
+#     print(f"더하기 : {add(a, b)}")
+#     print(f"빼기 : {subtract(a, b)}")
+#     print(f"곱하기 : {multiply(a, b)}")
+#     print(f"나누기 : {divide(a, b)}")
+#     print(f"나머지 : {remainder(a, b)}")
+#     print(f"몫 : {quotient(a, b)}")
+
+
+# calculator()
