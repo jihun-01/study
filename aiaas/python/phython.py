@@ -32,277 +32,7 @@
 # print(matrix)
 
 ########################################################
-## 과제 : 리스트 학생 관리
 
-# 기본값
-# name = ["홍길동", "이순신", "강감찬"]
-# score = [95, 87, 78]
-# # 학생 추가
-# def students_add():
-#     name.append(input("이름을 입력하세요 :"))
-#     score.append(int(input("점수를 입력하세요 :")))
-
-# students_add()
-# print(f"이름 : {name}, 점수 : {score}")
-
-# # 학생 삭제
-# def student_delete():
-#     delete = name.index(input("삭제할 이름을 입력하세요 :"))
-#     name.pop(delete)
-#     score.pop(delete)
-
-# student_delete()
-# print(f"이름 : {name}, 점수 : {score}")
-
-# # 학생 성적 수정
-
-# def student_modify():
-#     modify = name.index(input("수정할 이름을 입력하세요 :"))
-#     score[modify] = int(input("수정할 점수를 입력하세요 :"))
-
-# student_modify()
-# print(f"이름 : {name}, 점수 : {score}")
-
-# # 전체 목록 출력
-# def student_list():
-#     for i in range(len(name)):
-#         print(f"이름 : {name[i]}, 점수 : {score[i]}")
-
-# student_list()
-
-# #통계 출력
-# def student_statistics():
-
-#     print(f"최고점 : {max(score)}")
-#     print(f"최저점 : {min(score)}")
-#     print(f"평균 : {sum(score) / len(score)}")
-
-# student_statistics()
-
-########################################################
-
-# 과제 : 튜플 판매 데이터 분석
-# 기본 데이터
-# (연도, 분기, 제품, 가격, 판매량, 지역)
-# sales_data = [
-#     (2020, 1, "노트북", 1200, 100, "서울"),
-#     (2020, 1, "스마트폰", 800, 200, "부산"),
-#     (2020, 2, "노트북", 1200, 150, "서울"),
-#     (2020, 2, "스마트폰", 1000, 250, "대구"),
-#     (2020, 3, "노트북", 1300, 100, "인천"),
-#     (2020, 3, "스마트폰", 850, 300, "서울"),
-#     (2020, 4, "노트북", 1300, 130, "부산"),
-#     (2020, 4, "스마트폰", 850, 350, "서울"),
-#     (2021, 1, "노트북", 1400, 110, "대구"),
-#     (2021, 1, "스마트폰", 900, 220, "서울"),
-#     (2021, 2, "노트북", 1350, 150, "인천"),
-#     (2021, 2, "스마트폰", 900, 270, "부산"),
-#     (2021, 3, "노트북", 1500, 130, "서울"),
-#     (2021, 3, "스마트폰", 950, 300, "대구"),
-#     (2021, 4, "노트북", 1500, 140, "부산"),
-#     (2021, 4, "스마트폰", 950, 370, "서울")
-# ]
-
-# # 연도별 판매량
-# def sales_analysis():
-#     years = sorted({index[0] for index in sales_data})
-#     sum_sales = 0
-#     print("\n연도별 판매량")
-#     for i in years:
-#         for j in sales_data:
-#             if i == j[0]:
-#                 sum_sales += j[4]
-#         print(f"{i}년도 총 판매량 : {sum_sales}")
-#         sum_sales = 0
-
-# sales_analysis()
-
-# # 제품별 평균 가격
-# def product_analysis():
-#     products = sorted({index[2] for index in sales_data})
-#     sum_price = 0
-#     print("\n제품별 평균 가격")
-#     for i in products:
-#         for j in sales_data:
-#             if i == j[2]:
-#                 sum_price += j[3]
-#         print(f"{i}년도 총 판매량 : {sum_price // len(sales_data)}")
-#         sum_price = 0
-
-# product_analysis()
-
-
-# # 최대 판매 지역
-# def max_sales_region():
-#     regions = sorted({index[5] for index in sales_data})
-#     sum_sales = 0
-#     max_sales = 0
-#     max_region = ""
-#     print("\n최대 판매 지역")
-#     for i in regions:
-#         for j in sales_data:
-#             if i == j[5]:
-#                 sum_sales += j[4]
-#         if sum_sales > max_sales:
-#             max_sales = sum_sales
-#             max_region = i
-#         sum_sales = 0
-
-#     print(f"최대 판매 지역 : {max_region}, 판매량 : {max_sales}")
-
-# max_sales_region()
-
-# #분기별 매출
-# def quarter_sales():
-#     years = sorted({index[0] for index in sales_data})
-#     quarters = sorted({index[1] for index in sales_data})
-    
-#     print("\n분기별 매출")
-#     for i in years:
-#         for j in quarters:
-#             sum_sales = 0  
-#             for k in sales_data:
-#                 if i == k[0] and j == k[1]: 
-#                     sum_sales += k[3]
-#             print(f"{i}년도 {j}분기 총 매출 : {sum_sales}")
-        
-# quarter_sales()
-########################################################
-#과제 : 딕셔너리 
-
-# users = {
-#     "홍길동" : {
-#         "phone" : [
-#             "010-1234-5678",
-#             "010-9876-5432"
-#         ],
-#         "email" : "test@test.com",
-#         "address" : "서울시 강남구"
-#     },
-#     "예제1" : {
-#         "phone" : [
-#             "010-1234-5678",
-#             "010-9876-5432"
-#         ],
-#         "email" : "test@test.com",
-#         "address" : "서울시 강남구"
-#     },
-#     "예제2" : {
-#         "phone" : [
-#             "010-1234-5678",
-#             "010-9876-5432"
-#         ],
-#         "email" : "test@test.com",
-#         "address" : "서울시 강남구"
-#     }
-# }
-# #연락처 추가
-# def add_list():
-#     name = input("이름을 입력하세요 :")
-#     phone = input("전화번호를 입력하세요 :")
-#     email = input("이메일을 입력하세요 :")
-#     address = input("주소를 입력하세요 :")
-#     users[name] = {
-#         "phone" : list(phone.split(",")),
-#         "email" : email,
-#         "address" : address
-#     }
-
-# add_list()
-
-# def delete_list():
-#     name = input("삭제할 이름을 입력하세요 :")
-#     if name in users:
-#         del users[name]
-#     else:
-#         print("존재하지 않는 이름입니다.")
-
-# delete_list()
-
-# def search_list():
-#     name = input("검색할 이름을 입력하세요 :")
-#     if name in users:
-#         print(f"\n{name}")
-#         for values in users[name]:
-#             print(values, users[name][values])
-#     else:
-#         print("존재하지 않는 이름입니다.")
-
-
-# search_list()
-
-# #모든 연락처 보기
-# def show_list():
-#     print("====전체 연락처 목록====")
-#     for key in users:
-#         print(f"\n{key}")
-#         for values in users[key]:
-#             print(values, users[key][values])
-
-# show_list()
-
-#과제 : 집합
-# 소셜 네트워크에서 사용자 간의 관계와 추천 시스템을
-# 구현하는 프로그램을 작성
-# 공통 관심사를 갖는 친구 응답
-# 공통 관심사가 없는 친구 응답
-
-# hobbies = {
-#     "Alice": ["음악", "영화", "독서"],
-#     "Bob": ["스포츠", "여행", "음악"],
-#     "Charlie": ["프로그래밍", "게임", "영화"],
-#     "David": ["요리", "여행", "사진"],
-#     "Eve": ["프로그래밍", "독서", "음악"],
-#     "Frank": ["스포츠", "게임", "요리"],
-#     "Grace": ["영화", "여행", "독서"]
-# }
-
-# key_list = list(hobbies)
-# @time_decorator
-# def get_common_hobbies(key_list):
-    
-#     for other , interests in hobbies.items():
-#         if other == key_list[0]:
-#             continue
-#         common_hobbies = set(interests) & set(hobbies[key_list[0]])
-#         if common_hobbies:
-#             print(f"{key_list[0]}와 {other}의 공통 취미 : {common_hobbies}")
-# @time_decorator
-# def get_no_common_hobbies(key_list):
-    
-#     for other , interests in hobbies.items():
-#         if other == key_list[0]:
-#             continue
-#         no_common_hobbies = not(set(interests) & set(hobbies[key_list[0]]))
-#         if no_common_hobbies:
-#             print(f"{key_list[0]}와 {other}의 공통 취미가 없습니다.")
-
-# get_common_hobbies(key_list)
-# get_no_common_hobbies(key_list)
-
-
-
-
-# 여러 개의 숫자를 입력받아 합계를 계산하는 함수를 작성
-
-# def sum_numbers():
-#     sum_num = 0
-#     while True:
-#         number = input("숫자를 입력하세요. q를 누르면 종료 :")
-#         if number == "q":
-#             print(f"총합 : {sum_num}")
-#             print("종료")
-#             break
-#         elif number.isdigit():
-#             sum_num += int(number)
-#         else:
-#             print("문자는 사용할수 없습니다.")
-
-#     return sum_num
-
-
-# sum_numbers()
-########################################################
 
 # get_max = lambda a,b : a  * b
 # print(get_max(10,20))
@@ -442,79 +172,178 @@
 # rec = Rectangle(30,10)
 
 ########################################################
-# 과제 : 모든 함수 호출 시간을 측정하는 데코레이터 적용
 
+# 은행 계좌 관리 프로그램
+# class BankAccount:
+#     def __init__(self, owner, balance=0):
+#         self.owner = owner
+#         self.balance = balance
+#         self.transaction_history = []
+#         self._log_transaction('개설', balance)
 
-# import datetime
-# def time_decorator(func):
-#     def wrapper(*args, **kwargs):
-#         now = datetime.datetime.now()
-#         print(f"호출 시간 : {now.year}년 {now.month}월 {now.day}일 {now.hour}시 {now.minute}분 {now.second}초")
-#         return func(*args, **kwargs)
-#     return wrapper
+#     #입금
+#     def deposit(self, amount):
+#         self.balance += amount
+#         self._log_transaction('입금', amount)
+#         print(f"{amount}가 입금되었습니다.")
 
-# @time_decorator
-# def sum_numbers():
-#     sum_num = 0
-#     while True:
-#         number = input("숫자를 입력하세요. q를 누르면 종료 :")
-#         if number == "q":
-#             print(f"총합 : {sum_num}")
-#             print("종료")
-#             break
-#         elif number.isdigit():
-#             sum_num += int(number)
-#         else:
-#             print("문자는 사용할수 없습니다.")
+#     #출금
+#     def withdraw(self, amount):
+#         self.balance -= amount
+#         self._log_transaction('출금', amount)
+#         print(f"{amount}가 출금되었습니다.")
 
-# sum_numbers()
-
-# hobbies = {
-#     "Alice": ["음악", "영화", "독서"],
-#     "Bob": ["스포츠", "여행", "음악"],
-#     "Charlie": ["프로그래밍", "게임", "영화"],
-#     "David": ["요리", "여행", "사진"],
-#     "Eve": ["프로그래밍", "독서", "음악"],
-#     "Frank": ["스포츠", "게임", "요리"],
-#     "Grace": ["영화", "여행", "독서"]
-# }
-
-# key_list = list(hobbies)
-# @time_decorator
-# def get_common_hobbies(key_list):
     
-#     for other , interests in hobbies.items():
-#         if other == key_list[0]:
-#             continue
-#         common_hobbies = set(interests) & set(hobbies[key_list[0]])
-#         if common_hobbies:
-#             print(f"{key_list[0]}와 {other}의 공통 취미 : {common_hobbies}")
-# @time_decorator
-# def get_no_common_hobbies(key_list):
-    
-#     for other , interests in hobbies.items():
-#         if other == key_list[0]:
-#             continue
-#         no_common_hobbies = not(set(interests) & set(hobbies[key_list[0]]))
-#         if no_common_hobbies:
-#             print(f"{key_list[0]}와 {other}의 공통 취미가 없습니다.")
+#     def _log_transaction(self,type, amount):
+#         self.transaction_history.append({
+#             '타입' : type,
+#             '금액' : amount,
+#             '잔고' : self.balance
+#         })
 
-# get_common_hobbies(key_list)
-# get_no_common_hobbies(key_list)
+#     def print_transaction_history(self):
+#         for transaction in self.transaction_history:
+#             print(f"타입 : {transaction['타입']}, 금액 : {transaction['금액']}, 잔고 : {transaction['잔고']}")
+
+# my_account = BankAccount("홍길동", 3000)
+# my_account.deposit(5000)
+# my_account.withdraw(2000)
+# my_account.print_transaction_history()
 
 ########################################################
 
-# from calculator.arithmetic import add, subtract, multiply, divide, remainder, quotient
+# file = open('example.txt', 'r')
+# content = file.read()
+# print(content)
+# file.close()
 
-# def calculator():
-#     a = int(input("첫번째 숫자를 입력하세요 :"))
-#     b = int(input("두번째 숫자를 입력하세요 :"))
-#     print(f"더하기 : {add(a, b)}")
-#     print(f"빼기 : {subtract(a, b)}")
-#     print(f"곱하기 : {multiply(a, b)}")
-#     print(f"나누기 : {divide(a, b)}")
-#     print(f"나머지 : {remainder(a, b)}")
-#     print(f"몫 : {quotient(a, b)}")
+# data = bytes([0x48,0x65,0x6C,0x6C,0x6F])
+# with open('binary_data.bin', 'wb') as file:
+#     file.write(data)
+
+########################################################
+# 이미지 복사
+# with open('image.jpg', 'rb') as source:
+#     image_data = source.read()
+
+# print(image_data)
+
+# with open('copy.jpg', 'wb') as destination:
+#     destination.write(image_data)
+
+########################################################
+# 파일 암호화
+#XOR 암호화 방식
+# def xor_encrypt_decrypt(input_file, output_file, key):
+
+#     with open(input_file, 'rb') as infile:
+#         data = infile.read()
+
+#     key_bytes = key.encode() if isinstance(key,str) else bytes([key])
+#     key_len = len(key_bytes)
+
+#     encrupted_data = bytearray(len(data))
+#     for i in range(len(data)):
+#         encrupted_data[i] = data[i] ^ key_bytes[i%key_len]             #암호화된 데이터
+
+#     with open(output_file, 'wb') as outfile:
+#         outfile.write(encrupted_data)
+
+# xor_encrypt_decrypt('example.txt', 'secret.enc', 'mykey123')
+
+# xor_encrypt_decrypt('secret.enc', 'decrypted.txt', 'mykey123')
+
+########################################################
+# 디렉토리 압축 및 백업
+# import zipfile
+# from pathlib import Path
+# import datetime
+# import os
+
+# def backup_directory(source_dir, backup_dir=None, backup_name=None):
+
+#     source_path = Path(source_dir)
+#     if backup_dir is None:
+#         backup_dir = Path.cwd()
+#     else:
+#         backup_dir = Path(backup_dir)
+#         backup_dir.mkdir(parents=True, exist_ok=True)
+    
+#     if backup_name is None:
+#         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+#         backup_name = f"{source_path.name}_backup_{timestamp}.zip"
+    
+#     backup_path = backup_dir / backup_name
+
+#     with zipfile.ZipFile(backup_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+#         for root, _, files in os.walk(source_dir):
+#             for file in files:
+#                 file_path = os.path.join(root, file)
+
+#                 arc_name = os.path.relpath(file_path, os.path.dirname(source_dir))
+#                 zipf.write(file_path, arc_name)
+    
+
+# backup_directory()
+
+########################################################
+
+# try:
+#     num = int(input('숫자 입력:'))
+#     result = 10 / num
+#     print(f'결과 : {result}')
+
+# except ValueError:
+#     print('유효한 숫자 입력 필요')
+# except ZeroDivisionError:
+#     print('0으로 나눌 수 없습니다.')
+# except:
+#     print('예외 발생')
+
+#######################################################
+
+# from functools import partial
+
+# def power(base, exponent, multiplier):
+#     return (base ** exponent) * multiplier
+
+# square_and_double = partial(power,2, multiplier=2)
+
+# print(square_and_double(3))
+
+# cube = partial(power, exponent=3)
+# print(cube(2, multiplier=1))
+
+#######################################################
+# class Event:
+#     def __init__(self, event_type, data):
+#         self.event_type = event_type
+#         self.data = data
 
 
-# calculator()
+# def handle_login(event_data):
+#     return f"{event_data} 로그인 되었습니다"    
+
+# def handle_logout(event_data):
+#     return f"{event_data} 로그아웃 되었습니다"
+
+
+# event_handlers = {
+#     "LOGIN" : handle_login,
+#     "LOGOUT" : handle_logout,
+# }
+
+# def process_event(event, handlers) :
+#     if event.event_type in handlers:
+#         return handlers[event.event_type](event.data)
+
+
+# events = [
+#     Event("LOGIN",{"username":"alice"}),
+#     Event("LOGOUT",{"username":"alice"}),
+# ]
+
+# list = (map(lambda event:process_event(event, event_handlers), events))
+
+# print(list)
+
