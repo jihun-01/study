@@ -346,4 +346,380 @@
 # list = (map(lambda event:process_event(event, event_handlers), events))
 
 # print(list)
+#######################################################
+# my_list = [1,2,3]
+# iterator = iter(my_list)
+# print(next(iterator))
+# print(next(iterator))
+# print(next(iterator))
 
+#######################################################
+
+# def count_to_up(max):
+#     count = 1
+#     while count <=max:
+#         yield count
+#         count += 1
+
+# counter = count_to_up(5)
+
+# print(next(counter))
+# print(next(counter))
+
+# for num in count_to_up(5):
+#     print(num)
+
+#######################################################
+
+# squre_list = [x**2 for x in range(1000)]
+# squre_gen = (x**2 for x in range(10))
+
+# import sys
+# print(sys.getsizeof(squre_list))
+# print(sys.getsizeof(squre_gen))
+
+# for num in squre_gen:
+#     print(num)
+
+#######################################################
+
+# def stateful_generate():
+#     print("첫 번째")
+#     yield 1
+
+#     print("두 번째")
+#     yield 2
+#     return "종료"
+
+#     print("세 번째")
+#     yield 3
+
+# gen = stateful_generate()
+
+# try :
+#     print(next(gen))
+#     print(next(gen))
+#     print(next(gen))
+
+# except StopIteration :
+#     print("종료")
+
+#######################################################
+# def nested():
+#     yield 'A'
+#     yield 'B'
+
+# def main_generator():
+#     yield 1
+#     yield from nested()
+#     yield 2
+#     yield 3
+
+# for v in main_generator():
+#     print(v)
+
+#######################################################
+# import random
+# import time
+# #시계열 데이터
+# def sensor_data_stream():
+#     while True:
+#         temperature = 20+random.uniform(-5,5)
+#         yield f"온도 : {temperature:.2f}도\n시간 : {time.strftime('%H:%M:%S')}"
+#         time.sleep(1)
+
+# stream = sensor_data_stream()
+# for _ in range(5):
+#     print(next(stream))
+
+#######################################################
+# 스레드 백그라운드 작업
+# import threading
+# import time
+
+# def background_task():
+#     while True:
+#         print("백그라운드 작업 실행 중")
+#         time.sleep(1)
+
+# my_thread = threading.Thread(target=background_task, daemon=True)
+# my_thread.start()
+
+# print('메인 스레드드 작업 중')
+# time.sleep(3)
+# print('메인 스레드 종료')
+
+#######################################################
+# 스레드드
+# import threading
+# import time
+
+# event = threading.Event()
+
+# def setter():
+#     print('주문 설정 중')
+#     time.sleep(3)
+#     print('이벤트 설정')
+#     event.set()
+
+# def waiter():
+#     print('waiter 대기 중')
+#     event.wait()
+#     print('이벤트 수신 후 처리')
+
+# t1 = threading.Thread(target=waiter)
+# t2 = threading.Thread(target=setter)
+
+# t1.start()
+# t2.start()
+
+#######################################################
+#데이터를 준비하고 대기하는 스레드
+# import threading
+# import time
+
+# data = None
+# condition = threading.Condition()
+
+
+# def wait_for_data():
+#     print('데이터를 대기 중')
+#     with condition:
+#         condition.wait()
+#         print(f'데이터 : {data} 수신')
+
+
+# def prepare_data():
+#     global data
+#     print('데이터 준비중')
+#     time.sleep(2)
+#     with condition:
+#         data = '준비된 데이터'
+#         print('데이터가 준비되었습니다.')
+#         condition.notify()
+
+# t1 = threading.Thread(target=wait_for_data)
+# t2 = threading.Thread(target=prepare_data)
+
+# t1.start()
+# t2.start()
+
+# t1.join()
+# t2.join()
+
+#######################################################
+
+# import threading
+# import time
+
+# counter = 0
+# counter_lock = threading.Lock()
+# def increment(count):
+#     global counter
+#     for _ in range(count):
+#         with counter_lock:
+#             current = counter
+#             time.sleep(0.001)
+#             counter = current + 1
+        
+        
+
+# t1 = threading.Thread(target=increment, args=(1000,))
+# t2 = threading.Thread(target=increment, args=(1000,))
+
+# t1.start()
+# t2.start()
+
+# t1.join()
+# t2.join()
+
+# print(counter)
+
+#######################################################
+
+#?
+
+# import threading
+# import time
+# import queue
+# import random
+
+# # 작업 큐
+# task_queue = queue.Queue()
+# # 결과 큐
+# result_queue = queue.Queue()
+
+# #작업 생성
+# def create_tasks():
+#     print('작업 생성')
+#     for i in range(10):
+#         task = f"작업-{i}"
+#         task_queue.put(task)
+#         print(f"{task} 작업이 추가 됨")
+#         time.sleep(random.uniform(0.1, 0.3))
+#     for _ in range(3):
+#         task_queue.put(None)
+#     print('작업 생성 종료')
+
+# def worker(worker_id):
+#     print(f"{worker_id} 작업 시작")
+
+#     while True:
+#         task = task_queue.get()
+
+#         if task is None:
+#             print(f"워커 {worker_id} 작업 종료")
+#             break
+#         #작업 처리 중
+#         print(f"워커 {worker_id} : {task} 처리중")
+#         processing_time = random.uniform(0.5, 1)
+#         time.sleep(processing_time)
+
+#         result = print(f"워커 {worker_id}, {task} 처리 완료, 소요 : {processing_time:.2f}초")
+#         result_queue.put(worker_id,result)
+
+#         task_queue.task_done()
+
+        
+# def result_collector():
+#     print('완료 보고 내용 수집')
+#     results = []
+
+#     for _ in range(10):
+#         worker_id, result = result_queue.get()
+#         print(f"수신 : {worker_id} -> {result}")
+#         results.append(result)
+#         result_queue.task_done()
+
+# creater = threading.Thread(target = create_tasks)
+# workers = [threading.Thread(target=worker, args=(i,)) for i in range(3)]
+# collector = threading.Thread(target=result_collector)
+
+# creater.start()
+# for w in workers:
+#     w.start()
+# collector.start()
+
+# creater.join()
+# for w in workers:
+#     w.join()
+# collector.join()
+
+#######################################################
+
+# import threading
+# import time
+# import queue
+# import random
+# import concurrent.futures
+
+# def task(params):
+#     name, duration = params
+#     print(f"작업{name} 시작")
+#     time.sleep(duration)
+#     print(f"작업{name} 완료")
+#     return f"{name} 리턴값"
+# #작업 목록
+# params = [
+#     ('A', 2),
+#     ('B', 1),
+#     ('C', 3)
+# ]
+
+# with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+#     results = list(executor.map(task,params))
+
+#     for result in results:
+#         print(result)
+
+
+#######################################################
+
+# import multiprocessing
+# import time
+# def count_up(name, max_count):
+#     for i in range(1,max_count+1):
+#         print(f"프로세스{name} : 카운트 : {i}")
+#         time.sleep(0.5)
+
+# if __name__== "__main__":
+#     p1 = multiprocessing.Process(target=count_up, args=("A",5))
+#     p2 = multiprocessing.Process(target=count_up, args=("B",3))
+
+#     p1.start()
+#     p2.start()
+
+#     p1.join()
+#     p2.join()
+
+#     print('모든 프로세스 종료')
+    
+
+#######################################################
+# import multiprocessing
+# import time
+# def add_to_shared(shared_value, lock, increment):
+#     for i in range(5):
+#         with lock:
+#             shared_value.value += increment
+#             print(f"프로세스{multiprocessing.current_process().name} 완료")
+#             time.sleep(0.5)
+
+# if __name__== "__main__":
+
+#     shared_number = multiprocessing.Value('i',0)
+#     lock = multiprocessing.Lock()
+
+#     p1 = multiprocessing.Process(target=add_to_shared, args=(shared_number, lock,1))
+#     p2 = multiprocessing.Process(target=add_to_shared, args=(shared_number, lock,2))
+
+#     p1.start()
+#     p2.start()
+
+#     p1.join()
+#     p2.join()
+
+#     print(f'모든 프로세스 종료, 최종 값: {shared_number.value}')
+    
+#######################################################
+#멀티프로세싱 큐 사용
+# import multiprocessing
+# import multiprocessing.process
+# import multiprocessing.queues
+# import time
+# import random
+
+# def producer_process(queue):
+#     print(f"생산자 프로세스 {multiprocessing.current_process().name}")
+#     for i in range(5):
+#         item = f"데이터-{i}"
+#         queue.put(item)
+#         time.sleep(random.uniform(0.1, 1))
+#         print(f"{item} 추가")
+#     queue.put(None)
+#     print("생산자 프로세스 종료")
+
+# def consumer_process(queue):
+#     print(f"소비자 프로세스 {multiprocessing.current_process().name}")
+#     while True:
+#         item = queue.get()
+#         if item is None:
+#             break
+#         print(f"{item} 처리")
+#         time.sleep(random.uniform(0.2, 0.8))
+#     print("소비자 프로세스 종료")
+
+# if __name__=="__main__":
+#     q = multiprocessing.Queue()
+
+#     prod = multiprocessing.Process(target=producer_process, args=(q,))
+#     cons = multiprocessing.Process(target=consumer_process, args=(q,))
+#     prod.start()
+#     cons.start()
+
+#     prod.join()
+#     cons.join()
+
+#     print("모든 프로세스 종료")
+    
+#######################################################

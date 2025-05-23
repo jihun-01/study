@@ -367,147 +367,511 @@
 # • 객체 지향 설계 원칙(SOLID)을 최소한 2가지 이상 적용하세요.
 # • 적절한 캡슐화를 통해 데이터를 보호하세요.
 
+# 책 클래스
+# class Books:
+#     def __init__(self, title, author, isbn, publication_year,quantity=int):
+#         self._title = title
+#         self._author = author
+#         self._isbn = isbn
+#         self._publication_year = publication_year
+#         self._quantity = quantity
 
-class Books:
-    def __init__(self, title, author, isbn, publication_year,quantity):
-        self.title = title
-        self.author = author
-        self.isbn = isbn
-        self.publication_year = publication_year
-        self.quantity = quantity
+#     @property
+#     def title(self):
+#         return self._title
+
+#     @property
+#     def author(self):
+#         return self._author
+
+#     @property
+#     def isbn(self):
+#         return self._isbn
+
+#     @property
+#     def publication_year(self):
+#         return self._publication_year
+
+#     @property
+#     def quantity(self):
+#         return self._quantity
+
+#     # setter 메서드
+#     @quantity.setter
+#     def quantity(self, value):
+#         if value < 0:
+#             raise ValueError("수량은 0보다 작을 수 없습니다.")
+#         self._quantity = value
 
 
-class Library:
-    def __init__(self):
-        self.books = []
-        self.members = []
-        self.rental_books = {}
-
-    def add_book(self, title, author, isbn, publication_year,quantity):
-        self.books.append(Books(title, author, isbn, publication_year,quantity))
+# class Library:
     
-    def remove_book(self,isbn):
-        for book in self.books:
-            if book.isbn == isbn:
-                self.books.remove(book)
-                print("도서가 성공적으로 삭제되었습니다.")
-                return
-        print("존재하지 않는 도서입니다.")
+#     def __init__(self):
+#         self._books = []
+#         self._members = []
+#         self._rental_books = []
 
-    def search_book(self, title= None, author= None, isbn= None):
+#     #도서 추가  
+#     def add_book(self, title, author, isbn, publication_year,quantity=int):
+#         print("도서 추가 중...")
+#         for book in self._books:
+#             if book.isbn == isbn:
+#                 book.quantity += quantity
+#                 print(f"도서 {title} 수량이 증가되었습니다.\n")
+#                 return
+#         else:
+#             self._books.append(Books(title, author, isbn, publication_year,quantity))
+#             print(f"도서 {title} 추가되었습니다.\n")
 
-        found = False
+#     #도서 삭제
+#     def remove_book(self,isbn):
+#         print("도서 삭제 중...")
+#         for book in self._books:
+#             if book.isbn == isbn:
+#                 self._books.remove(book)
+#                 print("도서가 삭제되었습니다.\n")
+#                 return
+#         print("존재하지 않는 도서입니다.\n")
+
+#     #도서 검색
+#     def search_book(self, title= None, author= None, isbn= None):
+#         print("도서 검색 중...")
+#         found = False
             
-        for book in self.books:
-            if title and book.title == title:
-                print(f"제목 검색 결과 : \n제목 : {book.title}\n저자 : {book.author}\nISBN : {book.isbn}\n출판연도 : {book.publication_year}\n")
-                found = True
-            elif author and book.author == author:
-                print(f"저자 검색 결과 : \n제목 : {book.title}\n저자 : {book.author}\nISBN : {book.isbn}\n출판연도 : {book.publication_year}\n")
-                found = True
-            elif isbn and book.isbn == isbn:
-                print(f"ISBN 검색 결과 : \n제목 : {book.title}\n저자 : {book.author}\nISBN : {book.isbn}\n출판연도 : {book.publication_year}\n")
-                found = True
+#         for book in self._books:
+#             if title and book.title == title:
+#                 print(f"제목 검색 결과 : \n제목 : {book.title}\n저자 : {book.author}\nISBN : {book.isbn}\n출판연도 : {book.publication_year}\n")
+#                 found = True
+#             elif author and book.author == author:
+#                 print(f"저자 검색 결과 : \n제목 : {book.title}\n저자 : {book.author}\nISBN : {book.isbn}\n출판연도 : {book.publication_year}\n")
+#                 found = True
+#             elif isbn and book.isbn == isbn:
+#                 print(f"ISBN 검색 결과 : \n제목 : {book.title}\n저자 : {book.author}\nISBN : {book.isbn}\n출판연도 : {book.publication_year}\n")
+#                 found = True
          
-        if not found:
-            print("존재하지 않는 도서입니다.\n")
+#         if not found:
+#             print("존재하지 않는 도서입니다.\n")
 
-    def rental_book(self,isbn,member_id):
-            
-            for member in self.members:
-                if member.member_id == member_id:
-                    break
-            else:
-                print("존재하지 않는 회원입니다.")
-                return
+#     #도서 대여
+#     def rental_book(self,isbn,member_id):
+#             print("대여 처리 중...")
+#             for member in self._members:
+#                 if member.member_id == member_id:
+#                     break
+#             else:
+#                 print("존재하지 않는 회원입니다.\n")
+#                 return
 
-            for book in self.books :
-                if book.isbn == isbn and member_id not in self.rental_books:
-                    if book.quantity > 0:
-                        book.quantity -= 1
-                        self.rental_books[member_id] = book.title
-                        print(f"{book.title} 도서가 {member_id}님에게 대출되었습니다.")
-                        return
-                    else:
-                        print(f"{book.title} 도서는 이미 대출중입니다.")
-                        return
-                if book.isbn == isbn and member_id in self.rental_books:
-                    print(f"이미 대출중인 도서입니다.")
-                    return
+#             for book in self._books :
+#                 if book.isbn == isbn and member_id not in self._rental_books:
+#                     if book.quantity > 0:
+#                         book.quantity -= 1
+#                         self._rental_books.append({
+#                             "member_id" : member_id,
+#                             "isbn" : isbn,
+#                             "title" : book.title,
+#                         })
+#                         print(f"{book.title} 도서가 {member_id}님에게 대출되었습니다.\n")
+#                         return
+#                     else:
+#                         print(f"{book.title} 도서는 이미 대출중입니다.\n")
+#                         return
+#                 if book.isbn == isbn and member_id in self._rental_books:
+#                     print(f"이미 대출중인 도서입니다.\n")
+#                     return
                 
-            print("존재하지 않는 도서입니다.")
+#             print("존재하지 않는 도서입니다.\n")
 
-    def return_book(self,isbn,member_id):
-
-        for member in self.members:
-                if member.member_id == member_id:
-                    break
-                else:
-                    print("존재하지 않는 회원입니다.")
-                    return
+#     #도서 반납
+#     def return_book(self,isbn,member_id):
+#         print("반납 처리 중...")
+#         for member in self._members:
+#                 if member.member_id == member_id:
+#                     break
+#                 else:
+#                     print("존재하지 않는 회원입니다.\n")
+#                     return
         
-        for book in self.books:
-            if book.isbn == isbn:
-                if member_id in self.rental_books:
-                    book.quantity += 1
-                    self.rental_books.pop(member_id)
-                    print(f"{book.title} 도서가 {member_id}님에게 반납되었습니다.")
-                    return
-                else:
-                    print(f"{book.title} 도서는 {member_id}님에게 대출되지 않았습니다.")
-                    return
-            print("존재하지 않는 도서입니다.")
+#         for book in self._books:
+            
+#             if book.isbn == isbn:
+#                 if member_id in self._rental_books:
+#                     book.quantity += 1
+#                     self._rental_books.pop(member_id)
+#                     print(f"{book.title} 도서가 {member_id}님에게 반납되었습니다.\n")
+#                     return
+#                 else:
+#                     print(f"{book.title} 도서는 {member_id}님에게 대출되지 않았습니다.\n")
+#                     return
+#             print("존재하지 않는 도서입니다.\n")
+
+#     #회원 등록
+#     def add_member(self, member_name, member_id, member_phone, member_email):
+#         print("회원 등록 중...")
+#         if member_id in self._members:
+#             print("이미 존재하는 회원입니다.\n")
+#             return
+#         self._members.append(Members(member_name, member_id, member_phone, member_email))
+#         print(f"{member_name}님이 성공적으로 등록되었습니다.\n")
+
+#     #대출 목록 조회
+
+#     def rental_list(self):
+#         print("대출 목록 조회회 중...")
+#         for member in self._members:
+#             member_rentals = [rental for rental in self._rental_books if rental["member_id"] == member.member_id]
+#             if member_rentals:
+#                 print(f"{member.member_name}님의 대출 목록 :")
+#                 for rental in member_rentals:
+#                     print(f"제목 : {rental['title']}")
+#             else:
+#                 print(f"{member.member_name}님의 대출 목록이 없습니다.\n")
+
+# class Members:
+#     def __init__(self, member_name, member_id, member_phone, member_email):
+#         self._member_name = member_name
+#         self._member_id = member_id
+#         self._member_phone = member_phone
+#         self._member_email = member_email
+#         self._rental_books = []
+#         self._return_books = []
+
     
-    def add_member(self, member_name, member_id, member_phone, member_email):
-        if member_id in self.members:
-            print("이미 존재하는 회원입니다.")
-            return
-        self.members.append(Members(member_name, member_id, member_phone, member_email))
-        print(f"{member_name}님이 성공적으로 등록되었습니다.")
+#     @property
+#     def member_name(self):
+#         return self._member_name
+
+#     @property
+#     def member_id(self):
+#         return self._member_id
+
+#     @property
+#     def member_phone(self):
+#         return self._member_phone
+
+#     @property
+#     def member_email(self):
+#         return self._member_email
+
+#     @property
+#     def rental_books(self):
+#         return self._rental_books.copy()  # 복사본 반환하여 외부 수정 방지
+
+#     # setter 메서드
+#     def add_rental_book(self, book):
+#         self._rental_books.append(book)
+
+#     def remove_rental_book(self, book):
+#         if book in self._rental_books:
+#             self._rental_books.remove(book)
 
 
 
-    def rental_list(self):
 
-        for member in self.members:
-            if member.member_id in self.rental_books:
-                print(f"{member.member_name}님의 대출 목록 : {self.rental_books[member.member_id]}")
-            elif member.member_id not in self.rental_books:
-                print(f"{member.member_name}님의 대출 목록이 없습니다.")
-            else:
-                print("존재하지 않는 회원입니다.")
-
-class Members:
-    def __init__(self, member_name, member_id, member_phone, member_email):
-        self.member_name = member_name
-        self.member_id = member_id
-        self.member_phone = member_phone
-        self.member_email = member_email
-        self.rental_books = []
-        self.return_books = []
-
-
-
-
-library = Library()
-#예제 책 등록
-library.add_book("파이썬", "저자", "ISBN", "2024",1)
-library.add_book("자바", "저자2", "ISBN2", "2025",1)
-library.add_book("C++", "저자3", "ISBN3", "2024",1)
-#예제 책 검색
-library.search_book(title="파이썬")
-library.search_book(author="저자2")
-library.search_book(isbn="ISBN3")
-#예제 회원 등록
-library.add_member("회원1", "회원1", "010-1234-5678", "test@test.com")
-#예제 책 대출
-library.rental_book("ISBN", "회원1")
-library.rental_book("ISBN2", "회원1")
-library.rental_book("ISBN3", "회원1")
-#예제 책 반납
-library.return_book("ISBN", "회원1")
-library.return_book("ISBN", "회원2")
-#예제 대출 목록 출력
-library.rental_list()
+# library = Library()
+# #예제 책 등록
+# library.add_book("파이썬", "저자", "ISBN", "2024",1)
+# library.add_book("자바", "저자2", "ISBN2", "2025",1)
+# library.add_book("C++", "저자3", "ISBN3", "2024",1)
+# library.add_book("파이썬", "저자", "ISBN", "2024",1)
+# #예제 책 검색
+# library.search_book(title="파이썬")
+# library.search_book(author="저자2")
+# library.search_book(isbn="ISBN3")
+# #예제 회원 등록
+# library.add_member("회원1", "회원1", "010-1234-5678", "test@test.com")
+# library.add_member("회원2", "회원2", "010-1234-5678", "test@test.com")
+# #예제 책 대출
+# library.rental_book("ISBN", "회원1")
+# library.rental_book("ISBN2", "회원1")
+# library.rental_book("ISBN3", "회원1")
+# library.rental_book("ISBN", "회원2")
+# library.rental_book("ISBN", "회원3")
+# #예제 책 반납
+# library.return_book("ISBN", "회원1")
+# library.return_book("ISBN", "회원3")
+# #예제 대출 목록 출력
+# library.rental_list()
 
 
+########################################################
+
+#파일 처리기 구현
+# • 다양한 유형의 파일(텍스트, CSV, JSON, 바이너리)을 읽고 쓸 수 있어야 합니다
+# • 파일이 존재하지 않거나, 권한이 없거나, 형식이 잘못된 경우 등 다양한 오류 상황을 적절히 처리
+# • 사용자 정의 예외 계층 구조를 설계하고 구현
+# • 오류 발생 시 로깅을 통해 문제를 기록
+# • 모든 파일 작업은 컨텍스트 매니저(`with` 구문)를 사용
+import json
+import csv
+
+
+class FileHandler:
+    def __init__(self, file_path):
+         self._file_path = file_path
+
+    def read_text(self):
+         with open(self._file_path, "r",encoding="utf-8") as file:
+              content = file.readline()
+              for line in content:
+                   print(line)
+    
+    def write_text(self, content):
+         with open(self._file_path, "w",encoding="utf-8") as file:
+              file.write(content)
+
+    def read_csv(self):
+         with open(self._file_path, "r",encoding="utf-8") as file:
+              #헤더 읽기
+              header = file.readline().strip().split(",")
+              print(f"헤더 : {header}")
+              #데이터 읽기
+              for line in file:
+                   values = line.strip().split(",")
+                   print(f"값 : {values}")
+    
+    def write_csv(self, header, data):
+         with open(self._file_path, "w",encoding="utf-8",newline="") as file:
+              writer = csv.writer(file)
+              writer.writerow(header)
+              writer.writerows(data)
+
+    def read_json(self):
+         with open(self._file_path, "r",encoding="utf-8") as file:
+              content = file.read()
+              print(content)
+    
+    def write_json(self, content):
+         with open(self._file_path, "w",encoding="utf-8") as file:
+              file.write(content)
+
+    def read_binary(self):
+         with open(self._file_path, "rb") as file:
+              content = file.read()
+              print(content)
+    
+    def write_binary(self, content):
+         with open(self._file_path, "wb") as file:
+              file.write(content)
+        
+try:
+    file_handler = FileHandler("example.txt")
+    file_handler.read_text()
+    file_handler.write_text("Hello, World!")
+    file_handler.read_csv()
+    file_handler.write_csv("Hello, World!")
+    file_handler.read_json()
+    file_handler.write_json("Hello, World!")
+    file_handler.read_binary()
+    file_handler.write_binary("Hello, World!")
+except FileNotFoundError as e:
+    print(f"파일을 찾을 수 없습니다 : {e}")
+
+except PermissionError as e:
+    print(f"파일 권한이 없습니다 : {e}")
+
+except Exception as e:
+    print(f"오류 발생 : {e}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+########################################################
+# 과제
+# • 로그 파일을 한 줄씩 읽는 제너레이터 함수 작성
+# • 특정 패턴(예: 'ERROR', 'WARNING' 등)이 포함된 줄만 필터링하는 제너레이터 작성
+
+# class Logger:
+#     def __init__(self, file_path):
+#         self._file_path = file_path
+
+#     def log_generator(self):
+#         try:
+#             with open(self._file_path, "r",encoding="utf-8") as file:
+#                 for line in file:
+#                     yield line
+#         except Exception as e:
+#             print(f"오류 발생 : {e}")
+
+#     def filter_log(self):
+#         try:
+#             with open("error.log", "a",encoding="utf-8") as error_file:
+#                 for line in self.log_generator():
+#                     if "ERROR" in line or "WARNING" in line:
+#                         error_file.write(line)
+#                         yield line
+#         except Exception as e:
+#             print(f"오류 발생 : {e}")
+
+# Logger = Logger("test.log")
+
+# for log_line in Logger.filter_log():
+#     print(log_line, end="")
+
+
+
+########################################################
+#과제
+#• 5개의 공개 API URL에 GET 요청을 보냄
+# • 세 가지 방식으로 구현하고 성능을 비교합니다:
+# • 순차 처리
+# • ThreadPoolExecutor 사용
+# • asyncio와 aiohttp 사용
+# • API_URLS
+# • "https://jsonplaceholder.typicode.com/posts/1",
+# • "https://jsonplaceholder.typicode.com/posts/2",
+# • "https://jsonplaceholder.typicode.com/posts/3",
+# • "https://jsonplaceholder.typicode.com/posts/4",
+# • "https://jsonplaceholder.typicode.com/posts/5"
+
+
+# import asyncio
+# import aiohttp
+# import time
+# import concurrent.futures
+# import requests
+
+# websites = [
+#     "https://jsonplaceholder.typicode.com/posts/1",
+#     "https://jsonplaceholder.typicode.com/posts/2",
+#     "https://jsonplaceholder.typicode.com/posts/3",
+#     "https://jsonplaceholder.typicode.com/posts/4",
+#     "https://jsonplaceholder.typicode.com/posts/5"
+# ]
+
+
+# #requests용
+# def fetch_sync(url):
+    
+#     try:
+#         start_time = time.time()
+#         response = requests.get(url, timeout=10)
+#         response.raise_for_status()
+#         content = response.text
+#         elapsed = time.time() - start_time
+#         print(f"{url} 요청 중...")
+#         print(f"{url} 응답 완료: {len(content)} 바이트 (소요시간: {elapsed:.2f}초)")
+#         return url, len(content), elapsed
+#     except Exception as e:
+#         print(f"{url} 요청 중...")
+#         print(f"{url} 요청 실패: {e}")
+#         return url, 0, 0
+
+
+# #aiohttp용
+# async def fetch(session, url):
+#     print(f"{url} 요청 중...")
+#     try:
+#         start_time = time.time()
+#         async with session.get(url, timeout=10) as response:
+#             content = await response.text()
+#             elapsed = time.time() - start_time
+#             print(f"{url} 응답 완료: {len(content)} 바이트 (소요시간: {elapsed:.2f}초)")
+#             return url, len(content), elapsed
+#     except Exception as e:
+#         print(f"{url} 요청 실패: {e}")
+#         return url, 0, 0
+
+
+# #순차 처리
+# def fetch_sequential(urls):
+#     start_time = time.time()
+#     results = []
+#     for url in urls:
+#         result = fetch_sync(url)
+#         results.append(result)
+
+#     end_time = time.time()
+#     elapsed = end_time - start_time
+#     print(f"순차 처리 완료, 소요시간 : {elapsed}초")
+#     return results, elapsed
+
+# #ThreadPoolExecutor 사용
+# def fetch_with_threads(urls):
+#     start_time = time.time()
+#     results = []
+
+#     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+#         future_to_url = {executor.submit(fetch_sync,url):url for url in urls}
+#         for future in concurrent.futures.as_completed(future_to_url):
+#             url = future_to_url[future]
+#             try:
+#                 result = future.result()
+#                 results.append(result)
+#             except Exception as e:
+#                 print(f"{url} 요청 실패: {e}")
+
+#     end_time = time.time()  
+#     elapsed = end_time - start_time
+#     print(f"ThreadPoolExecutor 사용 완료, 소요시간 : {elapsed}초")
+#     return results, elapsed
+
+        
+# #aiohttp 사용
+# async def fetch_aiohttp(urls):
+#     start_time = time.time()
+#     results = []
+
+#     async with aiohttp.ClientSession() as session:
+#         for url in urls:
+#             result = await fetch(session, url)
+#             results.append(result)
+
+#     end_time = time.time()
+#     elapsed = end_time - start_time
+#     print(f"aiohttp 사용 완료, 소요시간 : {elapsed}초")
+#     return results , elapsed
+
+
+
+# async def main():
+#     # print("순차 처리 시작")
+#     # sequntial_results = await fetch_sequential(websites)    
+
+#     print("순차 처리 시작")
+#     sequntial_results = fetch_sequential(websites)
+
+#     await asyncio.sleep(1)
+
+#     print("ThreadPoolExecutor 사용 시작")
+#     threadpool_results = fetch_with_threads(websites)
+
+#     await asyncio.sleep(1)
+
+#     #aiohttp 사용
+#     print("\naiohttp 시작")
+#     aiohttp_results = await fetch_aiohttp(websites)
+
+
+#     #결과
+#     print("\n 결과 출력")
+
+
+#     sequntial_total_time = sequntial_results[1]
+#     threadpool_total_time = threadpool_results[1]
+#     aiohttp_total_time = aiohttp_results[1]
+
+#     print(f"순차 처리 총 시간 : {sequntial_total_time}")
+#     print(f"threadpool 총 시간 : {threadpool_total_time}")
+#     print(f"aiohttp 총 시간 : {aiohttp_total_time}")
+
+# if __name__ == "__main__":
+#     asyncio.run(main())
