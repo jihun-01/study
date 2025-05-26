@@ -602,79 +602,113 @@
 # • 사용자 정의 예외 계층 구조를 설계하고 구현
 # • 오류 발생 시 로깅을 통해 문제를 기록
 # • 모든 파일 작업은 컨텍스트 매니저(`with` 구문)를 사용
-import json
-import csv
+# import json
+# import csv
+# import logging
+
+# logging.basicConfig(
+#     level=logging.INFO,
+#     format='%(asctime)s - %(levelname)s - %(message)s',
+#     handlers=[
+#         logging.FileHandler('file_handler.log'),
+#         logging.StreamHandler()
+#     ]
+# )
 
 
-class FileHandler:
-    def __init__(self, file_path):
-         self._file_path = file_path
+# class FileHandler:
+#      def __init__(self, file_path):
+#          self._file_path = file_path
+#      def read_text(self):
+#           try:
+#               with open(self._file_path, "r",encoding="utf-8") as file:
+#                    content = file.readline()
+#                    for line in content:
+#                          print(line)
+#           except Exception as e:
+#                logging.error(f"txt 파일 읽기 오류 : {e}")
 
-    def read_text(self):
-         with open(self._file_path, "r",encoding="utf-8") as file:
-              content = file.readline()
-              for line in content:
-                   print(line)
+#      def write_text(self, content):
+#           try:
+#                with open(self._file_path, "w",encoding="utf-8") as file:
+#                    file.write(content)
+#           except Exception as e:
+#                logging.error(f"txt 파일 쓰기 오류 : {e}")
+
+#      def read_csv(self):
+#           try:
+#                with open(self._file_path, "r",encoding="utf-8") as file:
+#                     #헤더 읽기
+#                     header = file.readline().strip().split(",")
+#                     print(f"헤더 : {header}")
+#                     #데이터 읽기
+#                     for line in file:
+#                          values = line.strip().split(",")
+#                          print(f"값 : {values}")
+#           except Exception as e:
+#                logging.error(f"csv 파일 읽기 오류 : {e}")
     
-    def write_text(self, content):
-         with open(self._file_path, "w",encoding="utf-8") as file:
-              file.write(content)
+#      def write_csv(self, header, data):
+#           try:
+#               with open(self._file_path, "w",encoding="utf-8",newline="") as file:
+#                    writer = csv.writer(file)
+#                    writer.writerow(header)
+#                    writer.writerows(data)
+#           except Exception as e:
+#                logging.error(f"csv 파일 쓰기 오류 : {e}")
 
-    def read_csv(self):
-         with open(self._file_path, "r",encoding="utf-8") as file:
-              #헤더 읽기
-              header = file.readline().strip().split(",")
-              print(f"헤더 : {header}")
-              #데이터 읽기
-              for line in file:
-                   values = line.strip().split(",")
-                   print(f"값 : {values}")
+#      def read_json(self):
+#           try:
+#                with open(self._file_path, "r",encoding="utf-8") as file:
+#                     content = file.read()
+#                     print(content)
+#           except Exception as e:
+#                logging.error(f"json 파일 읽기 오류 : {e}")
     
-    def write_csv(self, header, data):
-         with open(self._file_path, "w",encoding="utf-8",newline="") as file:
-              writer = csv.writer(file)
-              writer.writerow(header)
-              writer.writerows(data)
+#      def write_json(self, content):
+#           try:
+#                with open(self._file_path, "w",encoding="utf-8") as file:
+#                    file.write(content)
+#           except Exception as e:
+#                logging.error(f"json 파일 쓰기 오류 : {e}")
 
-    def read_json(self):
-         with open(self._file_path, "r",encoding="utf-8") as file:
-              content = file.read()
-              print(content)
+#      def read_binary(self):
+#           try:
+#                with open(self._file_path, "rb") as file:
+#                     content = file.read()
+#                     print(content)
+#           except Exception as e:
+#                logging.error(f"binary 파일 읽기 오류 : {e}")
     
-    def write_json(self, content):
-         with open(self._file_path, "w",encoding="utf-8") as file:
-              file.write(content)
-
-    def read_binary(self):
-         with open(self._file_path, "rb") as file:
-              content = file.read()
-              print(content)
-    
-    def write_binary(self, content):
-         with open(self._file_path, "wb") as file:
-              file.write(content)
+#      def write_binary(self, content):
+#           try:
+#                with open(self._file_path, "wb") as file:
+#                     file.write(content)
+#           except Exception as e:
+#                logging.error(f"binary 파일 쓰기 오류 : {e}")
         
-try:
-    file_handler = FileHandler("example.txt")
-    file_handler.read_text()
-    file_handler.write_text("Hello, World!")
-    file_handler.read_csv()
-    file_handler.write_csv("Hello, World!")
-    file_handler.read_json()
-    file_handler.write_json("Hello, World!")
-    file_handler.read_binary()
-    file_handler.write_binary("Hello, World!")
-except FileNotFoundError as e:
-    print(f"파일을 찾을 수 없습니다 : {e}")
+# try:
+#     file_handler = FileHandler("example.txt")
+#     file_handler.write_text("Hello, World!")
+#     file_handler.read_text()
+#     file_handler = FileHandler("example.csv")
+#     file_handler.write_csv(["Hello, World!"],["Hello, World!"])
+#     file_handler.read_csv()
+#     file_handler = FileHandler("example.json")
+#     file_handler.write_json({"Hello, World!"})
+#     file_handler.read_json()
+#     file_handler = FileHandler("example.bin")
+#     file_handler.write_binary(b"Hello, World!")
+#     file_handler.read_binary()
+    
+# except FileNotFoundError as e:
+#     logging.error(f"파일을 찾을 수 없습니다 : {e}")
 
-except PermissionError as e:
-    print(f"파일 권한이 없습니다 : {e}")
+# except PermissionError as e:
+#     logging.error(f"파일 권한이 없습니다 : {e}")
 
-except Exception as e:
-    print(f"오류 발생 : {e}")
-
-
-
+# except Exception as e:
+#     logging.error(f"오류 발생 : {e}")
 
 
 

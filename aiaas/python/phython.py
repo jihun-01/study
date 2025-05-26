@@ -723,3 +723,342 @@
 #     print("모든 프로세스 종료")
     
 #######################################################
+# Numpy 배열 처리
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import matplotlib
+
+# print(np.__version__)
+
+
+# arr1 = np.array([1,2,3,4,5])
+# print(arr1.sum()) #합
+# print(arr1.mean()) #평균
+# print(arr1.std()) #표준편차
+# print(arr1.var()) #분산
+# print(arr1.max()) #최대값
+# print(arr1.min()) #최소값
+# print(arr1.argmax()) #최대값 인덱스
+# print(arr1.argmin()) #최소값 인덱스
+# print(arr1.cumsum()) #누적합
+# print(arr1.cumprod()) #누적곱
+# print(arr1[arr1%2==0])
+
+# print(arr1)
+# arr2 = np.array([[1,2,3],[4,5,6]])
+# print(arr2.ndim) #차원
+# print(arr2.shape) #행열
+# print(arr2.size) #사이즈
+# print(arr2.dtype) #데이터 타입
+# print(arr2.itemsize) #바이트 크기
+# print(arr2.nbytes) #총 바이트 크기
+# print(arr2.T) #전치행렬
+# arr1d = np.arange(12) # 0~11
+# arr2d = arr1d.reshape(3,4)
+# print(arr2d)
+# print(arr2d.flatten()) # 평탄화
+
+# zeros = np.zeros((3,4))
+# print(zeros)
+
+# range_arr = np.arange(10)
+# print(range_arr)
+
+# range_arr = np.arange(0, 10, 2)
+# print(range_arr)
+# linear_space = np.linspace(0,1,5)
+# print(linear_space)
+
+# random_arr = np.random.random((2,2))
+# print(random_arr)
+
+# a = np.array([[1,2],[3,4]])
+# b = np.array([[5,6],[7,8]])
+
+# print(a.dot(b)) #행렬 곱
+# print(a*b) #요소 곱
+
+# arr1 = np.array([1,2,3,4,5])
+# print(arr1[0])
+
+# arr2 = np.array([[1,2,3,4],[4,5,6,7]])
+# print(arr2[1:,1:3])
+
+# a = np.array([1,2,3,4])
+# b = np.array([5,6,7,8])
+
+# print(a+b)
+# print(a-b)
+# print(a*b)
+# print(a/b) 
+# print(a)
+# print(np.sum(a))
+# print(np.sum(a, axis=0))#열 합
+# print(np.sum(a, axis=1))#행 합
+
+
+
+
+# celsius = np.array([[1,2,3,4],[5,6,7,8]])
+# far = celsius * 9/5 +32
+# print(far)
+
+# arr = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+# reshape = arr.reshape(3,4)
+# print(reshape)
+
+# a = np.array([[1,2],[3,4]])
+# b = np.array([[5,6],[7,8]])
+# vertical = np.concatenate([a,b], axis=0) # 세로로 합치기
+# v_stack = np.vstack([a,b]) # 세로로 합치기
+# horizontal = np.concatenate([a,b], axis=1) # 가로로 합치기
+# h_stack = np.hstack([a,b]) # 가로로 합치기
+
+# print(vertical)
+# print(v_stack)
+# print(horizontal)
+# print(h_stack)
+
+# ages = np.array([23,16,45,61,52,14,92,58])
+
+# adult_filter = ages >= 18 #조건부 필터 True, False
+# print(adult_filter)
+# adults = ages[adult_filter] #True인 값만 필터링
+# print(adults)
+# mz = ages[(ages >= 18) & (ages <= 40)] #조건 조합
+# print(mz)
+
+# ticket_prices = np.zeros_like(ages)
+
+# ticket_prices[ages<18] = 5
+# ticket_prices[(ages>=18) & (ages<=60)] = 10
+# ticket_prices[ages>60] = 8
+# print(ticket_prices)
+
+# matplotlib.use('TkAgg')
+
+# image = np.array([
+#     [0,0,0,0,0],
+#     [0,1,1,1,0],
+#     [0,1,0,1,0],
+#     [0,1,1,1,0],
+#     [0,0,0,0,0],
+    
+# ])
+
+# plt.figure(figsize=(8,4))
+# plt.subplot(1,3,1)
+# plt.imshow(image, cmap='gray',vmin=0,vmax=1)
+# plt.title('Original')
+
+# brightened = image + 0.5
+# plt.subplot(1,3,2)
+# plt.imshow(brightened, cmap='gray',vmin=0,vmax=1)
+# plt.title('Brightened')
+
+# inverted = 1 - image
+# plt.subplot(1,3,3)
+# plt.imshow(inverted, cmap='gray',vmin=0,vmax=1)
+# plt.title('Inverted')
+
+# plt.show()
+
+#######################################################
+# pandas 
+# import numpy as np
+# import pandas as pd
+
+# popul = {
+#     'seoul' : 977,
+#     'busan' : 122,
+#     'incheon' : 242
+# }
+
+# pop_series = pd.Series(popul)
+# print(pop_series)
+
+# s = pd.Series([1,np.nan,3,np.nan,5], index=['a','b','c','d','e'])
+# print(s.values) # 값
+# print(s.index) # 인덱스
+# print(s.mean()) # 평균
+# print(s[['a','c']]) # 인덱스 조회
+# print(s[s>2]) # 조건 조회
+# print(s.apply(np.sqrt)) # 함수 적용
+# print(s * 2) # 연산
+# print(s.isna()) # na 확인
+# print(s.dropna()) # na 제거
+# print(s.fillna(0)) # na 채우기
+
+
+# df = pd.DataFrame({
+#     'Name' : ['john', 'Anna', 'Peter', 'Linda', 'Bob'],
+#     'Age' : [28,24,35,32,43],
+#     'City' : ['New York', 'Paris', 'Berlin', 'London', 'Tokyo'],
+#     'salary' : [50000,65000,75000,85000,60000],
+#     'Department' : ['IT', 'HR', 'IT', 'Finance', 'IT'],
+#     'year' : [2021,2022,2021,2022,2021]
+# })
+
+# print(df)# 데이터프레임 출력
+# print(df.shape)# 행열 크기
+# print(df.index)# 인덱스
+# print(df.columns)# 컬럼
+# print(df.dtypes)# 데이터 타입
+# print(df.head(2))# 처음 2개
+# print(df.tail(2))# 마지막 2개
+# print(df.describe())# 요약 통계
+# print(df[['Age','salary']])# 컬럼 조회
+# print(df.iloc[0:3])# 위치 기반 조회
+# print(df[df['Age']>30])# 조건 조회
+# df['Age'] = df['Age']+1 # 연산
+# df['Country'] = ['USA','France','Germany','UK','Japan'] # 컬럼 추가
+# df.loc[5] = ['Charlie',29,'Sydney',70000,'IT','Australia'] # 행 추가
+# df.drop('Country', axis=1, inplace=True) # 컬럼 삭제
+# df.drop(5, axis=0,inplace=True) # 행 삭제
+# print(df)
+
+# print(df.iloc[0:3]) # 0-2행 조회
+# print(df.loc[[1,2,3]]) # 인덱스 기반 조회
+# print(df.loc[0:1, ['Name','Age']]) # 인덱스 기반 조회
+# print(df[(df['Age']>=30) & (df["Department"]=="IT")]) # 조건 조회
+
+
+# dept_groups = df.groupby('Department')
+# df['Dept_Avg_Salary'] = dept_groups['salary'].transform('mean')
+# print(df[['Department','salary','Dept_Avg_Salary']])
+
+# high_salary_depts = dept_groups.filter(lambda x:x['salary'].mean()>70000)
+# print(high_salary_depts)
+
+# print(dept_groups.get_group('IT'))
+
+# df['Date'] = pd.date_range(start='2022-01-01', periods=len(df),freq='M')
+# print(df)
+
+# print(df.groupby(df['Date'].dt.month)['salary'].mean()) # 월별 평균 급여
+# print(df.groupby(df['Date'].dt.quarter)['salary'].mean()) # 분기별 평균 급여
+
+# def experience_level(age):
+#     if age < 30:
+#         return 'Junior'
+#     elif age < 40:
+#         return 'Mid-level'
+#     else:
+#         return 'Senior'
+
+# df['Experience'] = df['Age'].apply(experience_level)
+# print(df.groupby('Experience')['salary'].mean())
+
+# df = pd.DataFrame({
+#     'Name' : ['Alice', 'Bob', 'Charlie', 'David', 'Eva','Frank'],
+#     'Score' : [85,90,78,96,88,73],
+#     'Attendance' : [95,80,90,75,85,92]
+# })
+
+# print('\n점수와 출석률의 상관관계:')
+# print(df[['Score','Attendance']].corr())
+# print('\n점수와 출석률의 공분산:')
+# print(df[['Score','Attendance']].cov())
+
+# customers = pd.DataFrame({
+#     'customer_id' : [101,102,103,104,105],
+#     'name' : ['Alice','Bob','Charlie','David','Eva'],
+#     'email' : ['alice@example.com','bob@example.com','charlie@example.com',
+#     'david@example.com','eva@example.com']
+# })
+
+# orders = pd.DataFrame({
+#     'order_id' : [101,102,103,104,105],
+#     'customer_id' : [1,2,1,2,3],
+#     'product' : ['Laptop','Smartphone','Tablet','Smartphone','Laptop'],
+#     'amount' : [1000,500,300,200,1000]
+# })
+
+# inner_join = pd.merge(customers, orders, on='customer_id') # 이너 조인인
+# print(inner_join)
+
+# left_join = pd.merge(customers, orders, on='customer_id', how='left') # 왼쪽 조인
+# print(left_join)
+
+# right_join = pd.merge(customers, orders, on='customer_id', how='right') # 오른쪽 조인
+# print(right_join)
+
+# outer_join = pd.merge(customers, orders, on='customer_id', how='outer') # 외부 조인
+# print(outer_join)
+
+
+# df1 = pd.DataFrame({
+#     'A' : ['A0','A1','A2'],
+#     'B' : ['B0','B1','B2']
+# })
+
+# df2 = pd.DataFrame({
+#     'A' : ['A3','A4','A5'],
+#     'B' : ['B3','B4','B5']
+# })
+# result_row = pd.concat([df1,df2])
+# print(result_row)
+
+# df3 = pd.DataFrame({
+#     'C' : ['C0','C1','C2'],
+#     'D' : ['D0','D1','D2']
+# })
+
+# result_cols = pd.concat([df1,df3], axis=1)
+# print(result_cols)
+
+#######################################################
+# 결측치
+# import pandas as pd
+# import numpy as np
+
+
+# df = pd.DataFrame({
+#     'A' : [1,2,np.nan,4,5],
+#     'B' : [np.nan,2,3,4,5],
+#     'C' : [1,2,3,np.nan,np.nan]
+# })
+
+# # print(df.isna().sum()) # 결측치 확인
+# #삭제
+# df_dropped = df.dropna()
+# print(df_dropped)
+# #채우기
+# df_filled = df.fillna(0)
+# print(df_filled)
+# #평균 채우기
+# df_mean = df.fillna(df.mean())
+# print(df_mean)
+
+#######################################################
+# 데이터 타입 변환
+
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame({
+    'A': ['1', '2', '3', '4', '5'],
+    'B': [1.1, 2.2, 3.3, 4.4, 5.5],
+    'C': ['2020-01-01', '2020-02-01', '2020-03-01',
+          '2020-04-01', '2020-05-01'],
+    'D': ['True', 'False', 'True', 'False', 'True']
+})
+
+print(df)
+print(df.dtypes)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
