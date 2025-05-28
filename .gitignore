@@ -5,3 +5,4 @@ __pycache__/
 .specstory/.what-is-this.md
 .specstory/
 ./aiaas/html/React/my-app/node_modules/*
+.venv/
