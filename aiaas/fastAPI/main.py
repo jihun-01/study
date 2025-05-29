@@ -46,7 +46,7 @@ app = FastAPI(
     openapi_tags=tags_metadata
 )
 
-
+# 테스트용 토큰
 VALID_TOKENS = ["test_token_123", "admin_token_456", "user_token_789"]
 
 def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
