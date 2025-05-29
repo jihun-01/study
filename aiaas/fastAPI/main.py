@@ -11,6 +11,7 @@ from typing import List, Optional
 import os
 import zipfile
 import tempfile
+import uvicorn
 
 #태그 메타데이터
 tags_metadata = [
@@ -175,3 +176,5 @@ async def delete_files(filenames: list[str] = Query(...)):
         "deleted_files": deleted_files
     }
 
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
