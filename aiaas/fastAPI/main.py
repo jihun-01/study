@@ -54,7 +54,7 @@ def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
     print(token)
     if token not in VALID_TOKENS:
         raise HTTPException(
-            status_code=401,
+            status_code=403,
             detail="권한이 없습니다."
         )
     return token
