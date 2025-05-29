@@ -5,13 +5,14 @@
 # 파일 다운로드 : 단일/다중 ZIP 다운로드
 # 파일 삭제 : 단일/다중 삭제
 
-from fastapi import FastAPI, HTTPException,UploadFile, File, Query
+from fastapi import FastAPI, HTTPException,UploadFile, File, Query, Depends
 from fastapi.responses import FileResponse
 from typing import List, Optional
 import os
 import zipfile
 import tempfile
 import uvicorn
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 #태그 메타데이터
 tags_metadata = [
@@ -34,6 +35,10 @@ tags_metadata = [
 ]
 
 
+
+security = HTTPBearer()
+
+
 app = FastAPI(
     title="파일 관리 시스템",
     description="파일 업로드, 다운로드, 파일목록 조회, 삭제 기능 제공",
@@ -41,10 +46,24 @@ app = FastAPI(
     openapi_tags=tags_metadata
 )
 
+
+VALID_TOKENS = ["test_token_123", "admin_token_456", "user_token_789"]
+
+def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    token = credentials.credentials
+    print(token)
+    if token not in VALID_TOKENS:
+        raise HTTPException(
+            status_code=401,
+            detail="권한이 없습니다."
+        )
+    return token
+
 #파일 업로드
 @app.post("/upload-files/",
           tags=["파일 업로드"],
-          description="파일크기 제한 10MB, 확장자 제한: jpeg, png, txt, pdf, doc, docx, xls, xlsx, zip")
+          description="파일크기 제한 10MB, 확장자 제한: jpeg, png, txt, pdf, doc, docx, xls, xlsx, zip",
+          dependencies=[Depends(verify_token)])
 async def upload_files(files: list[UploadFile] = File(...)):
     
     #업로드 가능 파일 확장자 제한
@@ -97,10 +116,13 @@ async def upload_files(files: list[UploadFile] = File(...)):
         "file_list": file_list
     }
 
+
+
 #파일 다운로드
 @app.get("/download-files",
          tags=["파일 다운로드"],
-         description="단일/다중 파일 다운로드(zip 파일 생성)")
+         description="단일/다중 파일 다운로드(zip 파일 생성)",
+         dependencies=[Depends(verify_token)])
 async def download_files(filenames: list[str] = Query(...)):
     file_paths = []
     for filename in filenames:
@@ -155,7 +177,8 @@ async def get_files(skip: int = 0, limit: int = 10, q: Optional[str] = None):
 #파일 삭제
 @app.delete("/delete-files",
            tags=["파일 삭제"],
-           description="단일/다중 파일 삭제")
+           description="단일/다중 파일 삭제",
+           dependencies=[Depends(verify_token)])
 async def delete_files(filenames: list[str] = Query(...)):
     upload_dir = "uploads"
     deleted_files = []
