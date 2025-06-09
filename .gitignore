@@ -6,5 +6,10 @@ __pycache__/
 .specstory/
 ./aiaas/html/React/my-app/node_modules/*
 .venv/
+<<<<<<< HEAD
+=======
+.cursorignore
+.cursorindexingignore
+>>>>>>> f79e5a92a71b54845ee8a569733e07e83d5be00f
 .env
 data/
