@@ -6,3 +6,5 @@ __pycache__/
 .specstory/
 ./aiaas/html/React/my-app/node_modules/*
 .venv/
+.env
+data/
