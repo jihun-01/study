@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-image = cv2.imread('image.png', 0)
+image = cv2.imread('testimage.png', 0)
 
 ret, binary = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
 
@@ -17,19 +17,16 @@ plt.imshow(image, cmap='gray')
 plt.title('Original')
 plt.axis('off')
 
-plt.figure(figsize=(15, 5))
 plt.subplot(1, 4, 2)
 plt.imshow(binary, cmap='gray')
 plt.title('Binary')
 plt.axis('off')
 
-plt.figure(figsize=(15, 5))
 plt.subplot(1, 4, 3)
 plt.imshow(otsu, cmap='gray')
 plt.title('Otsu')
 plt.axis('off')
 
-plt.figure(figsize=(15, 5))
 plt.subplot(1, 4, 4)
 plt.imshow(adaptive, cmap='gray')
 plt.title('Adaptive')
