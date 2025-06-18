@@ -10,3 +10,4 @@ __pycache__/
 .cursorindexingignore
 .env
 data/
+node_modules/
